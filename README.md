@@ -1,8 +1,5 @@
 ## Data Science Specialization | John Hopkins Coursera
 
-### 
-[The Data Scientist’s Toolbox (JHU Coursera)](https://medium.com/@GalarnykMichael/blogging-through-the-data-science-specialization-john-hopkins-coursera-2ea63fb99ab5#.x4aocpdez "Review + Going over Parts of Quiz")
+[R Programming (JHU Coursera)](https://medium.com/@GalarnykMichael/in-progress-review-course-2-r-programming-jhu-coursera-ad27086d8438#.bzzr29fvo "Review + data.table")
 
-[Time Series Data Basics with Pandas Part 2](https://www.youtube.com/watch?v=1S5UKLqe-gg "Time Series Data Basics with Pandas part 2")
-
-### Jupyter Notebook
+[The Data Scientist’s Toolbox (JHU Coursera)](https://medium.com/@GalarnykMichael/review-course-1-the-data-scientists-toolbox-jhu-coursera-4d7459458821#.5jpg133ln "Review + Going over Parts of Quiz")
