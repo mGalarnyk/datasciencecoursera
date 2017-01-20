@@ -50,14 +50,3 @@ DT <- data.table::fread("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2F
 
 # fastest
 system.time(DT[,mean(pwgtp15),by=SEX])
-
-
-# Extracting the last 2 rows of the data.table (either expression would work) 
-tail(quiz_data,2)
-quiz_data[c(.N-1,.N)]
-
-# Removing Missing Values 
-quiz_data[complete.cases(quiz_data),]
-
-# Ozone values are above 31 and Temp values are above 90. etc
-quiz_data[Ozone > 31 & Temp > 90]
