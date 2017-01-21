@@ -1,28 +1,34 @@
+#install.packages("jsonlite")
+library(jsonlite)
+#install.packages("httpuv")
+library(httpuv)
+#install.packages("httr")
 library(httr)
 
-# 1. Find OAuth settings for github:
-#    http://developer.github.com/v3/oauth/
+# Can be github, linkedin etc depending on application
 oauth_endpoints("github")
 
-# 2. To make your own application, register at at
-#    https://github.com/settings/applications. Use any URL for the homepage URL
-#    (http://github.com is fine) and  http://localhost:1410 as the callback url
-#
-#    Replace your key and secret below.
-myapp <- oauth_app("github",
-                   key = "56b637a5baffac62cad9",
-                   secret = "8e107541ae1791259e9987d544ca568633da2ebf")
+# Change based on what you 
+myapp <- oauth_app(appname = "Youtube_Michael_Galarnyk",
+                   key = "8758a6bf9a146e1da0c1",
+                   secret = "b9504edde46b794414495bd9c33ea28cbfd87824")
 
-# 3. Get OAuth credentials
+# Get OAuth credentials
 github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
 
-# 4. Use API
+# Use API
 gtoken <- config(token = github_token)
-req <- GET("https://api.github.com/rate_limit", gtoken)
-stop_for_status(req)
-content(req)
+req <- GET("https://api.github.com/users/jtleek/repos", gtoken)
 
-# OR:
-req <- with_config(gtoken, GET("https://api.github.com/rate_limit"))
+# Take action on http error
 stop_for_status(req)
-content(req)
+
+# Extract content from a request
+json1 = content(req)
+
+# Convert to a data.frame
+gitDF = jsonlite::fromJSON(jsonlite::toJSON(json1))
+
+# Subset data.frame
+gitDF[gitDF$full_name == "jtleek/datasharing", "created_at"] 
+
