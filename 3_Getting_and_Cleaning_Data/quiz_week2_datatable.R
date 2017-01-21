@@ -1,3 +1,5 @@
+# 1
+
 #install.packages("jsonlite")
 library(jsonlite)
 #install.packages("httpuv")
@@ -8,7 +10,7 @@ library(httr)
 # Can be github, linkedin etc depending on application
 oauth_endpoints("github")
 
-# Change based on what you 
+# Change based on your appname, key, and secret 
 myapp <- oauth_app(appname = "Youtube_Michael_Galarnyk",
                    key = "8758a6bf9a146e1da0c1",
                    secret = "b9504edde46b794414495bd9c33ea28cbfd87824")
@@ -32,3 +34,4 @@ gitDF = jsonlite::fromJSON(jsonlite::toJSON(json1))
 # Subset data.frame
 gitDF[gitDF$full_name == "jtleek/datasharing", "created_at"] 
 
+# 2
