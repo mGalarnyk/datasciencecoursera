@@ -1,12 +1,5 @@
-#install.packages("jsonlite")
-library(jsonlite)
 #install.packages("twitteR")
 library(twitteR)
-#install.packages("httpuv")
-library(httpuv)
-#install.packages("httr")
-library(httr)
-
 
 consumer_key <- "OQMbUsBfWQ1mVUGASpSArbG33"
 consumer_secret <- "GQ5kc0BlwJZE2FYyvv8cxn845z32ES6HsID87cawkQ075jwyIy"
