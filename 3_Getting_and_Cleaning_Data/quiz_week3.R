@@ -54,32 +54,55 @@ quantile(picture, probs = c(0.3, 0.8) )
 # Match the data based on the country shortcode. How many of the IDs match? Sort the data frame in descending order by GDP rank (so United States is last). 
 # What is the 13th country in the resulting data frame?
 
+# install.packages("data.table)
 library("data.table")
-# Download the File
-download.file('https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv'
-              , 'FGDP.csv' )
 
 
-# download from the URL
-download.file('https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv'
-              , 'FEDSTATS_Country.csv' )
+# Download data and read FGDP data into data.table
+FGDP <- data.table::fread('https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv'
+                          , skip=4
+                          , nrows = 190
+                          , select = c(1, 2, 4, 5)
+                          , col.names=c("CountryCode", "Rank", "Economy", "Total")
+                          )
 
-# Read data into data.frame
-FEDSTATS_Country <- read.csv('FEDSTATS_Country.csv')
+# Download data and read FGDP data into data.table
+FEDSTATS_Country <- data.table::fread('https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv'
+                                      )
 
+#data.table::merge(FGDP, FEDSTATS_Country, by = 'CountryCode')
+mergedDT <- merge(FGDP, FEDSTATS_Country, by = 'CountryCode')
 
+# How many of the IDs match?
+nrow(mergedDT)
+
+# Sort the data frame in descending order by GDP rank (so United States is last). 
+# What is the 13th country in the resulting data frame?
+mergedDT[order(-Rank)][13,.(Economy)]
 
 # 4. What is the average GDP ranking for the 
 # "High income: OECD" and "High income: nonOECD" group?
 
 # "High income: OECD" 
-
+mergedDT[`Income Group` == "High income: OECD"
+         , lapply(.SD, mean)
+         , .SDcols = c("Rank")
+         , by = "Income Group"]
 
 # "High income: nonOECD"
-
+mergedDT[`Income Group` == "High income: nonOECD"
+         , lapply(.SD, mean)
+         , .SDcols = c("Rank")
+         , by = "Income Group"]
 
 # 5. Cut the GDP ranking into 5 separate quantile groups.
 # Make a table versus Income.Group. 
 # How many countries are Lower middle income but among the 38 nations with highest GDP?
 
+install.packages('dplyr')
+library('dplyr')
 
+
+breaks <- quantile(mergedDT[, Rank], probs = seq(0, 1, 0.2), na.rm = TRUE)
+mergedDT$quantileGDP <- cut(mergedDT[, Rank], breaks = breaks)
+mergedDT[`Income Group` == "Lower middle income", .N, by = c("Income Group", "quantileGDP")]
