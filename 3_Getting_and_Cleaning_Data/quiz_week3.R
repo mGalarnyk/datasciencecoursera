@@ -102,7 +102,6 @@ mergedDT[`Income Group` == "High income: nonOECD"
 install.packages('dplyr')
 library('dplyr')
 
-
 breaks <- quantile(mergedDT[, Rank], probs = seq(0, 1, 0.2), na.rm = TRUE)
 mergedDT$quantileGDP <- cut(mergedDT[, Rank], breaks = breaks)
 mergedDT[`Income Group` == "Lower middle income", .N, by = c("Income Group", "quantileGDP")]
