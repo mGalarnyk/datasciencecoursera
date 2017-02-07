@@ -11,9 +11,8 @@
 
 # Apply strsplit() to split all the names of the data frame on the characters "wgtp". What is the value of the 123 element of the resulting list?
 
-communities <- data.table::fread("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv")
-varNames <- names(communities)
-varNamesSplit <- strsplit(varNames, "wgtp")
+communities <- data.table::fread("http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv")
+varNamesSplit <- strsplit(names(communities), "wgtp")
 varNamesSplit[[123]]
 
 #2. 
@@ -27,69 +26,71 @@ varNamesSplit[[123]]
   
 #  http://data.worldbank.org/data-catalog/GDP-ranking-table
 
-dtGDP <- data.table::fread('https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv'
+
+# Removed the s from https to be compatible with windows computers. 
+# Skip first 5 rows and only read in relevent columns
+GDPrank <- data.table::fread('http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv'
                     , skip=5
-                    , nrows=190)
-# , select = c(1, 2, 4, 5)
-# , col.names=c("CountryCode", "Rank", "Economy", "Total")
+                    , nrows=190
+                    , select = c(1, 2, 4, 5)
+                    , col.names=c("CountryCode", "Rank", "Country", "GDP")
+)
+
+# Remove the commas using gsub
+# Convert to integer after removing commas. 
+# Take mean of GDP column (I know this code may look a little confusing)
+GDPrank[, mean(as.integer(gsub(pattern = ',', replacement = '', x = GDP )))]
+  
 
 
-# 3. Load the Gross Domestic Product data for the 190 ranked countries in this data set:
+#3. In the data set from Question 2 
+# what is a regular expression that would allow you to count the number of countries whose name begins with "United"?
+# Assume that the variable with the country names in it is named countryNames. How many countries begin with United?
+
+grep("^United",GDPrank[, Country])
+
+# 4.Load the Gross Domestic Product data for the 190 ranked countries in this data set:
 # https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv
 # Load the educational data from this data set:
 # https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv
-# Match the data based on the country shortcode. How many of the IDs match? Sort the data frame in descending order by GDP rank (so United States is last). 
-# What is the 13th country in the resulting data frame?
+# Match the data based on the country shortcode. 
+# Of the countries for which the end of the fiscal year is available, how many end in June?
 
-# install.packages("data.table)
-library("data.table")
+GDPrank <- data.table::fread('http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv'
+                             , skip=5
+                             , nrows=190
+                             , select = c(1, 2, 4, 5)
+                             , col.names=c("CountryCode", "Rank", "Country", "GDP")
+)
 
+eduDT <- data.table::fread('http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv')
 
-# Download data and read FGDP data into data.table
-FGDP <- data.table::fread('https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv'
-                          , skip=4
-                          , nrows = 190
-                          , select = c(1, 2, 4, 5)
-                          , col.names=c("CountryCode", "Rank", "Economy", "Total")
-                          )
+mergedDT <- merge(GDPrank, eduDT, by = 'CountryCode')
 
-# Download data and read FGDP data into data.table
-FEDSTATS_Country <- data.table::fread('https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv'
-                                      )
-
-#data.table::merge(FGDP, FEDSTATS_Country, by = 'CountryCode')
-mergedDT <- merge(FGDP, FEDSTATS_Country, by = 'CountryCode')
-
-# How many of the IDs match?
-nrow(mergedDT)
-
-# Sort the data frame in descending order by GDP rank (so United States is last). 
-# What is the 13th country in the resulting data frame?
-mergedDT[order(-Rank)][13,.(Economy)]
-
-# 4. What is the average GDP ranking for the 
-# "High income: OECD" and "High income: nonOECD" group?
-
-# "High income: OECD" 
-mergedDT[`Income Group` == "High income: OECD"
-         , lapply(.SD, mean)
-         , .SDcols = c("Rank")
-         , by = "Income Group"]
-
-# "High income: nonOECD"
-mergedDT[`Income Group` == "High income: nonOECD"
-         , lapply(.SD, mean)
-         , .SDcols = c("Rank")
-         , by = "Income Group"]
-
-# 5. Cut the GDP ranking into 5 separate quantile groups.
-# Make a table versus Income.Group. 
-# How many countries are Lower middle income but among the 38 nations with highest GDP?
-
-install.packages('dplyr')
-library('dplyr')
+mergedDT[grepl(pattern = "Fiscal year end: June 30;", mergedDT[, `Special Notes`]), .N]
 
 
-breaks <- quantile(mergedDT[, Rank], probs = seq(0, 1, 0.2), na.rm = TRUE)
-mergedDT$quantileGDP <- cut(mergedDT[, Rank], breaks = breaks)
-mergedDT[`Income Group` == "Lower middle income", .N, by = c("Income Group", "quantileGDP")]
+# 5. You can use the quantmod (http://www.quantmod.com/) package
+# to get historical stock prices for publicly traded companies on the NASDAQ and NYSE. 
+# Use the following code to download data on Amazon's stock price and get the times the data was sampled.
+
+# library(quantmod)
+# amzn = getSymbols("AMZN",auto.assign=FALSE)
+# sampleTimes = index(amzn)
+
+
+# install.packages("quantmod")
+library("quantmod")
+amzn <- getSymbols("AMZN",auto.assign=FALSE)
+sampleTimes <- index(amzn) 
+timeDT <- data.table::data.table(timeCol = sampleTimes)
+
+# How many values were collected in 2012? 
+timeDT[(timeCol >= "2012-01-01") & (timeCol) < "2013-01-01", .N ]
+
+# How many values were collected on Mondays in 2012?
+timeDT[((timeCol >= "2012-01-01") & (timeCol < "2013-01-01")) & (weekdays(timeCol) == "Monday"), .N ]
+
+
+
+
