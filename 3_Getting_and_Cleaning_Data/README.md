@@ -1,8 +1,5 @@
 # Getting and Cleaning Data Project
-=====================================
-Author: Michael Galarnyk (https://github.com/benjamin-chan/GettingAndCleaningData)
-
-[Link to Github Repo](https://medium.com/@GalarnykMichael/review-course-1-the-data-scientists-toolbox-jhu-coursera-4d7459458821#.5jpg133ln "Click to go to Repo")
+Author: Michael Galarnyk [Link to Github Repo](https://medium.com/@GalarnykMichael/review-course-1-the-data-scientists-toolbox-jhu-coursera-4d7459458821#.5jpg133ln "Click to go to Repo")
 
 ## Data Science Specialization | John Hopkins Coursera
 
