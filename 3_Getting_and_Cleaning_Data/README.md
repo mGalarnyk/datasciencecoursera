@@ -1,5 +1,5 @@
 # Getting and Cleaning Data Project
-Author: Michael Galarnyk 
+Author: Michael Galarnyk <br />
 Blog Post: [Getting and Cleaning Data Review](https://medium.com/@GalarnykMichael/review-course-1-the-data-scientists-toolbox-jhu-coursera-4d7459458821#.5jpg133ln "Click to go to Repo")
 
 ## Goal of the Project
