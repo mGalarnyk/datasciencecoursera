@@ -13,7 +13,7 @@ Data Zip File Location: [UC Irvine Repo](https://d396qusza40orc.cloudfront.net/g
 
 Goal | Item | Link to Item
 --- | --- | ---
-Tidy Data Set |  Clean Data Set |  [Data Set Link](https://medium.com/@GalarnykMichael/review-course-1-the-data-scientists-toolbox-jhu-coursera-4d7459458821#.5jpg133ln "Click to go to Repo")
+Tidy Data Set |  Clean Data Set |  [Data Set Link](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/tidyData.csv "Click to go to Repo")
 Github Repo | Repo |  [Repo Link](https://github.com/mGalarnyk/datasciencecoursera/tree/master/3_Getting_and_Cleaning_Data "Click to go to Repo")
 Cookbook | CodeBook.md |  [Repo Link](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/CodeBook.md "CodeBook.md")
 README | ReadingItNow |  [Repo Link](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/README.md "README.md")
