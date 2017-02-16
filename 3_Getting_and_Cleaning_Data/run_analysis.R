@@ -42,7 +42,7 @@ testSubjects <- fread(file.path(path, "UCI HAR Dataset/test/subject_test.txt")
                       , col.names = c("SubjectNum"))
 test <- cbind(testSubjects, testActivities, test)
 
-# merge datasets and add labels
+# merge datasets
 combined <- rbind(train, test)
 
 # Convert classLabels to activityName basically. More explicit. 
