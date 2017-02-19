@@ -1,6 +1,4 @@
 ## Data Science Specialization | John Hopkins Coursera
-
-# Getting and Cleaning Data Project
 Author: Michael Galarnyk <br />
 
 ## Goal of the Project
