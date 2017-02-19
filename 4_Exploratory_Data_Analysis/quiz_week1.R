@@ -1,96 +1,137 @@
-# Getting and Cleaning Data, JHU Coursera
+# Exploratory Data Analysis, Quiz 1 JHU Coursera
 
 #1. 
-#The American Community Survey distributes downloadable data about United States communities. Download the 2006 microdata survey about housing for the state of Idaho using download.file() from here:
-  
-# https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv
+# Which of the following is a principle of analytic graphics?
 
-# and load the data into R. The code book, describing the variable names is here:
-  
-# https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FPUMSDataDict06.pdf
+# Don't plot more than two variables at at time
 
-# Apply strsplit() to split all the names of the data frame on the characters "wgtp". What is the value of the 123 element of the resulting list?
+# Integrate multiple modes of evidence
 
-communities <- data.table::fread("http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv")
-varNamesSplit <- strsplit(names(communities), "wgtp")
-varNamesSplit[[123]]
+# Show box plots (univariate summaries)
+
+# Make judicious use of color in your scatterplots
+
+# Only do what your tools allow you to do
+
+# solution: Integrate multiple modes of evidence
 
 #2. 
-#Load the Gross Domestic Product data for the 190 ranked countries in this data set:
-  
-#https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv
+# What is the role of exploratory graphs in data analysis?
 
-# Remove the commas from the GDP numbers in millions of dollars and average them. What is the average?
+# They are made for formal presentations.
 
-#Original data sources:
-  
-#  http://data.worldbank.org/data-catalog/GDP-ranking-table
+# They are typically made very quickly.
 
+# Axes, legends, and other details are clean and exactly detailed.
 
-# Removed the s from https to be compatible with windows computers. 
-# Skip first 5 rows and only read in relevent columns
-GDPrank <- data.table::fread('http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv'
-                    , skip=5
-                    , nrows=190
-                    , select = c(1, 2, 4, 5)
-                    , col.names=c("CountryCode", "Rank", "Country", "GDP")
-)
+# Only a few are constructed.
 
-# Remove the commas using gsub
-# Convert to integer after removing commas. 
-# Take mean of GDP column (I know this code may look a little confusing)
-GDPrank[, mean(as.integer(gsub(pattern = ',', replacement = '', x = GDP )))]
-  
+# SOLUTION: They are typically made very quickly.
 
+# 3. 
+# Which of the following is true about the base plotting system?
 
-#3. In the data set from Question 2 
-# what is a regular expression that would allow you to count the number of countries whose name begins with "United"?
-# Assume that the variable with the country names in it is named countryNames. How many countries begin with United?
+# Plots are created and annotated with separate functions
 
-grep("^United",GDPrank[, Country])
+# The system is most useful for conditioning plots
 
-# 4.Load the Gross Domestic Product data for the 190 ranked countries in this data set:
-# https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv
-# Load the educational data from this data set:
-# https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv
-# Match the data based on the country shortcode. 
-# Of the countries for which the end of the fiscal year is available, how many end in June?
+# Plots are typically created with a single function call
 
-GDPrank <- data.table::fread('http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv'
-                             , skip=5
-                             , nrows=190
-                             , select = c(1, 2, 4, 5)
-                             , col.names=c("CountryCode", "Rank", "Country", "GDP")
-)
+# Margins and spacings are adjusted automatically depending on the type of plot and the data
 
-eduDT <- data.table::fread('http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv')
+# SOLUTION: Plots are created and annotated with separate functions
 
-mergedDT <- merge(GDPrank, eduDT, by = 'CountryCode')
+# 4. 
+# Which of the following is an example of a valid graphics device in R?
 
-mergedDT[grepl(pattern = "Fiscal year end: June 30;", mergedDT[, `Special Notes`]), .N]
+# A PNG file
 
+# The keyboard
 
-# 5. You can use the quantmod (http://www.quantmod.com/) package
-# to get historical stock prices for publicly traded companies on the NASDAQ and NYSE. 
-# Use the following code to download data on Amazon's stock price and get the times the data was sampled.
+# A file folder
 
-# library(quantmod)
-# amzn = getSymbols("AMZN",auto.assign=FALSE)
-# sampleTimes = index(amzn)
+# A Microsoft Word document
 
+# A socket connection
 
-# install.packages("quantmod")
-library("quantmod")
-amzn <- getSymbols("AMZN",auto.assign=FALSE)
-sampleTimes <- index(amzn) 
-timeDT <- data.table::data.table(timeCol = sampleTimes)
+# SOLUTION: A PNG file
 
-# How many values were collected in 2012? 
-timeDT[(timeCol >= "2012-01-01") & (timeCol) < "2013-01-01", .N ]
+# 5. 
+# Which of the following is an example of a vector graphics device in R?
 
-# How many values were collected on Mondays in 2012?
-timeDT[((timeCol >= "2012-01-01") & (timeCol < "2013-01-01")) & (weekdays(timeCol) == "Monday"), .N ]
+# TIFF 
 
+# GIF
 
+# Postscript
 
+# PNG
 
+# JPEG 
+
+# SOLUTION: SVG or Postscript
+
+# 6. 
+# Bitmapped file formats can be most useful for
+
+# Scatterplots with many many points
+
+# Plots that require animation or interactivity
+
+# Plots that may need to be resized
+
+# Plots that are not scaled to a specific resolution
+
+# SOLUTION: Scatterplots with many many points
+
+# 7. 
+# Which of the following functions is typically used to add elements to a plot in the base graphics system?
+
+# points()
+
+# hist() 
+
+# plot() 
+
+# boxplot() 
+
+# SOLUTION: text() or points() 
+
+# 8. 
+# Which function opens the screen graphics device for the Mac?
+
+# quartz()
+
+# bitmap()
+
+# pdf()
+
+# png()
+
+# SOLUTION: quartz()
+
+# 9. 
+# What does the 'pch' option to par() control?
+
+# the plotting symbol/character in the base graphics system
+
+# the line width in the base graphics system
+
+# the orientation of the axis labels on the plot
+
+# the size of the plotting symbol in a scatterplot
+
+# SOLUTION: the plotting symbol/character in the base graphics system
+
+# 10
+# If I want to save a plot to a PDF file, which of the following is a correct way of doing that?
+
+# Construct the plot on the screen device and then copy it to a PDF file with dev.copy2pdf()
+
+# Open the screen device with quartz(), construct the plot, and then close the device with dev.off().
+
+# Open the PostScript device with postscript(), construct the plot, then close the device with dev.off().
+
+# Construct the plot on the PNG device with png(), then copy it to a PDF with dev.copy2pdf().
+
+# SOLUTION: Construct the plot on the screen device and then copy it to a PDF file with dev.copy2pdf()
