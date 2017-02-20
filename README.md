@@ -1,6 +1,16 @@
 # Data Science Specialization | John Hopkins Coursera
 Author: Michael Galarnyk <br />
 
+Just started on Course 4 "Exploratory Data Analysis" (as of 2/19/2017). All the coursework is aggregated into one repo.
+
+## Course 
+Course Number | Course | Link to Repo
+--- | --- | ---
+4 |  Exploratory Data Analysis |  [Course Repo](https://github.com/mGalarnyk/datasciencecoursera/tree/master/4_Exploratory_Data_Analysis "Exploratory Data Analysis Repo")
+3 |  Getting and Cleaning Data |  [Course Repo](https://github.com/mGalarnyk/datasciencecoursera/tree/master/3_Getting_and_Cleaning_Data "Getting and Cleaning Data")
+2 |  R Programming |  [Course Repo](https://github.com/mGalarnyk/datasciencecoursera/tree/master/2_R_Programming "R Programming Repo")
+1 |  The Data Scientist's Toolbox |  [Course Repo](https://github.com/mGalarnyk/datasciencecoursera/tree/master/4_Exploratory_Data_Analysis "Data Scientist's Repo")
+
 ## Blog Posts on the Specialization | John Hopkins Coursera
 
 [Getting and Cleaning Data (JHU Coursera)](https://medium.com/@GalarnykMichael/getting-and-cleaning-data-jhu-coursera-course-3-c3635747858b#.y93kqfa0u "Review + data.table")
@@ -9,9 +19,6 @@ Author: Michael Galarnyk <br />
 
 [The Data Scientist’s Toolbox (JHU Coursera)](https://medium.com/@GalarnykMichael/review-course-1-the-data-scientists-toolbox-jhu-coursera-4d7459458821#.5jpg133ln "Review + Going over Parts of Quiz")
 
-## Goal of the Project
-1. To go through the Data Science Specialization and blog on it. Feel free to submit a pull request to improve on my code. 
-
 ## Contributors
 FirstName | LastName | Email
 --- | --- | ---
@@ -19,5 +26,4 @@ Michael |  Galarnyk |  <mgalarny@gmail.com>
 Submit |  Pull Request | <youremailhere@gmail.com>
 
 ## License
-Anyone may contribute after each assignment is turned in and graded. 
-
+Anyone may contribute after each assignment is turned in and graded. Feel free to submit a pull request. 
