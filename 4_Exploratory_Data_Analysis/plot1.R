@@ -1,6 +1,6 @@
 library("data.table")
 
-setwd("C:/Users/mgalarnyk/Desktop/datasciencecoursera/4_Exploratory_Data_Analysis/project/data")
+setwd("~/Desktop/datasciencecoursera/4_Exploratory_Data_Analysis/project/data")
 
 #Reads in data from file then subsets data for specified dates
 powerDT <- data.table::fread(input = "household_power_consumption.txt"
@@ -19,7 +19,7 @@ powerDT <- powerDT[(Date >= "2007-02-01") & (Date <= "2007-02-02")]
 png("plot1.png", width=480, height=480)
 
 ## Plot 1
-hist(powerDT[["Global_active_power"]], main="Global Active Power", 
+hist(powerDT[, Global_active_power], main="Global Active Power", 
      xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
 
 dev.off()
