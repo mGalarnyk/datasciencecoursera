@@ -1,6 +1,12 @@
 # Exploratory Data Analysis
 Author: Michael Galarnyk <br />
 
+## Projects 
+
+Project # | Link 
+--- | --- 
+1 |  [Exploratory Data Analysis Project 1](https://github.com/mGalarnyk/datasciencecoursera/blob/master/4_Exploratory_Data_Analysis/project/README.md)
+
 ## Contributors
 
 FirstName | LastName | Email
