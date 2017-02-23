@@ -10,6 +10,7 @@ powerDT <- data.table::fread(input = "household_power_consumption.txt"
 # Prevents Scientific Notation
 powerDT[, Global_active_power := lapply(.SD, as.numeric), .SDcols = c("Global_active_power")]
 
+# Making a POSIXct date capable of being filtered and graphed by time of day
 powerDT[, dateTime := as.POSIXct(paste(Date, Time), format = "%d/%m/%Y %H:%M:%S")]
 
 # Filter Dates for 2007-02-01 and 2007-02-02
