@@ -1,6 +1,6 @@
 ## Data Science Specialization | John Hopkins Coursera
 
-# R Programming
+## R Programming
 Author: Michael Galarnyk <br />
 
 ## Quizzes
