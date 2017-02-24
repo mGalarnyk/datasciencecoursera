@@ -6,10 +6,10 @@ Author: Michael Galarnyk <br />
 ## Quizzes
 Quiz # | Link 
 --- | --- 
-4 | No link Yet (File will be Uploaded Shortly
-3 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/quiz_week3_datatable.R)
-2 | No link Yet (File will be Uploaded Shortly
-1 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/quiz_week1_datatable.R)
+4 | [Quiz 4](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/quizzes/quiz4.md)
+3 | [Quiz 3](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/quizzes/quiz3.md)
+2 | [Quiz 2](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/quizzes/quiz2.md)
+1 | [Quiz 1](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/quizzes/quiz1.md)
 
 ## Projects 
 
