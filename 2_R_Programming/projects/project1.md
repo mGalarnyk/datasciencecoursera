@@ -4,10 +4,9 @@ For this first programming assignment you will write three functions that are me
 
 Although this is a programming assignment, you will be assessed using a separate quiz.
 
-Data
+
 
 The zip file containing the data can be downloaded here:
-Dataset:
 [specdata.zip](https://d396qusza40orc.cloudfront.net/rprog%2Fdata%2Fspecdata.zip) [2.4MB]
 </br>Description: The zip file contains 332 comma-separated-value (CSV) files containing pollution monitoring data. 
 
