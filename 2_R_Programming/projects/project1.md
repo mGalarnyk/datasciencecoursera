@@ -10,7 +10,7 @@ The zip file containing the data can be downloaded here:
 [specdata.zip](https://d396qusza40orc.cloudfront.net/rprog%2Fdata%2Fspecdata.zip) [2.4MB]
 </br>Description: The zip file contains 332 comma-separated-value (CSV) files containing pollution monitoring data. 
 
-### Part 1 (pollutantmean.R)
+### Part 1 ([pollutantmean.R](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/projects/pollutantmean.R))
 
 ```R
 # install.packages("data.table")
@@ -34,7 +34,7 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
 pollutantmean(directory = '~/Desktop/specdata', pollutant = 'sulfate', id = 20)
 ```
 
-### Part 2 (complete.R)
+### Part 2 ([complete.R](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/projects/complete.R))
 ```R
 complete <- function(directory,  id = 1:332) {
   
@@ -53,7 +53,7 @@ complete <- function(directory,  id = 1:332) {
 complete(directory = '~/Desktop/specdata', id = 20:30)
 ```
 
-### Part 3 (corr.R)
+### Part 3 ([corr.R](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/projects/corr.R))
 ```R
 corr <- function(directory, threshold = 0) {
   
