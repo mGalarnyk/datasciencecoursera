@@ -15,7 +15,7 @@ Quiz # | Link
 
 Project # | Link 
 --- | --- 
-1 |  No Link Yet
+1 |  [Project 1](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/projects/project1.md)
 
 ## Contributors
 
