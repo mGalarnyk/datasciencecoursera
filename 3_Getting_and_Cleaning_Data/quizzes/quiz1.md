@@ -44,9 +44,9 @@ Read rows 18-23 and columns 7-15 into R and assign the result to a variable call
 dat
 
 What is the value of:
-
+```R
 sum(dat$Zip*dat$Ext,na.rm=T)
-
+```
 (original data source: http://catalog.data.gov/dataset/natural-gas-acquisition-program)
 
 
