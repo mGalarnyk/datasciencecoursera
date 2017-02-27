@@ -1,4 +1,5 @@
 ## R Programming Data Science Specialization | John Hopkins Coursera
+Page is currently a work in progress and will be cleaned soon. 
 
 ## Projects 
 Project # | Link 
