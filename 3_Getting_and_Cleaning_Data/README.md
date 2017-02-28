@@ -1,4 +1,4 @@
-## R Programming Data Science Specialization | John Hopkins Coursera
+## Getting and Cleaning Data | John Hopkins Coursera
 Page is currently a work in progress and will be cleaned soon. 
 
 ## Projects 
@@ -14,7 +14,7 @@ Quiz # | Link
 4 | [Quiz 4](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/quizzes/quiz4.md)
 3 | [Quiz 3](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/quizzes/quiz3.md)
 2 | [Quiz 2](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/quizzes/quiz2.md)
-1 | [Quiz 1](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/quizzes/quiz1.md)
+1 | [Quiz 1](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/quizzes/quiz1.md)
 
 ## Contributors
 FirstName | LastName | Email
