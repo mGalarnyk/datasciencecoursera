@@ -8,104 +8,124 @@ You may also need to run the code in the base R package and not R studio. </br>
 
 Since many people had issues with this I wrote a blog post on how to do this question: [Github API using R](https://medium.com/@GalarnykMichael/accessing-data-from-github-api-using-r-3633fb62cb08#.s1wco0d5u)
 
-[![Youtube Video](http://i.imgur.com/Ot5DWAW.png)](https://www.youtube.com/watch?v=xCPWRP_WqYQ "Github API using R")
-
+[![Github API using R](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/data/githubAPIusingR.png)](https://www.youtube.com/watch?v=xCPWRP_WqYQ "Github API using R")
 
 ### Answer
 ```R
-# fread url requires curl package on mac 
-# install.packages("curl")
+#install.packages("jsonlite")
+#install.packages("httpuv")
+#install.packages("httr")
 
-library(data.table)
-housing <- data.table::fread("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv")
+library(jsonlite)
+library(httpuv)
+library(httr)
 
-# VAL attribute says how much property is worth, .N is the number of rows
-# VAL == 24 means more than $1,000,000
-housing[VAL == 24, .N]
+# Can be github, linkedin etc depending on application
+oauth_endpoints("github")
+
+# Change based on your appname, key, and secret 
+myapp <- oauth_app(appname = "Youtube_Michael_Galarnyk",
+                   key = "8758a6bf9a146e1da0c1",
+                   secret = "b9504edde46b794414495bd9c33ea28cbfd87824")
+
+# Get OAuth credentials
+github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
+
+# Use API
+gtoken <- config(token = github_token)
+req <- GET("https://api.github.com/users/jtleek/repos", gtoken)
+
+# Take action on http error
+stop_for_status(req)
+
+# Extract content from a request
+json1 = content(req)
+
+# Convert to a data.frame
+gitDF = jsonlite::fromJSON(jsonlite::toJSON(json1))
+
+# Subset data.frame
+gitDF[gitDF$full_name == "jtleek/datasharing", "created_at"] 
 
 # Answer: 
-# 53
+# 2013-11-07T13:25:07Z
 ```
 
 Question 2
 ----------
-Use the data you loaded from Question 1. Consider the variable FES in the code book. Which of the "tidy data" principles does this variable violate?
+The sqldf package allows for execution of SQL commands on R data frames. We will use the sqldf package to practice the queries we might send with the dbSendQuery command in RMySQL. </br>
+
+Download the American Community Survey data and load it into an R object called </br>
+
+acs <br>
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv </br>
+
+Which of the following commands will select only the data for the probability weights pwgtp1 with ages less than 50? </br>
 
 ### Answer
-Tidy data one variable per column
+```R
+# install.packages("sqldf")
+library("sqldf")
+
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv"
+f <- file.path(getwd(), "ss06pid.csv")
+download.file(url, f)
+acs <- data.table::data.table(read.csv(f))
+
+# Answer: 
+query1 <- sqldf("select pwgtp1 from acs where AGEP < 50")
+```
 
 Question 3
 ----------
-Download the Excel spreadsheet on Natural Gas Aquisition Program here:
-
-https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx
-
-Read rows 18-23 and columns 7-15 into R and assign the result to a variable called:
-
-dat
-
-What is the value of:
+Using the same data frame you created in the previous problem, what is the equivalent function to 
 ```R
-sum(dat$Zip*dat$Ext,na.rm=T)
-```
-(original data source: http://catalog.data.gov/dataset/natural-gas-acquisition-program)
+unique(acs$AGEP)
 
-
-```R
-fileUrl <- "http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx"
-download.file(fileUrl, destfile = paste0(getwd(), '/getdata%2Fdata%2FDATA.gov_NGAP.xlsx'), method = "curl")
-
-dat <- xlsx::read.xlsx(file = "getdata%2Fdata%2FDATA.gov_NGAP.xlsx", sheetIndex = 1, rowIndex = 18:23, colIndex = 7:15)
-sum(dat$Zip*dat$Ext,na.rm=T)
-
-# Answer:
-# 36534720
+# Answer
+# sqldf("select distinct AGEP from acs")
 ```
 
 Question 4
 ----------
-Read the XML data on Baltimore restaurants from here:
+How many characters are in the 10th, 20th, 30th and 100th lines of HTML from this page:
 
-https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml
+http://biostat.jhsph.edu/~jleek/contact.html
 
-How many restaurants have zipcode 21231?
-
-Use http instead of https, which caused the message Error: XML content does not seem to be XML: 'https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml'.
+(Hint: the nchar() function in R may be helpful)
 
 ```R
-# install.packages("XML")
-library("XML")
-fileURL<-"https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml"
-doc <- XML::xmlTreeParse(sub("s", "", fileURL), useInternal = TRUE)
-rootNode <- XML::xmlRoot(doc)
-
-zipcodes <- XML::xpathSApply(rootNode, "//zipcode", XML::xmlValue)
-xmlZipcodeDT <- data.table::data.table(zipcode = zipcodes)
-xmlZipcodeDT[zipcode == "21231", .N]
+connection <- url("http://biostat.jhsph.edu/~jleek/contact.html")
+htmlCode <- readLines(connection)
+close(connection)
+c(nchar(htmlCode[10]), nchar(htmlCode[20]), nchar(htmlCode[30]), nchar(htmlCode[100]))
 
 # Answer: 
-# 127
+# 45 31 7 25
 ```
 
 Question 5
 ----------
-The American Community Survey distributes downloadable data about United States communities. Download the 2006 microdata survey about housing for the state of Idaho using download.file() from here:
+Read this data set into R and report the sum of the numbers in the fourth of the nine columns.
 
-https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv
+https://d396qusza40orc.cloudfront.net/getdata%2Fwksst8110.for
 
-using the fread() command load the data into an R object
+Original source of the data: http://www.cpc.ncep.noaa.gov/data/indices/wksst8110.for
 
-DT
-
-Which of the following is the fastest way to calculate the average value of the variable
-
-pwgtp15
-
-broken down by sex using the data.table package?
+(Hint this is a fixed width file format)
 
 ```R
-DT <- data.table::fread("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv")
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fwksst8110.for"
+lines <- readLines(url, n = 10)
+w <- c(1, 9, 5, 4, 1, 3, 5, 4, 1, 3, 5, 4, 1, 3, 5, 4, 1, 3)
+colNames <- c("filler", "week", "filler", "sstNino12", "filler", "sstaNino12", 
+              "filler", "sstNino3", "filler", "sstaNino3", "filler", "sstNino34", "filler", 
+              "sstaNino34", "filler", "sstNino4", "filler", "sstaNino4")
+d <- read.fwf(url, w, header = FALSE, skip = 4, col.names = colNames)
+d <- d[, grep("^[^filler]", names(d))]
+sum(d[, 4])
 
-# Answer (fastest):
-system.time(DT[,mean(pwgtp15),by=SEX])
+# Answer: 
+# 32426.7
 ```
