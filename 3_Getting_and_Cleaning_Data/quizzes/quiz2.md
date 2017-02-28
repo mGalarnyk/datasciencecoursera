@@ -6,7 +6,7 @@ You may also need to run the code in the base R package and not R studio. </br>
 
 Since many people had issues with this I wrote a blog post on how to do this question: [Github API using R](https://medium.com/@GalarnykMichael/accessing-data-from-github-api-using-r-3633fb62cb08#.s1wco0d5u)
 
-[![Github API using R](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/data/githubAPIusingR.png)](https://www.youtube.com/watch?v=xCPWRP_WqYQ "Github API using R")
+[![Github API using R](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/data/githubAPIusingR.png)](https://www.youtube.com/watch?v=xCPWRP_WqYQ?sub_confirmation=1  "Github API using R")
 
 ### Answer
 ```R
