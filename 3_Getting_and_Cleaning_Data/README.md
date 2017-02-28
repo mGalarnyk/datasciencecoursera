@@ -4,16 +4,12 @@ Page is currently a work in progress and will be cleaned soon.
 ## Projects 
 Project # | Link 
 --- | --- 
-3 |  [Project 3](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/projects/project3.md)
-2 |  [Project 2](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/projects/project2.md)
-1 |  [Project 1](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/projects/project1.md)
+1 |  [Not currently linked Properly](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/projects/project1.md)
 
 ## Quizzes
 Quiz # | Link 
 --- | --- 
-4 | [Quiz 4](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/quizzes/quiz4.md)
-3 | [Quiz 3](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/quizzes/quiz3.md)
-2 | [Quiz 2](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/quizzes/quiz2.md)
+2 | [Quiz 2](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/quizzes/quiz2.md)
 1 | [Quiz 1](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/quizzes/quiz1.md)
 
 ## Contributors
