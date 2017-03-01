@@ -1,5 +1,4 @@
-## Getting and Cleaning Data | John Hopkins Coursera
-Page is currently a work in progress and will be cleaned soon. 
+# Getting and Cleaning Data | John Hopkins Coursera
 
 ## Projects 
 Project # | Link 
@@ -9,6 +8,7 @@ Project # | Link
 ## Quizzes
 Quiz # | Link 
 --- | --- 
+4 | [Quiz 4](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/quizzes/quiz4.md)
 3 | [Quiz 3](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/quizzes/quiz3.md)
 2 | [Quiz 2](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/quizzes/quiz2.md)
 1 | [Quiz 1](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/quizzes/quiz1.md)
