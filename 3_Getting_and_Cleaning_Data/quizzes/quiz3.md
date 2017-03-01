@@ -24,88 +24,133 @@ agricultureLogical <- ACS$ACR == 3 & ACS$AGS == 6
 head(which(agricultureLogical), 3)
 
 # Answer: 
-# 
+# 125 238 262
 ```
 
 Question 2
 ----------
-Use the data you loaded from Question 1. Consider the variable FES in the code book. Which of the "tidy data" principles does this variable violate?
+Using the jpeg package read in the following picture of your instructor into R
 
-### Answer
-Tidy data one variable per column
+https://d396qusza40orc.cloudfront.net/getdata%2Fjeff.jpg
+
+Use the parameter native=TRUE. What are the 30th and 80th quantiles of the resulting data?
+
+```R
+# install.packages('jpeg')
+library(jpeg)
+
+# Download the file
+download.file('https://d396qusza40orc.cloudfront.net/getdata%2Fjeff.jpg'
+              , 'jeff.jpg'
+              , mode='wb' )
+
+# Read the image
+picture <- jpeg::readJPEG('jeff.jpg'
+                          , native=TRUE)
+
+# Get Sample Quantiles corressponding to given prob
+quantile(picture, probs = c(0.3, 0.8) )
+
+# Answer: 
+#       30%       80% 
+# -15259150 -10575416 
+```
 
 Question 3
 ----------
-Download the Excel spreadsheet on Natural Gas Aquisition Program here:
+Load the Gross Domestic Product data for the 190 ranked countries in this data set:
 
-https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx
+https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv
 
-Read rows 18-23 and columns 7-15 into R and assign the result to a variable called:
+Load the educational data from this data set:
 
-dat
+https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv
 
-What is the value of:
-```R
-sum(dat$Zip*dat$Ext,na.rm=T)
-```
-(original data source: http://catalog.data.gov/dataset/natural-gas-acquisition-program)
+Match the data based on the country shortcode. How many of the IDs match? Sort the data frame in descending order by GDP rank. What is the 13th country in the resulting data frame?
+
+Original data sources: http://data.worldbank.org/data-catalog/GDP-ranking-table http://data.worldbank.org/data-catalog/ed-stats
 
 
 ```R
-fileUrl <- "http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx"
-download.file(fileUrl, destfile = paste0(getwd(), '/getdata%2Fdata%2FDATA.gov_NGAP.xlsx'), method = "curl")
+# install.packages("data.table)
+library("data.table")
 
-dat <- xlsx::read.xlsx(file = "getdata%2Fdata%2FDATA.gov_NGAP.xlsx", sheetIndex = 1, rowIndex = 18:23, colIndex = 7:15)
-sum(dat$Zip*dat$Ext,na.rm=T)
 
-# Answer:
-# 36534720
+# Download data and read FGDP data into data.table
+FGDP <- data.table::fread('https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv'
+                          , skip=4
+                          , nrows = 190
+                          , select = c(1, 2, 4, 5)
+                          , col.names=c("CountryCode", "Rank", "Economy", "Total")
+                          )
+
+# Download data and read FGDP data into data.table
+FEDSTATS_Country <- data.table::fread('https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv'
+                                      )
+                                      
+mergedDT <- merge(FGDP, FEDSTATS_Country, by = 'CountryCode')
+
+# How many of the IDs match?
+nrow(mergedDT)
+
+# Answer: 
+# 189
+
+# Sort the data frame in descending order by GDP rank (so United States is last). 
+# What is the 13th country in the resulting data frame?
+mergedDT[order(-Rank)][13,.(Economy)]
+
+# Answer: 
+
+#                Economy
+# 1: St. Kitts and Nevis
 ```
+
 
 Question 4
 ----------
-Read the XML data on Baltimore restaurants from here:
-
-https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml
-
-How many restaurants have zipcode 21231?
-
-Use http instead of https, which caused the message Error: XML content does not seem to be XML: 'https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml'.
+What is the average GDP ranking for the "High income: OECD" and "High income: nonOECD" group?
 
 ```R
-# install.packages("XML")
-library("XML")
-fileURL<-"https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml"
-doc <- XML::xmlTreeParse(sub("s", "", fileURL), useInternal = TRUE)
-rootNode <- XML::xmlRoot(doc)
+# "High income: OECD" 
+mergedDT[`Income Group` == "High income: OECD"
+         , lapply(.SD, mean)
+         , .SDcols = c("Rank")
+         , by = "Income Group"]
 
-zipcodes <- XML::xpathSApply(rootNode, "//zipcode", XML::xmlValue)
-xmlZipcodeDT <- data.table::data.table(zipcode = zipcodes)
-xmlZipcodeDT[zipcode == "21231", .N]
+# Answer:
+#
+#         Income Group     Rank
+# 1: High income: OECD 32.96667
 
-# Answer: 
-# 127
+# "High income: nonOECD"
+mergedDT[`Income Group` == "High income: nonOECD"
+         , lapply(.SD, mean)
+         , .SDcols = c("Rank")
+         , by = "Income Group"]
+
+# Answer
+#            Income Group     Rank
+# 1: High income: nonOECD 91.91304
 ```
 
 Question 5
 ----------
-The American Community Survey distributes downloadable data about United States communities. Download the 2006 microdata survey about housing for the state of Idaho using download.file() from here:
-
-https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv
-
-using the fread() command load the data into an R object
-
-DT
-
-Which of the following is the fastest way to calculate the average value of the variable
-
-pwgtp15
-
-broken down by sex using the data.table package?
+Cut the GDP ranking into 5 separate quantile groups. Make a table versus Income.Group. How many countries are Lower middle income but among the 38 nations with highest GDP?
 
 ```R
-DT <- data.table::fread("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv")
+# install.packages('dplyr')
+library('dplyr')
 
-# Answer (fastest):
-system.time(DT[,mean(pwgtp15),by=SEX])
+breaks <- quantile(mergedDT[, Rank], probs = seq(0, 1, 0.2), na.rm = TRUE)
+mergedDT$quantileGDP <- cut(mergedDT[, Rank], breaks = breaks)
+mergedDT[`Income Group` == "Lower middle income", .N, by = c("Income Group", "quantileGDP")]
+
+# Answer 
+#           Income Group quantileGDP  N
+# 1: Lower middle income (38.6,76.2] 13
+# 2: Lower middle income   (114,152]  9
+# 3: Lower middle income   (152,190] 16
+# 4: Lower middle income  (76.2,114] 11
+# 5: Lower middle income    (1,38.6]  5
 ```
