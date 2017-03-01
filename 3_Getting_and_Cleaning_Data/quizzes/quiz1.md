@@ -1,3 +1,5 @@
+# Getting and Cleaning Data Quiz 1 (JHU) Coursera
+
 Question 1
 ----------
 The American Community Survey distributes downloadable data about United States communities. Download the 2006 microdata survey about housing for the state of Idaho using download.file() from here:
@@ -10,7 +12,6 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FPUMSDataDict06.pdf
 
 How many housing units in this survey were worth more than $1,000,000?
 
-### Answer
 ```R
 # fread url requires curl package on mac 
 # install.packages("curl")
@@ -48,7 +49,6 @@ What is the value of:
 sum(dat$Zip*dat$Ext,na.rm=T)
 ```
 (original data source: http://catalog.data.gov/dataset/natural-gas-acquisition-program)
-
 
 ```R
 fileUrl <- "http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx"
