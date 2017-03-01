@@ -3,7 +3,7 @@
 ## Projects 
 Project # | Link 
 --- | --- 
-1 |  [Not currently linked Properly](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/projects/project1.md)
+1 |  [Getting and Cleaning Data Project](https://github.com/mGalarnyk/datasciencecoursera/tree/master/3_Getting_and_Cleaning_Data/projects)
 
 ## Quizzes
 Quiz # | Link 
