@@ -10,7 +10,7 @@ Project # | Link
 ## Quizzes
 Quiz # | Link 
 --- | --- 
-1 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/4_Exploratory_Data_Analysis/quizzes/quiz_week1.R)
+1 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/4_Exploratory_Data_Analysis/quizzes/quiz1.md)
 
 ## Contributors
 FirstName | LastName | Email
