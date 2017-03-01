@@ -9,6 +9,7 @@ Project # | Link
 ## Quizzes
 Quiz # | Link 
 --- | --- 
+3 | [Quiz 3](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/quizzes/quiz3.md)
 2 | [Quiz 2](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/quizzes/quiz2.md)
 1 | [Quiz 1](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/quizzes/quiz1.md)
 
