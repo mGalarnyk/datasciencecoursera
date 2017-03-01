@@ -10,7 +10,6 @@ Since many people had issues with this I wrote a blog post on how to do this que
 
 [![Github API using R](https://github.com/mGalarnyk/datasciencecoursera/blob/master/3_Getting_and_Cleaning_Data/data/githubAPIusingR.png)](https://www.youtube.com/watch?v=xCPWRP_WqYQ?sub_confirmation=1  "Github API using R")
 
-### Answer
 ```R
 #install.packages("jsonlite")
 #install.packages("httpuv")
