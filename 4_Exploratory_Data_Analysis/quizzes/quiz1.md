@@ -4,140 +4,156 @@ Question 1
 ----------
 Which of the following is a principle of analytic graphics?
 
-_Make judicious use of color in your scatterplots
+* Make judicious use of color in your scatterplots (NO)
 
-_Don't plot more than two variables at at time
+* Don't plot more than two variables at at time (NO)
 
-_Show box plots (univariate summaries)
+* Show box plots (univariate summaries) (NO)
 
-_Only do what your tools allow you to do
+* Only do what your tools allow you to do (NO)
 
-_Show comparisons
+* Show comparisons
+
+Answer Options: </br>
+Integrate multiple modes of evidence </br>
+Show comparisons
 
 Question 2
 ----------
-Using the jpeg package read in the following picture of your instructor into R
+What is the role of exploratory graphs in data analysis?
 
-https://d396qusza40orc.cloudfront.net/getdata%2Fjeff.jpg
+* They are made for formal presentations.
 
-Use the parameter native=TRUE. What are the 30th and 80th quantiles of the resulting data?
+* Only a few are constructed.
 
-```R
-# install.packages('jpeg')
-library(jpeg)
+* They are typically made very quickly.
 
-# Download the file
-download.file('https://d396qusza40orc.cloudfront.net/getdata%2Fjeff.jpg'
-              , 'jeff.jpg'
-              , mode='wb' )
+* Axes, legends, and other details are clean and exactly detailed.
 
-# Read the image
-picture <- jpeg::readJPEG('jeff.jpg'
-                          , native=TRUE)
-
-# Get Sample Quantiles corressponding to given prob
-quantile(picture, probs = c(0.3, 0.8) )
-
-# Answer: 
-#       30%       80% 
-# -15259150 -10575416 
-```
+Answer Options: </br>
+They are typically made very quickly.
 
 Question 3
 ----------
-Load the Gross Domestic Product data for the 190 ranked countries in this data set:
+Which of the following is true about the base plotting system?
 
-https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv
+* Plots are typically created with a single function call
 
-Load the educational data from this data set:
+* Margins and spacings are adjusted automatically depending on the type of plot and the data
 
-https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv
+* Plots are created and annotated with separate functions
 
-Match the data based on the country shortcode. How many of the IDs match? Sort the data frame in descending order by GDP rank. What is the 13th country in the resulting data frame?
+* The system is most useful for conditioning plots
 
-Original data sources: http://data.worldbank.org/data-catalog/GDP-ranking-table http://data.worldbank.org/data-catalog/ed-stats
-
-
-```R
-# install.packages("data.table)
-library("data.table")
-
-
-# Download data and read FGDP data into data.table
-FGDP <- data.table::fread('https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv'
-                          , skip=4
-                          , nrows = 190
-                          , select = c(1, 2, 4, 5)
-                          , col.names=c("CountryCode", "Rank", "Economy", "Total")
-                          )
-
-# Download data and read FGDP data into data.table
-FEDSTATS_Country <- data.table::fread('https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv'
-                                      )
-                                      
-mergedDT <- merge(FGDP, FEDSTATS_Country, by = 'CountryCode')
-
-# How many of the IDs match?
-nrow(mergedDT)
-
-# Answer: 
-# 189
-
-# Sort the data frame in descending order by GDP rank (so United States is last). 
-# What is the 13th country in the resulting data frame?
-mergedDT[order(-Rank)][13,.(Economy)]
-
-# Answer: 
-
-#                Economy
-# 1: St. Kitts and Nevis
-```
-
+Answer Options: </br>
+Plots are created and annotated with separate functions
 
 Question 4
 ----------
-What is the average GDP ranking for the "High income: OECD" and "High income: nonOECD" group?
+Which of the following is an example of a valid graphics device in R?
 
-```R
-# "High income: OECD" 
-mergedDT[`Income Group` == "High income: OECD"
-         , lapply(.SD, mean)
-         , .SDcols = c("Rank")
-         , by = "Income Group"]
+* A file folder (NO)
 
-# Answer:
-#
-#         Income Group     Rank
-# 1: High income: OECD 32.96667
+* The computer screen
 
-# "High income: nonOECD"
-mergedDT[`Income Group` == "High income: nonOECD"
-         , lapply(.SD, mean)
-         , .SDcols = c("Rank")
-         , by = "Income Group"]
+* A Microsoft Word document (NO)
 
-# Answer
-#            Income Group     Rank
-# 1: High income: nonOECD 91.91304
-```
+* A socket connection (NO)
+
+* The keyboard (NO)
+
+Answer Options: </br>
+The computer screen </br>
+A PNG file
 
 Question 5
 ----------
-Cut the GDP ranking into 5 separate quantile groups. Make a table versus Income.Group. How many countries are Lower middle income but among the 38 nations with highest GDP?
+Which of the following is an example of a vector graphics device in R?
 
-```R
-# install.packages('dplyr')
-library('dplyr')
+* GIF
 
-breaks <- quantile(mergedDT[, Rank], probs = seq(0, 1, 0.2), na.rm = TRUE)
-mergedDT$quantileGDP <- cut(mergedDT[, Rank], breaks = breaks)
-mergedDT[`Income Group` == "Lower middle income", .N, by = c("Income Group", "quantileGDP")]
+* TIFF
 
-# Answer 
-#           Income Group quantileGDP  N
-# 1: Lower middle income (38.6,76.2] 13
-# 2: Lower middle income   (114,152]  9
-# 3: Lower middle income   (152,190] 16
-# 4: Lower middle income  (76.2,114] 11
-# 5: Lower middle income    (1,38.6]  5
-```
+* Postscript
+
+* PNG
+
+* JPEG
+
+Answer Options: </br>
+Postscript or SVG
+
+Question 6
+----------
+Bitmapped file formats can be most useful for
+
+* Plots that require animation or interactivity
+
+* Scatterplots with many many points
+
+* Plots that may need to be resized
+
+* Plots that are not scaled to a specific resolution
+
+Answer: </br>
+Scatterplots with many many points
+
+Question 7
+----------
+Which of the following functions is typically used to add elements to a plot in the base graphics system?
+
+* hist()
+
+* plot()
+
+* text()
+
+* boxplot()
+
+Answer Options: </br>
+text() or points()
+
+Question 8
+----------
+Which function opens the screen graphics device on Windows?
+
+* postscript()
+
+* windows()
+
+* jpeg()
+
+* xfig()
+
+Answer: </br>
+windows()
+
+Question 9
+----------
+What does the 'pch' option to par() control?
+
+* the size of the plotting symbol in a scatterplot
+
+* the plotting symbol/character in the base graphics system
+
+* the orientation of the axis labels on the plot
+
+* the line width in the base graphics system
+
+Answer: </br>
+the plotting symbol/character in the base graphics system
+
+Question 10
+----------
+If I want to save a plot to a PDF file, which of the following is a correct way of doing that?
+
+* Construct the plot on the screen device and then copy it to a PDF file with dev.copy2pdf()
+
+* Construct the plot on the PNG device with png(), then copy it to a PDF with dev.copy2pdf().
+
+* Open the screen device with quartz(), construct the plot, and then close the device with dev.off().
+
+* Open the PostScript device with postscript(), construct the plot, then close the device with dev.off().
+
+Answer: </br>
+Construct the plot on the screen device and then copy it to a PDF file with dev.copy2pdf()
