@@ -1,3 +1,5 @@
+# Getting and Cleaning Data Quiz 2 (JHU) Coursera
+
 Question 1
 ----------
 Register an application with the Github API here https://github.com/settings/applications. 
@@ -61,7 +63,6 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv </br>
 
 Which of the following commands will select only the data for the probability weights pwgtp1 with ages less than 50? </br>
 
-### Answer
 ```R
 # install.packages("sqldf")
 library("sqldf")
@@ -80,7 +81,9 @@ Question 3
 Using the same data frame you created in the previous problem, what is the equivalent function to 
 ```R
 unique(acs$AGEP)
+```
 
+```R
 # Answer
 # sqldf("select distinct AGEP from acs")
 ```
