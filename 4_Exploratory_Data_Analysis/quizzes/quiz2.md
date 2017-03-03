@@ -49,6 +49,8 @@ xyplot(weight ~ Time | Diet, BodyWeight)
 Answer Options: </br>
 A set of 3 panels showing the relationship between weight and time for each diet.
 
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/4_Exploratory_Data_Analysis/data/quizImages/q2q2.png" alt="Exploratory Data Analysis Quiz 2 question 2" >
+
 Question 3
 ----------
 Annotation of plots in any plotting system involves adding points, lines, or text to the plot, in addition to customizing axis labels or adding titles. Different plotting systems have different sets of functions for annotating plots in this way.
@@ -157,6 +159,8 @@ airquality = transform(airquality, Month = factor(Month))
 qplot(Wind, Ozone, data = airquality, facets = . ~ Month)
 ```
 
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/4_Exploratory_Data_Analysis/data/quizImages/q2q7.png" alt="Exploratory Data Analysis Quiz 2 question 7" >
+
 Question 8
 ----------
 What is a geom in the ggplot2 system?
@@ -222,3 +226,5 @@ qplot(votes, rating, data = movies) + geom_smooth()
 
 Answer: </br>
 qplot(votes, rating, data = movies) + geom_smooth()
+
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/4_Exploratory_Data_Analysis/data/quizImages/q2q10.png" alt="Exploratory Data Analysis Quiz 2 question 10" >
