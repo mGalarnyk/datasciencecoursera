@@ -5,6 +5,7 @@ Author: Michael Galarnyk <br />
 
 Project # | Link 
 --- | --- 
+2 |  [Exploratory Data Analysis Project 2](https://github.com/mGalarnyk/datasciencecoursera/blob/master/4_Exploratory_Data_Analysis/project2/project2.md)
 1 |  [Exploratory Data Analysis Project 1](https://github.com/mGalarnyk/datasciencecoursera/blob/master/4_Exploratory_Data_Analysis/project1/README.md)
 
 ## Quizzes
