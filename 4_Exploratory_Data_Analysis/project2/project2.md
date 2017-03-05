@@ -84,9 +84,49 @@ Question 4
 ----------
 Across the United States, how have emissions from coal combustion-related sources changed from 1999–2008?
 
+```R
+# Subset coal combustion related NEI data
+combustionRelated <- grepl("comb", SCC[, SCC.Level.One], ignore.case=TRUE)
+coalRelated <- grepl("coal", SCC[, SCC.Level.Four], ignore.case=TRUE) 
+combustionSCC <- SCC[combustionRelated & coalRelated, SCC]
+combustionNEI <- NEI[NEI[,SCC] %in% combustionSCC]
+
+png("plot4.png")
+
+ggplot(combustionNEI,aes(x = factor(year),y = Emissions/10^5)) +
+  geom_bar(stat="identity", fill ="#FF9999", width=0.75) +
+  labs(x="year", y=expression("Total PM"[2.5]*" Emission (10^5 Tons)")) + 
+  labs(title=expression("PM"[2.5]*" Coal Combustion Source Emissions Across US from 1999-2008"))
+
+dev.off()
+```
+
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/4_Exploratory_Data_Analysis/project2/plot4.png" alt="Exploratory Data Analysis Project 2 question 4" >
+
 Question 5
 ----------
 How have emissions from motor vehicle sources changed from 1999–2008 in Baltimore City?x
+
+```R
+# Gather the subset of the NEI data which corresponds to vehicles
+condition <- grepl("vehicle", SCC[, SCC.Level.Two], ignore.case=TRUE)
+vehiclesSCC <- SCC[condition, SCC]
+vehiclesNEI <- NEI[NEI[, SCC] %in% vehiclesSCC,]
+
+# Subset the vehicles NEI data to Baltimore's fip
+baltimoreVehiclesNEI <- vehiclesNEI[fips=="24510",]
+
+png("plot5.png")
+
+ggplot(baltimoreVehiclesNEI,aes(factor(year),Emissions)) +
+  geom_bar(stat="identity", fill ="#FF9999" ,width=0.75) +
+  labs(x="year", y=expression("Total PM"[2.5]*" Emission (10^5 Tons)")) + 
+  labs(title=expression("PM"[2.5]*" Motor Vehicle Source Emissions in Baltimore from 1999-2008"))
+
+dev.off()
+```
+
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/4_Exploratory_Data_Analysis/project2/plot5.png" alt="Exploratory Data Analysis Project 2 question 5" >
 
 Question 6
 ----------
