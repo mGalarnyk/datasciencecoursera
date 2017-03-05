@@ -104,7 +104,7 @@ dev.off()
 
 Question 5 ([plot5.R](https://github.com/mGalarnyk/datasciencecoursera/blob/master/4_Exploratory_Data_Analysis/project2/plot5.R))
 ----------
-How have emissions from motor vehicle sources changed from 1999–2008 in Baltimore City?x
+How have emissions from motor vehicle sources changed from 1999–2008 in Baltimore City?
 
 ```R
 # Gather the subset of the NEI data which corresponds to vehicles
