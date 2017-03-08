@@ -10,8 +10,6 @@ rawData=read.csv("linear.csv", header=T)
 # Show first n entries of data.frame, notice NA values
 head(rawData, 10)
 
-
-
 linModel <- lm(y~x, data = rawData)
 
 # Show attributes of linModel
