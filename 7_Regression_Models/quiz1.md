@@ -26,6 +26,13 @@ Give the value of μ that minimizes the least squares equation
 
 * 1.077
 
+```R
+minu <- sum(x*w) / sum(w)
+
+# Answer
+# 0.1471429
+```
+
 Question 2
 ----------
 Consider the following data set
@@ -45,6 +52,13 @@ as the outcome and x as the regressor. (Hint, do not center the data since we wa
 * 0.8263
 
 * 0.59915
+
+```R
+summary(lm(y~x-1))
+
+# Answer
+# 0.8263
+```
 
 Question 3
 ----------
