@@ -1,4 +1,4 @@
-# Exploratory Data Analysis Quiz 1 (JHU) Coursera
+# Regression Models Quiz 1 (JHU) Coursera
 
 Question 1
 ----------
