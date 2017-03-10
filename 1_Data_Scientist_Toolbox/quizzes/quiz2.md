@@ -14,39 +14,34 @@ Which of the following will initiate a git repository locally?
 
 Question 3
 ----------
-What are good ways to find answers to questions in this course track? Select all that apply.
+Suppose you have forked a repository called datascientist on Github but it isn’t on your local computer yet. Which of the following is the command to bring the directory to your local computer?
 
-* Looking through R help files
-* Expecting every answer to be in a lecture slide
-* Asking a skilled friend
-* Posting homework assignments to mailing lists
-
-Answers: </br>
-Looking through R help files </br>
-Asking a skilled friend
+* git clone https://github.com/username/datascientist.git
 
 Question 4
 ----------
-What are characteristics of good questions on the message boards? Select all that apply.
+Which of the following will create a markdown document with a secondary heading saying “Data Science Specialization” and an unordered list with the following for bullet points: Uses R, Nine courses, Goes from raw data to data products
 
-* Is an exact homework question
-* Is polite and courteous
-* Explicitly lists versions of software being used
-* Provides no details
+```R 
+## Data Science Specialization
 
-Answers: </br>
-Is polite and courteous </br>
-Explicitly lists versions of software being used
+* Uses R
+
+* Nine courses
+
+* Goes from raw data to data products
+```
 
 Question 5
 ----------
-Which of the following packages provides machine learning functionality? Select all that apply
+Install and load the KernSmooth R package. What does the copyright message say?
 
-* knitr
-* cacheSweave
-* gbm
-* pamr
+* Copyright M. P. Wand 1997-2009
 
-Answers: </br>
-gbm </br> 
-pamr </br> 
+```R
+install.packages("KernSmooth")
+library("KernSmooth")
+
+# Answer
+# Copyright M. P. Wand 1997-2009
+```
