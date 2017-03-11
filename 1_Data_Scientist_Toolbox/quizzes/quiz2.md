@@ -63,6 +63,7 @@ Option 1:
 ```
 
 ```R
+Option 2:
 ### Data Science Specialization
 
 * Uses R
@@ -73,6 +74,7 @@ Option 1:
 ```
 
 ```R
+Option 3:
 ## Data Science Specialization
 
 li Uses R
@@ -83,6 +85,7 @@ li Goes from raw data to data products
 ```
 
 ```R
+Option 3:
 *** Data Science Specialization
 
 * Uses R
@@ -93,6 +96,7 @@ li Goes from raw data to data products
 ```
 
 ```R
+Option 4:
 ## Data Science Specialization
 
 * Uses R
