@@ -102,7 +102,6 @@ li Goes from raw data to data products
 * Goes from raw data to data products
 ```
 
-
 Answer: </br>
 ```R 
 ## Data Science Specialization
@@ -118,7 +117,13 @@ Question 5
 ----------
 Install and load the KernSmooth R package. What does the copyright message say?
 
+* Copyright KernSmooth 1997-2009
+
+* Copyright M. P. Wand 1997-2013
+
 * Copyright M. P. Wand 1997-2009
+
+* Copyright Coursera 2009-2013
 
 ```R
 install.packages("KernSmooth")
