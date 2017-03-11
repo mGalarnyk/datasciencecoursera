@@ -4,6 +4,7 @@ Author: Michael Galarnyk <br />
 ## Quizzes
 Quiz # | Link 
 --- | --- 
+3 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/1_Data_Scientist_Toolbox/quizzes/quiz3.md)
 2 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/1_Data_Scientist_Toolbox/quizzes/quiz2.md)
 1 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/1_Data_Scientist_Toolbox/quizzes/quiz1.md)
 
