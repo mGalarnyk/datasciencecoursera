@@ -61,7 +61,8 @@ What is an experimental design tool that can be used to address variables that m
 
 * Using data from a database.
 
-Answer: </br>
+Possible Answer: </br>
+Fixing variables.
 Stratifying variables.
 
 Question 5
