@@ -85,7 +85,7 @@ li Goes from raw data to data products
 ```
 
 ```R
-Option 3:
+Option 4:
 *** Data Science Specialization
 
 * Uses R
@@ -96,7 +96,7 @@ Option 3:
 ```
 
 ```R
-Option 4:
+Option 5:
 ## Data Science Specialization
 
 * Uses R
