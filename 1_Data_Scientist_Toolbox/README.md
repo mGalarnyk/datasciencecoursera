@@ -8,6 +8,11 @@ Quiz # | Link
 2 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/1_Data_Scientist_Toolbox/quizzes/quiz2.md)
 1 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/1_Data_Scientist_Toolbox/quizzes/quiz1.md)
 
+## Project 
+Quiz # | Link 
+--- | --- 
+1 | [Project](https://github.com/mGalarnyk/datasciencecoursera/blob/master/1_Data_Scientist_Toolbox/project/project1.md)
+
 ## Contributors
 FirstName | LastName | Email
 --- | --- | ---
