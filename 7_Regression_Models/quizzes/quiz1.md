@@ -54,7 +54,7 @@ as the outcome and x as the regressor. (Hint, do not center the data since we wa
 * 0.59915
 
 ```R
-summary(lm(y~x-1))
+lm(y ~ x - 1)
 
 # Answer
 # 0.8263
@@ -76,6 +76,14 @@ the slope coefficient.
 
 * -9.559
 
+```R
+data(mtcars)
+lm(mpg ~ wt, mtcars)
+
+# Answer
+# -5.344
+```
+
 Question 4
 ----------
 Consider data with an outcome (Y) and a predictor (X). The standard deviation of the predictor is one half that of the outcome. The correlation between the two variables is .5. What value would the slope coefficient for the regression model with Y as the outcome and X as the predictor?
@@ -87,6 +95,15 @@ Consider data with an outcome (Y) and a predictor (X). The standard deviation of
 * 3
 
 * 4
+
+```R
+corOfYandX <- 0.5
+sdYoverX <- 2
+corOfYandX*sdYoverX
+
+# Answer
+# 1
+```
 
 Question 5
 ----------
@@ -100,6 +117,15 @@ Students were given two hard tests and scores were normalized to have empirical 
 
 * 0.16
 
+```R
+corOfYandX <- 0.4
+quiz1 <- 1.5
+quiz1*corOfYandX*1 + 0
+
+# Answer
+# 0.6
+```
+
 
 Question 6
 ----------
@@ -110,6 +136,23 @@ x <- c(8.58, 10.46, 9.01, 9.64, 8.86)
 ```
 
 What is the value of the first measurement if x were normalized (to have mean 0 and variance 1)?
+
+* 8.58
+
+* 9.31
+
+* -0.9719
+
+* 8.86
+
+```R
+mean <- mean(x)
+sd <- sd(x)
+(x[1] - mean)/sd
+
+# Answer
+# -0.9719
+```
 
 Question 7
 ----------
@@ -128,6 +171,13 @@ y <- c(1.39, 0.72, 1.55, 0.48, 1.19, -1.59, 1.23, -0.65, 1.49, 0.05)
 
 * 1.567
 
+```R
+lm(y ~ x)
+
+# Answer
+# 1.567 
+```
+
 Question 8
 ----------
 You know that both the predictor and response have mean 0. What
@@ -142,6 +192,9 @@ can be said about the intercept when you fit a linear regression?
 * It must be identically 0.
 
 * It is undefined as you have to divide by zero.
+
+Answer </br>
+It must be identically 0. 
 
 Question 9
 ----------
@@ -161,6 +214,13 @@ What value minimizes the sum of the squared distances between these points and i
 
 * 0.8
 
+```R
+mean(x)
+
+# Answer
+# 0.573 
+```
+
 Question 10
 ----------
 Let the slope having fit Y as the outcome and X as the predictor be denoted as β1. Let the slope from fitting X as the outcome and Y as the predictor be denoted as γ1. Suppose that you divide β1 by γ1; in other words consider β1/γ1. What is this ratio always equal to?
@@ -172,3 +232,12 @@ Let the slope having fit Y as the outcome and X as the predictor be denoted as �
 * Var(Y)/Var(X)
 
 * Cor(Y,X)
+
+```R
+cor(X, Y)*sd(Y)/sd(X) / (cor(X,Y)*sd(X)/sd(Y))
+= sd(Y)^2/(sd(X)^2) 
+= var(Y)/var(X)
+
+# Answer 
+# Var(Y) / Var(X) 
+```
