@@ -16,7 +16,7 @@ w <- c(2, 1, 3, 1)
 
 Give the value of μ that minimizes the least squares equation
 
-∑ni=1wi(xi−μ)2
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/7_Regression_Models/images/leastSquaresEquation.png" alt="Least Squares Image">
 
 * 0.1471
 
@@ -27,7 +27,7 @@ Give the value of μ that minimizes the least squares equation
 * 1.077
 
 ```R
-minu <- sum(x*w) / sum(w)
+mu <- sum(x*w) / sum(w)
 
 # Answer
 # 0.1471429
