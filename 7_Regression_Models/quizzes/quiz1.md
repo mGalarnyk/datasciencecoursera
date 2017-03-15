@@ -28,6 +28,7 @@ Give the value of μ that minimizes the least squares equation
 
 ```R
 mu <- sum(x*w) / sum(w)
+mu
 
 # Answer
 # 0.1471429
@@ -54,10 +55,11 @@ as the outcome and x as the regressor. (Hint, do not center the data since we wa
 * 0.59915
 
 ```R
-lm(y ~ x - 1)
+linModel <- lm(y ~ x - 1)
+linModel$coefficients
 
 # Answer
-# 0.8263
+# 0.8262517
 ```
 
 Question 3
@@ -78,7 +80,8 @@ the slope coefficient.
 
 ```R
 data(mtcars)
-lm(mpg ~ wt, mtcars)
+linModel <- lm(mpg ~ wt, mtcars)
+linModel$coefficients['wt']
 
 # Answer
 # -5.344
@@ -96,10 +99,17 @@ Consider data with an outcome (Y) and a predictor (X). The standard deviation of
 
 * 4
 
+
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/7_Regression_Models/images/BetaValue.png" alt="Beta Equation Image">
+
 ```R
-corOfYandX <- 0.5
-sdYoverX <- 2
-corOfYandX*sdYoverX
+# Y (outcome)
+# X predictor
+
+corYX <- .5
+sdYdivX <- 2
+
+corYX * sdYdivX
 
 # Answer
 # 1
@@ -117,10 +127,21 @@ Students were given two hard tests and scores were normalized to have empirical 
 
 * 0.16
 
+
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/7_Regression_Models/images/normalizedData.png" alt="Normalized data Equation">
+
 ```R
-corOfYandX <- 0.4
+corYX <- .4
 quiz1 <- 1.5
-quiz1*corOfYandX*1 + 0
+
+# Scores are normalized so slope (beta1) is corYX
+beta1 <- corYX  
+
+# Beta0 is 0 since scores are normalized
+beta0 <- 0
+
+quiz2 <- beta0 + beta1 * quiz1
+quiz2
 
 # Answer
 # 0.6
@@ -145,10 +166,10 @@ What is the value of the first measurement if x were normalized (to have mean 0 
 
 * 8.86
 
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/7_Regression_Models/images/NormalX.png" alt="Normalized X">
+
 ```R
-mean <- mean(x)
-sd <- sd(x)
-(x[1] - mean)/sd
+(x[1] - mean(x)) / sd(x)
 
 # Answer
 # -0.9719
@@ -172,7 +193,8 @@ y <- c(1.39, 0.72, 1.55, 0.48, 1.19, -1.59, 1.23, -0.65, 1.49, 0.05)
 * 1.567
 
 ```R
-lm(y ~ x)
+linModel <- lm(y~x)
+linModel$coefficients['(Intercept)']
 
 # Answer
 # 1.567 
