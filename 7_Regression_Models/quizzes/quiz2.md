@@ -161,5 +161,21 @@ Do the residuals always have to sum to 0 in linear regression?
 * The residuals must always sum to zero.
 
 ```R
+# Answer: 
+# If an intercept is included, then they will sum to 0.
+
+# With Intercept
+data(mtcars)
+y <- mtcars$mpg
+x <- mtcars$wt
+fit_car <- lm(y ~ x)
+sum(resid(fit_car))
+#  -1.637579e-15
+
+
+# With Intercept
+
+
+
 
 ```
