@@ -1,159 +1,155 @@
-# Exploratory Data Analysis Quiz 1 (JHU) Coursera
+# Reproducible Research Quiz 1 (JHU) Coursera
 
 Question 1
 ----------
-Which of the following is a principle of analytic graphics?
+Suppose I conduct a study and publish my findings. Which of the following is an example of a replication of my study?
 
-* Make judicious use of color in your scatterplots (NO)
+* An investigator at another institution conducts a study addressing a different scientific question and publishes her findings.
 
-* Don't plot more than two variables at at time (NO)
+* I give my data to an independent investigator at another institution, she analyzes the data and gets the same results as I originally obtained. 
 
-* Show box plots (univariate summaries) (NO)
+* I take my own data, analyze it again, and publish new findings.
 
-* Only do what your tools allow you to do (NO)
-
-* Show comparisons
+* An investigator at another institution conducts a study addressing the same question, collects her own data, analyzes it separately from me, and publishes her own findings.
 
 Answer Options: </br>
-Integrate multiple modes of evidence </br>
-Show comparisons
+An investigator at another institution conducts a study addressing the same question, collects her own data, analyzes it separately from me, and publishes her own findings.
 
 Question 2
 ----------
-What is the role of exploratory graphs in data analysis?
+Which of the following is a requirement for a published data analysis to be reproducible?
 
-* They are made for formal presentations.
+* The data analysis is conducted using R.
 
-* Only a few are constructed.
+* The investigator makes the analytic data publicly available.
 
-* They are typically made very quickly.
+* The analysis is conducted on a variant of the Unix operating system.
 
-* Axes, legends, and other details are clean and exactly detailed.
+* The investigator makes available his computer, on which the analysis was originally conducted.
 
 Answer Options: </br>
-They are typically made very quickly.
+The investigator makes the analytic data publicly available.
 
 Question 3
 ----------
-Which of the following is true about the base plotting system?
+Which of the following is an example of a reproducible study?
 
-* Plots are typically created with a single function call
+* The study's analytic data and computer code are not publicly available, but the study was simple enough to be repeated by an independent investigator.
 
-* Margins and spacings are adjusted automatically depending on the type of plot and the data
+* The study's original authors re-run their computer code on their analytic data and confirm publicly that the findings match those of the published results.
 
-* Plots are created and annotated with separate functions
+* The study's analytic data are publicly available, but the computer code is not.
 
-* The system is most useful for conditioning plots
+* The study's analytic data and computer code for the data analysis are publicly available. When the code is run on the analytic data, the findings are identical to the published results.
 
 Answer Options: </br>
-Plots are created and annotated with separate functions
+The study's analytic data and computer code for the data analysis are publicly available. When the code is run on the analytic data, the findings are identical to the published results.
 
 Question 4
 ----------
-Which of the following is an example of a valid graphics device in R?
+Which of the following is a reason that a study might NOT be fully replicated?
 
-* A file folder (NO)
+* The original study was conducted by a well-known investigator.
 
-* The computer screen
+* The original investigator does not want to make the analytic data available. (NO)
 
-* A Microsoft Word document (NO)
+* The original study had null findings.
 
-* A socket connection (NO)
-
-* The keyboard (NO)
+* The original study was very expensive and there is no money to repeat it in a different setting.
 
 Answer Options: </br>
-The computer screen </br>
-A PNG file
+The original study was opportunistic in its timing and it would be difficult to find a similar context in which to repeat
+it. </br>
+The original study was very expensive and there is no money to repeat it in a different setting.
+
 
 Question 5
 ----------
-Which of the following is an example of a vector graphics device in R?
+Which of the following is a reason why publishing reproducible research is increasingly important?
 
-* GIF
+* The statistical methods for most studies can be accurately described using plain language.
 
-* TIFF
+* Most studies today are small-scale and easily replicated.
 
-* Postscript
+* Computing power is limited today, making it difficult to apply sophisticated statistical methods. (no)
 
-* PNG
-
-* JPEG
+* New technologies are increasing the rate of data collection, creating datasets that are more complex and extremely high dimensional.
 
 Answer Options: </br>
-Postscript or SVG
+New technologies are increasing the rate of data collection, creating datasets that are more complex and extremely high dimensional.
 
 Question 6
 ----------
-Bitmapped file formats can be most useful for
+What is the role of processing code in the research pipeline?
 
-* Plots that require animation or interactivity
+* It transforms the computational results into figures and tables.
 
-* Scatterplots with many many points
+* It transforms the measured data into analytic data.
 
-* Plots that may need to be resized
+* It transforms the analytic data into computational results.
 
-* Plots that are not scaled to a specific resolution
+* It conducts the statistical analysis of the primary outcome.
 
 Answer: </br>
-Scatterplots with many many points
+It transforms the measured data into analytic data.
 
 Question 7
 ----------
-Which of the following functions is typically used to add elements to a plot in the base graphics system?
+Which is a goal of literate statistical programming?
 
-* hist()
+* Ensure that data analysis documents are always exported in PDF format.
 
-* plot()
+* Combine explanatory text and data analysis code in a single document.
 
-* text()
+* Require that data analysis summaries are always written in LaTeX.
 
-* boxplot()
+* Separate figures and tables from other data analytic summaries.
 
 Answer Options: </br>
-text() or points()
+Combine explanatory text and data analysis code in a single document.
 
 Question 8
 ----------
-Which function opens the screen graphics device on Windows?
+What does it mean to weave a literate statistical program?
 
-* postscript()
+* Transform the literate program into a machine readable code file.
 
-* windows()
+* Transform a literate program from R to python.
 
-* jpeg()
+* Transform the literate program into a human readable document.
 
-* xfig()
+* Compress the literate program so that it takes up less space.
 
 Answer: </br>
-windows()
+Transform the literate program into a human readable document.
 
 Question 9
 ----------
-What does the 'pch' option to par() control?
+Which of the following is required to implement a literate programming system?
 
-* the size of the plotting symbol in a scatterplot
+* A Unix-based computer system.
 
-* the plotting symbol/character in the base graphics system
+* A documentation language like LaTeX.
 
-* the orientation of the axis labels on the plot
+* A program that views PDF files.
 
-* the line width in the base graphics system
+* A web server for publishing documents.
 
-Answer: </br>
-the plotting symbol/character in the base graphics system
+Answer Options: </br>
+A documentation language like LaTeX. </br>
+A programming language like R.
 
 Question 10
 ----------
-If I want to save a plot to a PDF file, which of the following is a correct way of doing that?
+What is one way in which the knitr system differs from Sweave?
 
-* Construct the plot on the screen device and then copy it to a PDF file with dev.copy2pdf()
+* knitr allows for the use of markdown instead of LaTeX.
 
-* Construct the plot on the PNG device with png(), then copy it to a PDF with dev.copy2pdf().
+* knitr lacks features like caching of code chunks.
 
-* Open the screen device with quartz(), construct the plot, and then close the device with dev.off().
+* knitr is written in python instead of R.
 
-* Open the PostScript device with postscript(), construct the plot, then close the device with dev.off().
+* knitr was developed by Friedrich Leisch.
 
 Answer: </br>
-Construct the plot on the screen device and then copy it to a PDF file with dev.copy2pdf()
+knitr allows for the use of markdown instead of LaTeX
