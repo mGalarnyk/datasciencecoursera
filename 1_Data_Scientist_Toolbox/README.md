@@ -10,7 +10,7 @@ Quiz # | Link
 
 ## Project 
 Quiz # | Link | Youtube Tutorial
---- | --- 
+--- | --- | ---
 1 | [Project](https://github.com/mGalarnyk/datasciencecoursera/blob/master/1_Data_Scientist_Toolbox/project/project1.md) | [Video Tutorial](https://www.youtube.com/watch?v=IhkvMPE9Jxs)
 
 ## Contributors
