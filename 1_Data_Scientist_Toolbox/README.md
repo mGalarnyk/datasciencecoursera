@@ -9,9 +9,9 @@ Quiz # | Link
 1 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/1_Data_Scientist_Toolbox/quizzes/quiz1.md)
 
 ## Project 
-Quiz # | Link 
+Quiz # | Link | Youtube Tutorial
 --- | --- 
-1 | [Project](https://github.com/mGalarnyk/datasciencecoursera/blob/master/1_Data_Scientist_Toolbox/project/project1.md)
+1 | [Project](https://github.com/mGalarnyk/datasciencecoursera/blob/master/1_Data_Scientist_Toolbox/project/project1.md) | [Video Tutorial](https://www.youtube.com/watch?v=IhkvMPE9Jxs)
 
 ## Contributors
 FirstName | LastName | Email
