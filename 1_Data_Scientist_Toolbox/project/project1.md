@@ -1,4 +1,5 @@
 # The Data Scientist's Toolbox Project (JHU) Coursera
+A image video link walkthrough of the project + answers is available at the end of this quiz. 
 
 Part 1 
 ----------
@@ -9,7 +10,7 @@ The Course Project for this course is pretty straightforward. Now that you’ve 
 3. Open Rstudio and take a screenshot
 4. Submit a screenshot of Rstudio open on your screen using one of these formats: png, jpg, gif, pdf
 
-Answer: </br>
+See Links Below if you have trouble installing R and RStudio: </br>
 
 Operating System | Youtube Video | Step by Step Guide
 --- | --- | ---
@@ -34,3 +35,6 @@ Create a text file called HelloWorld.md
 Add the line "## This is a markdown file" (without the quotation marks) to the document (without the quotation marks)
 Push the document to the datasciencecoursera repo you created on Github
 Submit the link to the HelloWorld.md file on your Github repo. 
+
+[![Click to see Video Solution!](https://github.com/mGalarnyk/datasciencecoursera/blob/master/1_Data_Scientist_Toolbox/images/DataScientistToolbox.png)](https://www.youtube.com/watch?v=IhkvMPE9Jxs  "Data Scientist\'s Toolbox solution")
+
