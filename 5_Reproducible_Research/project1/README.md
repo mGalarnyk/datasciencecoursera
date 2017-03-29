@@ -39,12 +39,27 @@ activityDT <- data.table::fread(input = "data/activity.csv")
 
 ## What is mean total number of steps taken per day?
 
-```
-For this part of the assignment, you can ignore the missing values in the dataset. 
+1. Calculate the total number of steps taken per day
 
-Calculate the total number of steps taken per day </br>
-If you do not understand the difference between a histogram and a barplot, research the difference between them. Make a histogram of the total number of steps taken each day </br>
-Calculate and report the mean and median of the total number of steps taken per day </br>
+```R
+Total_Steps <- activityDT[, c(lapply(.SD, sum, na.rm = TRUE)), .SDcols = c("steps"), by = .(date)] 
+
+head(Total_Steps, 10)
+```
+
+2. If you do not understand the difference between a histogram and a barplot, research the difference between them. Make a histogram of the total number of steps taken each day. 
+
+```R
+library(ggplot2)
+ggplot(Total_Steps, aes(x = steps)) +
+    geom_histogram(fill = "blue", binwidth = 1000) +
+    labs(title = "Daily Steps", x = "Steps", y = "Frequency")
+```
+
+3. Calculate and report the mean and median of the total number of steps taken per day
+
+```R
+Total_Steps[, .(Mean_Steps = mean(steps), Median_Steps = median(steps))]
 ```
 
 ## What is the average daily activity pattern?
