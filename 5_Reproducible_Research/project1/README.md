@@ -66,12 +66,24 @@ Total_Steps[, .(Mean_Steps = mean(steps), Median_Steps = median(steps))]
 
 1. Make a time series plot (i.e. 𝚝𝚢𝚙𝚎 = "𝚕") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
-2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+```R
+IntervalDT <- activityDT[, c(lapply(.SD, mean, na.rm = TRUE)), .SDcols = c("steps"), by = .(interval)] 
 
+ggplot(IntervalDT, aes(x = interval , y = steps)) +
+    geom_line(color="blue", size=1) +
+    labs(title = "Avg. Daily Steps", x = "Interval", y = "Avg. Steps per day")
+```
+
+2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+```R
+IntervalDT[steps == max(steps), .(max_interval = interval)]
+```
 
 ## Imputing missing values
 
 1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with 𝙽𝙰s)
+
+
 
 2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 
