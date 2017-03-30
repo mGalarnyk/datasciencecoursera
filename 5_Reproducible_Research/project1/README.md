@@ -45,15 +45,32 @@ activityDT <- data.table::fread(input = "data/activity.csv")
 Total_Steps <- activityDT[, c(lapply(.SD, sum, na.rm = TRUE)), .SDcols = c("steps"), by = .(date)] 
 
 head(Total_Steps, 10)
+
+#          date steps
+# 1: 2012-10-01     0
+# 2: 2012-10-02   126
+# 3: 2012-10-03 11352
+# 4: 2012-10-04 12116
+# 5: 2012-10-05 13294
+# 6: 2012-10-06 15420
+# 7: 2012-10-07 11015
+# 8: 2012-10-08     0
+# 9: 2012-10-09 12811
+# 10: 2012-10-10  9900
 ```
 
 2. If you do not understand the difference between a histogram and a barplot, research the difference between them. Make a histogram of the total number of steps taken each day. 
 
 ```R
 library(ggplot2)
+
+png("hist1.png", width=480, height=480)
+
 ggplot(Total_Steps, aes(x = steps)) +
     geom_histogram(fill = "blue", binwidth = 1000) +
     labs(title = "Daily Steps", x = "Steps", y = "Frequency")
+
+dev.off()
 ```
 
 3. Calculate and report the mean and median of the total number of steps taken per day
