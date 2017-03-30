@@ -94,10 +94,8 @@ IntervalDT <- activityDT[, c(lapply(.SD, mean, na.rm = TRUE)), .SDcols = c("step
 
 png("timeSeries1.png", width=480, height=480)
 
-ggplot(IntervalDT, aes(x = interval , y = steps)) +
-    geom_line(color="blue", size=1) +
-    labs(title = "Avg. Daily Steps", x = "Interval", y = "Avg. Steps per day")
-    
+ggplot(IntervalDT, aes(x = interval , y = steps)) + geom_line(color="blue", size=1) + labs(title = "Avg. Daily Steps", x = "Interval", y = "Avg. Steps per day")
+
 dev.off()
 ```
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/5_Reproducible_Research/data/project1Images/timeSeries1.png)
@@ -175,7 +173,7 @@ activityDT[, `weekday or weekend` := as.factor(`weekday or weekend`)]
 
 ```R
 activityDT[is.na(steps), "steps"] <- activityDT[, c(lapply(.SD, median, na.rm = TRUE)), .SDcols = c("steps")]
-IntervalDT <- activityDT[, c(lapply(.SD, mean, na.rm = TRUE)), .SDcols = c("steps"), by = .(interval)] 
+IntervalDT <- activityDT[, c(lapply(.SD, mean, na.rm = TRUE)), .SDcols = c("steps"), by = .(interval, `weekday or weekend`)] 
 
 png("timeSeries2.png", width=960, height=480)
 
