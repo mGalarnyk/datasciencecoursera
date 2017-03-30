@@ -73,6 +73,8 @@ ggplot(Total_Steps, aes(x = steps)) +
 dev.off()
 ```
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/5_Reproducible_Research/data/project1Images/hist1.png)
+</br>
+
 3. Calculate and report the mean and median of the total number of steps taken per day
 
 ```R
@@ -175,7 +177,7 @@ activityDT[, `weekday or weekend` := as.factor(`weekday or weekend`)]
 activityDT[is.na(steps), "steps"] <- activityDT[, c(lapply(.SD, median, na.rm = TRUE)), .SDcols = c("steps")]
 IntervalDT <- activityDT[, c(lapply(.SD, mean, na.rm = TRUE)), .SDcols = c("steps"), by = .(interval)] 
 
-png("timeSeries2.png", width=480, height=480)
+png("timeSeries2.png", width=960, height=480)
 
 ggplot(IntervalDT , aes(x = interval , y = steps, color=`weekday or weekend`)) +
     geom_line() +
