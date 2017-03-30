@@ -99,9 +99,25 @@ activityDT[is.na(steps), "steps"] <- round(activityDT[, c(lapply(.SD, mean, na.r
 
 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
+```R
+data.table::fwrite(x = activityDT, file = "data/tidyData.csv", quote = FALSE)
+```
 
 4. Make a histogram of the total number of steps taken each day and calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
+```R
+
+# total number of steps taken per day
+Total_Steps <- activityDT[, c(lapply(.SD, sum, na.rm = TRUE)), .SDcols = c("steps"), by = .(date)] 
+
+# mean and median total number of steps taken per day
+Total_Steps[, .(Mean_Steps = mean(steps), Median_Steps = median(steps))]
+
+library(ggplot2)
+ggplot(Total_Steps, aes(x = steps)) +
+    geom_histogram(fill = "blue", binwidth = 1000) +
+    labs(title = "Daily Steps", x = "Steps", y = "Frequency")
+```
 ## Are there differences in activity patterns between weekdays and weekends?
 
 1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
