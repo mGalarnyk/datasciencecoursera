@@ -118,8 +118,24 @@ ggplot(Total_Steps, aes(x = steps)) +
     geom_histogram(fill = "blue", binwidth = 1000) +
     labs(title = "Daily Steps", x = "Steps", y = "Frequency")
 ```
+
+Type of Estimate | Mean_Steps | Median_Steps
+--- | --- | ---
+First Part (with na) | 9354.23 | 10395
+Second Part (fillin in na with mean) | 10751.74 | 10656
+
 ## Are there differences in activity patterns between weekdays and weekends?
 
 1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
 
+```R
+activityDT[, dateTime := as.POSIXct(date, format = "%Y-%m-%d")]
+activityDT[, `Day of Week`:= weekdays(x = dateTime)]
+
+activityDT[grepl(pattern = "Monday|Tuesday|Wednesday|Thursday|Friday", x = `Day of Week`), "weekday or weekend"] <- "weekday"
+activityDT[grepl(pattern = "Saturday|Sunday", x = `Day of Week`), "weekday or weekend"] <- "weekend"
+activityDT[, `weekday or weekend` := as.factor(`weekday or weekend`)]
+```
+
 2. Make a panel plot containing a time series plot (i.e. 𝚝𝚢𝚙𝚎 = "𝚕") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
+
