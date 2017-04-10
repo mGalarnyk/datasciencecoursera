@@ -1,3 +1,7 @@
+# R Programming Quiz 4
+
+github repo for rest of specialization: [Data Science Coursera](https://github.com/mGalarnyk/datasciencecoursera)
+
 Question 1
 ----------
 
