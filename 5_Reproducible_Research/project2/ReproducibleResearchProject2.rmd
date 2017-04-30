@@ -9,23 +9,112 @@ output:
 
 github repo for rest of specialization: [Data Science Coursera](https://github.com/mGalarnyk/datasciencecoursera)
 
-## Introduction
+## 1 - Project Title: US Storm Event Human Health and Economic Impact Analysis
+
+## 2 - Synopsis:
 Storms and other severe weather events can cause both public health and economic problems for communities and municipalities. Many severe events can result in fatalities, injuries, and property damage, and preventing such outcomes to the extent possible is a key concern.
 
 This project involves exploring the U.S. National Oceanic and Atmospheric Administration's (NOAA) storm database. This database tracks characteristics of major storms and weather events in the United States, including when and where they occur, as well as estimates of any fatalities, injuries, and property damage.
 
-## Data: 
-The data for this assignment come in the form of a comma-separated-value file compressed via the bzip2 algorithm to reduce its size. You can download the file from the course web site:
+information on the data: [Documentation](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
 
-* [Storm Data](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2) 
+## 3 - Data Processing:
 
-There is also some documentation of the database available. Here you will find how some of the variables are constructed/defined.
+### 3.1 - Data Loading:
+Download the raw data file and extract the data into a dataframe.
 
-* National Weather Service [Storm Data Documentation](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+```{r}
+library("data.table")
+library(ggplot2)
 
-* National Climatic Data Center Storm Events [FAQ](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2FNCDC%20Storm%20Events-FAQ%20Page.pdf)
+fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2"
+download.file(fileUrl, destfile = paste0("C:/Users/mgalarnyk/Desktop", '/repdata%2Fdata%2FStormData.csv.bz2'))
+stormDF <- read.csv("C:/Users/mgalarnyk/Desktop/repdata%2Fdata%2FStormData.csv.bz2")
 
-The events in the database start in the year 1950 and end in November 2011. In the earlier years of the database there are generally fewer events recorded, most likely due to a lack of good records. More recent years should be considered more complete.
+stormDT <- as.data.table(stormDF)
+```
+
+Explore what is contained in the dataset
+
+```{r}
+colnames(stormDT)
+
+str(stormDT)
+```
+
+### 3.2 - Data Subsetting:
+Subset the dataset on the parameters of interest.
+```{r}
+
+# Change parameter names to lowercase.
+data.table::setnames(x = stormDT, old = colnames(stormDT), new = tolower(colnames(stormDT)))
+
+# Subset on the parameters of interest.
+stormDT <- stormDT[(evtype != "?" & 
+             (injuries > 0 | fatalities > 0 | propdmg > 0 | cropdmg > 0)), c("evtype", 
+                                                                              "fatalities", 
+                                                                              "injuries", 
+                                                                              "propdmg", 
+                                                                              "propdmgexp", 
+                                                                              "cropdmg", 
+                                                                              "cropdmgexp") ]
+```
+
+### 3.3 - Data Cleansing:
+
+```{r}
+
+# Change all damage exponents to uppercase.
+stormDT[, propdmgexp := toupper(propdmgexp)]
+stormDT[, cropdmgexp := toupper(cropdmgexp)]
+
+# Map property damage alphanumeric exponents to numeric values.
+propDmgKey <-  c("\"\"" = 10^0,
+                 "-" = 10^0, 
+                 "+" = 10^0,
+                 "0" = 10^0,
+                 "1" = 10^1,
+                 "2" = 10^2,
+                 "3" = 10^3,
+                 "4" = 10^4,
+                 "5" = 10^5,
+                 "6" = 10^6,
+                 "7" = 10^7,
+                 "8" = 10^8,
+                 "9" = 10^9,
+                 "H" = 10^2,
+                 "K" = 10^3,
+                 "M" = 10^6,
+                 "B" = 10^9)
+
+
+stormDT[,propdmgexp := propDmgKey[as.character(stormDT[,propdmgexp])]]
+stormDT[is.na(propdmgexp), propdmgexp := 10^0 ]
+
+# Map crop damage alphanumeric exponents to numeric values
+cropDmgKey <-  c("\"\"" = 10^0,
+                "?" = 10^0, 
+                "0" = 10^0,
+                "K" = 10^3,
+                "M" = 10^6,
+                "B" = 10^9)
+stormDT[, cropdmgexp := cropDmgKey[as.character(stormDT[,cropdmgexp])] ]
+stormDT[is.na(cropdmgexp), cropdmgexp := 10^0 ]
+```
+
+### 3.4 - Human Heath Data Processing:
+
+```{r}
+# Total injuries
+
+totalInjuriesDT <- stormDT[, .(fatalities = sum(fatalities), injuries = sum(injuries), totals = sum(fatalities) + sum(injuries)), by = .(evtype)]
+
+
+totalInjuriesDT <- totalInjuriesDT[order(-totals), ]
+
+head(totalInjuriesDT,20)
+```
+
 
 ## 1 - Project Title: US Storm Event Human Health and Economic Impact Analysis
 
@@ -55,129 +144,3 @@ The events in the database start in the year 1950 and end in November 2011. In t
 
 ### 5.2 - Across the United States, which types of events have the greatest economic consequences?
 
-
-
-
-
-
-## Loading and preprocessing the data
-Unzip data to obtain a csv file.
-
-```{r}
-library("data.table")
-library(ggplot2)
-
-fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
-download.file(fileUrl, destfile = paste0(getwd(), '/repdata%2Fdata%2Factivity.zip'), method = "curl")
-unzip("repdata%2Fdata%2Factivity.zip",exdir = "data")
-```
-
-## Reading csv Data into Data.Table. 
-```{r}
-activityDT <- data.table::fread(input = "data/activity.csv")
-```
-
-## What is mean total number of steps taken per day?
-
-1. Calculate the total number of steps taken per day
-
-```{r}
-Total_Steps <- activityDT[, c(lapply(.SD, sum, na.rm = FALSE)), .SDcols = c("steps"), by = .(date)] 
-
-head(Total_Steps, 10)
-```
-
-2. If you do not understand the difference between a histogram and a barplot, research the difference between them. Make a histogram of the total number of steps taken each day. 
-
-```{r}
-ggplot(Total_Steps, aes(x = steps)) +
-    geom_histogram(fill = "blue", binwidth = 1000) +
-    labs(title = "Daily Steps", x = "Steps", y = "Frequency")
-```
-
-3. Calculate and report the mean and median of the total number of steps taken per day
-```{r}
-Total_Steps[, .(Mean_Steps = mean(steps, na.rm = TRUE), Median_Steps = median(steps, na.rm = TRUE))]
-```
-
-## What is the average daily activity pattern?
-
-1. Make a time series plot (i.e. ???????????????? = "????") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
-
-```{r}
-IntervalDT <- activityDT[, c(lapply(.SD, mean, na.rm = TRUE)), .SDcols = c("steps"), by = .(interval)] 
-
-ggplot(IntervalDT, aes(x = interval , y = steps)) + geom_line(color="blue", size=1) + labs(title = "Avg. Daily Steps", x = "Interval", y = "Avg. Steps per day")
-```
-
-2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
-
-```{r}
-IntervalDT[steps == max(steps), .(max_interval = interval)]
-```
-
-
-## Imputing missing values
-
-1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with ????????s)
-
-```{r}
-activityDT[is.na(steps), .N ]
-
-# alternative solution
-nrow(activityDT[is.na(steps),])
-```
-
-2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
-
-```{r}
-# Filling in missing values with median of dataset. 
-activityDT[is.na(steps), "steps"] <- activityDT[, c(lapply(.SD, median, na.rm = TRUE)), .SDcols = c("steps")]
-```
-
-3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
-
-```{r}
-data.table::fwrite(x = activityDT, file = "data/tidyData.csv", quote = FALSE)
-```
-
-4. Make a histogram of the total number of steps taken each day and calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
-
-```{r}
-# total number of steps taken per day
-Total_Steps <- activityDT[, c(lapply(.SD, sum)), .SDcols = c("steps"), by = .(date)] 
-
-# mean and median total number of steps taken per day
-Total_Steps[, .(Mean_Steps = mean(steps), Median_Steps = median(steps))]
-
-ggplot(Total_Steps, aes(x = steps)) + geom_histogram(fill = "blue", binwidth = 1000) + labs(title = "Daily Steps", x = "Steps", y = "Frequency")
-```
-
-Type of Estimate | Mean_Steps | Median_Steps
---- | --- | ---
-First Part (with na) | 10765 | 10765
-Second Part (fillin in na with median) | 9354.23 | 10395
-
-## Are there differences in activity patterns between weekdays and weekends?
-
-1. Create a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
-
-```{r}
-# Just recreating activityDT from scratch then making the new factor variable. (No need to, just want to be clear on what the entire process is.) 
-activityDT <- data.table::fread(input = "data/activity.csv")
-activityDT[, date := as.POSIXct(date, format = "%Y-%m-%d")]
-activityDT[, `Day of Week`:= weekdays(x = date)]
-activityDT[grepl(pattern = "Monday|Tuesday|Wednesday|Thursday|Friday", x = `Day of Week`), "weekday or weekend"] <- "weekday"
-activityDT[grepl(pattern = "Saturday|Sunday", x = `Day of Week`), "weekday or weekend"] <- "weekend"
-activityDT[, `weekday or weekend` := as.factor(`weekday or weekend`)]
-head(activityDT, 10)
-```
-
-2. Make a panel plot containing a time series plot (i.e. ???????????????? = "????") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
-
-```{r}
-activityDT[is.na(steps), "steps"] <- activityDT[, c(lapply(.SD, median, na.rm = TRUE)), .SDcols = c("steps")]
-IntervalDT <- activityDT[, c(lapply(.SD, mean, na.rm = TRUE)), .SDcols = c("steps"), by = .(interval, `weekday or weekend`)] 
-
-ggplot(IntervalDT , aes(x = interval , y = steps, color=`weekday or weekend`)) + geom_line() + labs(title = "Avg. Daily Steps by Weektype", x = "Interval", y = "No. of Steps") + facet_wrap(~`weekday or weekend` , ncol = 1, nrow=2)
-```
