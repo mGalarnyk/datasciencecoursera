@@ -114,6 +114,49 @@ totalInjuriesDT <- totalInjuriesDT[order(-totals), ]
 
 head(totalInjuriesDT,20)
 ```
+melting data.table so that each earlier column name (fatalities, totals) and their associated value goes into the 
+
+```{r}
+bad_stuff <- melt(totalInjuriesDT, id.vars="evtype", variable.name = "bad_thing")
+
+png("plot6.png")
+
+# Create chart
+healthChart <- ggplot(bad_stuff, aes(x=reorder(evtype, -value), y=value))
+
+
+# Plot data as bar chart
+healthChart = healthChart + geom_bar(stat="identity", aes(fill=bad_thing), position="dodge")
+
+# Format y-axis scale and set y-axis label
+healthChart = healthChart + scale_y_sqrt("Frequency Count") 
+
+# Set x-axis label
+healthChart = healthChart + xlab("Event Type") 
+
+# Rotate x-axis tick labels 
+healthChart = healthChart + theme(axis.text.x = element_text(angle=45, hjust=1))
+
+# Set chart title
+healthChart = healthChart + ggtitle("Pareto Chart of Top 10 US Storm Health Impacts")
+
+dev.off()
+
+```
+
+```{r}
+#png("plot6.png")
+
+ggplot(totalInjuriesDT, aes(x=factor(evtype), y=Emissions, fill=city)) +
+  geom_bar(aes(fill=year),stat="identity") +
+  facet_grid(scales="free", space="free", .~city) +
+  labs(x="year", y=expression("Total PM"[2.5]*" Emission (Kilo-Tons)")) + 
+  labs(title=expression("PM"[2.5]*" Motor Vehicle Source Emissions in Baltimore & LA, 1999-2008"))
+
+#dev.off()
+
+
+```
 
 
 ## 1 - Project Title: US Storm Event Human Health and Economic Impact Analysis
