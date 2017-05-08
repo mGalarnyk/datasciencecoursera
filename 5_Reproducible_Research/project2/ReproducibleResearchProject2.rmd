@@ -37,8 +37,6 @@ stormDT <- as.data.table(stormDF)
 Explore what is contained in the dataset
 
 ```{r}
-colnames(stormDT)
-
 str(stormDT)
 ```
 
@@ -46,18 +44,29 @@ str(stormDT)
 Subset the dataset on the parameters of interest.
 ```{r}
 
-# Change parameter names to lowercase.
-data.table::setnames(x = stormDT, old = colnames(stormDT), new = tolower(colnames(stormDT)))
+# Finding columns to remove
+cols2Remove <- colnames(stormDT[, !c("EVTYPE"
+  , "FATALITIES"
+  , "INJURIES"
+  , "PROPDMG"
+  , "PROPDMGEXP"
+  , "CROPDMG"
+  , "CROPDMGEXP"
+  , "STATE")])
+
+# Removing columns
+stormDT[, c(cols2Remove) := NULL]
 
 # Subset on the parameters of interest.
-stormDT <- stormDT[(evtype != "?" & 
-             (injuries > 0 | fatalities > 0 | propdmg > 0 | cropdmg > 0)), c("evtype", 
-                                                                              "fatalities", 
-                                                                              "injuries", 
-                                                                              "propdmg", 
-                                                                              "propdmgexp", 
-                                                                              "cropdmg", 
-                                                                              "cropdmgexp") ]
+stormDT <- stormDT[(EVTYPE != "?" & 
+             (INJURIES > 0 | FATALITIES > 0 | PROPDMG > 0 | CROPDMG > 0)), c("EVTYPE"
+                                                                            , "FATALITIES"
+                                                                            , "INJURIES"
+                                                                            , "PROPDMG"
+                                                                            , "PROPDMGEXP"
+                                                                            , "CROPDMG"
+                                                                            , "CROPDMGEXP"
+                                                                            , "STATE") ]
 ```
 
 ### 3.3 - Data Cleansing:
