@@ -73,14 +73,9 @@ stormDT <- stormDT[(EVTYPE != "?" &
 
 ```{r}
 
-
-
 # Change all damage exponents to uppercase.
 cols <- c("PROPDMGEXP", "CROPDMGEXP")
 stormDT[,  (cols) := c(lapply(.SD, toupper)), .SDcols = cols]
-
-stormDT[, propdmgexp := toupper(propdmgexp)]
-stormDT[, cropdmgexp := toupper(cropdmgexp)]
 
 # Map property damage alphanumeric exponents to numeric values.
 propDmgKey <-  c("\"\"" = 10^0,
