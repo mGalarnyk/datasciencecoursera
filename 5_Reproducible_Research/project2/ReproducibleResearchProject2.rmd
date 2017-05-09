@@ -2,9 +2,7 @@
 title: "Reproducible Research Project 1"
 author: "Michael Galarnyk"
 date: "4/29/2017"
-output:
-  md_document:
-    variant: markdown_github
+output: html_document
 ---
 
 github repo for rest of specialization: [Data Science Coursera](https://github.com/mGalarnyk/datasciencecoursera)
@@ -28,8 +26,8 @@ library("data.table")
 library(ggplot2)
 
 fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2"
-download.file(fileUrl, destfile = paste0("C:/Users/mgalarnyk/Desktop", '/repdata%2Fdata%2FStormData.csv.bz2'))
-stormDF <- read.csv("C:/Users/mgalarnyk/Desktop/repdata%2Fdata%2FStormData.csv.bz2")
+download.file(fileUrl, destfile = paste0("/Users/mgalarny", '/repdata%2Fdata%2FStormData.csv.bz2'))
+stormDF <- read.csv("/Users/mgalarny/repdata%2Fdata%2FStormData.csv.bz2")
 
 stormDT <- as.data.table(stormDF)
 ```
@@ -67,6 +65,7 @@ stormDT <- stormDT[(EVTYPE != "?" &
                                                                             , "CROPDMG"
                                                                             , "CROPDMGEXP"
                                                                             , "STATE") ]
+head(stormDT, 10)
 ```
 
 ### 3.3 - Data Cleansing:
@@ -96,10 +95,6 @@ propDmgKey <-  c("\"\"" = 10^0,
                  "M" = 10^6,
                  "B" = 10^9)
 
-
-stormDT[,propdmgexp := propDmgKey[as.character(stormDT[,propdmgexp])]]
-stormDT[is.na(propdmgexp), propdmgexp := 10^0 ]
-
 # Map crop damage alphanumeric exponents to numeric values
 cropDmgKey <-  c("\"\"" = 10^0,
                 "?" = 10^0, 
@@ -107,32 +102,39 @@ cropDmgKey <-  c("\"\"" = 10^0,
                 "K" = 10^3,
                 "M" = 10^6,
                 "B" = 10^9)
-stormDT[, cropdmgexp := cropDmgKey[as.character(stormDT[,cropdmgexp])] ]
-stormDT[is.na(cropdmgexp), cropdmgexp := 10^0 ]
+
+stormDT[,PROPDMGEXP := propDmgKey[as.character(stormDT[,PROPDMGEXP])]]
+stormDT[is.na(PROPDMGEXP), PROPDMGEXP := 10^0 ]
+
+stormDT[, CROPDMGEXP := cropDmgKey[as.character(stormDT[,CROPDMGEXP])] ]
+stormDT[is.na(CROPDMGEXP), CROPDMGEXP := 10^0 ]
+
+head(stormDT, 10)
 ```
 
 ### 3.4 - Human Heath Data Processing:
 
 ```{r}
+
 # Total injuries
+totalInjuriesDT <- stormDT[, .(FATALITIES = sum(FATALITIES), INJURIES = sum(INJURIES), totals = sum(FATALITIES) + sum(INJURIES)), by = .(EVTYPE)]
 
-totalInjuriesDT <- stormDT[, .(fatalities = sum(fatalities), injuries = sum(injuries), totals = sum(fatalities) + sum(injuries)), by = .(evtype)]
 
+totalInjuriesDT <- totalInjuriesDT[order(-FATALITIES), ]
 
-totalInjuriesDT <- totalInjuriesDT[order(-totals), ]
+totalInjuriesDT <- totalInjuriesDT[1:10, ]
 
-head(totalInjuriesDT,20)
+head(totalInjuriesDT, 10)
 ```
 melting data.table so that each earlier column name (fatalities, totals) and their associated value goes into the 
 
 ```{r}
-bad_stuff <- melt(totalInjuriesDT, id.vars="evtype", variable.name = "bad_thing")
+bad_stuff <- melt(totalInjuriesDT, id.vars="EVTYPE", variable.name = "bad_thing")
 
-png("plot6.png")
+#png("plot6.png")
 
 # Create chart
-healthChart <- ggplot(bad_stuff, aes(x=reorder(evtype, -value), y=value))
-
+healthChart <- ggplot(bad_stuff, aes(x=reorder(EVTYPE, -value), y=value))
 
 # Plot data as bar chart
 healthChart = healthChart + geom_bar(stat="identity", aes(fill=bad_thing), position="dodge")
@@ -147,52 +149,8 @@ healthChart = healthChart + xlab("Event Type")
 healthChart = healthChart + theme(axis.text.x = element_text(angle=45, hjust=1))
 
 # Set chart title
-healthChart = healthChart + ggtitle("Pareto Chart of Top 10 US Storm Health Impacts")
-
-dev.off()
-
-```
-
-```{r}
-#png("plot6.png")
-
-ggplot(totalInjuriesDT, aes(x=factor(evtype), y=Emissions, fill=city)) +
-  geom_bar(aes(fill=year),stat="identity") +
-  facet_grid(scales="free", space="free", .~city) +
-  labs(x="year", y=expression("Total PM"[2.5]*" Emission (Kilo-Tons)")) + 
-  labs(title=expression("PM"[2.5]*" Motor Vehicle Source Emissions in Baltimore & LA, 1999-2008"))
+healthChart = healthChart + ggtitle("Top 10 US Killers")
 
 #dev.off()
-
-
+healthChart
 ```
-
-
-## 1 - Project Title: US Storm Event Human Health and Economic Impact Analysis
-
-## 2 - Synopsis:
-
-## 3 - Data Processing:
-
-### 3.1 - Data Loading:
-
-### 3.2 - Data Subsetting:
-
-### 3.3 - Data Cleansing:
-
-### 3.4 - Human Heath Data Processing:
-
-### 3.5 - Economic Data Processing:
-
-## 4 - Analysis Results:
-
-### Figure 4.1: Top 10 Health Impact Event Types
-
-### Figure 4.2: Top 10 Economic Impact Event Types
-
-## 5 - Conclusions
-
-### 5.1 - Across the United States, which types of events (as indicated in the EVTYPE variable) are most harmful with respect to population health?
-
-### 5.2 - Across the United States, which types of events have the greatest economic consequences?
-
