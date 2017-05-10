@@ -1,5 +1,5 @@
 ---
-title: "Reproducible Research Project 1"
+title: "Reproducible Research Project 2"
 author: "Michael Galarnyk"
 date: "4/29/2017"
 output: html_document
@@ -32,15 +32,15 @@ stormDF <- read.csv("C:/Users/mgalarnyk/Desktop/repdata%2Fdata%2FStormData.csv.b
 stormDT <- as.data.table(stormDF)
 ```
 
-### 2.2: Examining Column Types
+### 2.2: Examining Column Names
 
 ```{r}
-str(stormDT)
+colnames(stormDT)
 ```
 
 ### 2.3: Data Subsetting
-Subset the dataset on the parameters of interest. Basically, we remove the columns we don't need and 
-```{r}
+Subset the dataset on the parameters of interest. Basically, we remove the columns we don't need 
+```{r DataSubsetting, results="hide"}
 
 # Finding columns to remove
 cols2Remove <- colnames(stormDT[, !c("EVTYPE"
@@ -63,12 +63,11 @@ stormDT <- stormDT[(EVTYPE != "?" &
                                                                             , "PROPDMGEXP"
                                                                             , "CROPDMG"
                                                                             , "CROPDMGEXP") ]
-head(stormDT, 10)
 ```
 
 ### 2.4: Converting Exponent Columns into Actual Exponents instead of (-,+, H, K, etc)
 
-```{r}
+```{r, results="hide"}
 
 # Change all damage exponents to uppercase.
 cols <- c("PROPDMGEXP", "CROPDMGEXP")
@@ -106,37 +105,39 @@ stormDT[is.na(PROPDMGEXP), PROPDMGEXP := 10^0 ]
 
 stormDT[, CROPDMGEXP := cropDmgKey[as.character(stormDT[,CROPDMGEXP])] ]
 stormDT[is.na(CROPDMGEXP), CROPDMGEXP := 10^0 ]
-
-head(stormDT, 10)
 ```
 
 ### 2.5: Making Economic Cost Columns
+```{r}
+stormDT <- stormDT[, .(EVTYPE, FATALITIES, INJURIES, PROPDMG, PROPDMGEXP, propCost = PROPDMG * PROPDMGEXP, CROPDMG, CROPDMGEXP, cropCost = CROPDMG * CROPDMGEXP)]
+
+```
 
 
-### 2.5: Human Heath Data Processing:
+### 2.6: Events that are Most Harmful Health Processing
 
 ```{r}
 
 # Total injuries
 totalInjuriesDT <- stormDT[, .(FATALITIES = sum(FATALITIES), INJURIES = sum(INJURIES), totals = sum(FATALITIES) + sum(INJURIES)), by = .(EVTYPE)]
 
-
 totalInjuriesDT <- totalInjuriesDT[order(-FATALITIES), ]
 
 totalInjuriesDT <- totalInjuriesDT[1:10, ]
 
-head(totalInjuriesDT, 10)
+head(totalInjuriesDT, 5)
 ```
+
+## 3: Results
+
 melting data.table so that each earlier column name (fatalities, totals) and their associated value goes into the 
 
-```{r}
+```{r HealthResults}
 bad_stuff <- melt(totalInjuriesDT, id.vars="EVTYPE", variable.name = "bad_thing")
 ```
 
 
-```{r}
-#png("plot6.png")
-
+```{r healthChart}
 # Create chart
 healthChart <- ggplot(bad_stuff, aes(x=reorder(EVTYPE, -value), y=value))
 
@@ -155,6 +156,5 @@ healthChart = healthChart + theme(axis.text.x = element_text(angle=45, hjust=1))
 # Set chart title
 healthChart = healthChart + ggtitle("Top 10 US Killers")
 
-#dev.off()
 healthChart
 ```
