@@ -1,45 +1,50 @@
 ---
-title: "Reproducible Research Project 2"
+title: "Analysis of the Adverse Health and Economic Impacts of US Storms"
 author: "Michael Galarnyk"
-date: "4/29/2017"
+date: "5/10/2017"
 output: html_document
 ---
 
-github repo for rest of specialization: [Data Science Coursera](https://github.com/mGalarnyk/datasciencecoursera)
-
-# US Storm Event Human Health and Economic Impact Analysis
+Github repo for the Course: [Reproducible Research](https://github.com/mGalarnyk/datasciencecoursera/tree/master/5_Reproducible_Research)
+</br>
+Github repo for Rest of Specialization: [Data Science Coursera](https://github.com/mGalarnyk/datasciencecoursera)
 
 ## 1: Synopsis
 The goal of the assignment is to explore the NOAA Storm Database and explore the effects of severe weather events on both population and economy.The database covers the time period between 1950 and November 2011.
 
-The analysis aims to investigate which different types of severe weather events are most harmful on the populations health in respect of general injuries and fatalities. Further the economic consequences will be analyzed by exploring the financial damage done to both general property and agriculture (i.e. crops)
+The following analysis investigates which types of severe weather events are most harmful on:
 
-information on the data: [Documentation](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+1. Health (injuries and fatalities) 
+2. Property and crops (economic consequences)
+
+Information on the Data: [Documentation](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
 
 ## 2: Data Processing
 
 ### 2.1: Data Loading
-Download the raw data file and extract the data into a dataframe.
 
-```{r}
+Download the raw data file and extract the data into a dataframe.Then convert to a data.table
+```{r DataLoading}
 library("data.table")
-library(ggplot2)
+library("ggplot2")
 
 fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2"
 download.file(fileUrl, destfile = paste0("C:/Users/mgalarnyk/Desktop", '/repdata%2Fdata%2FStormData.csv.bz2'))
 stormDF <- read.csv("C:/Users/mgalarnyk/Desktop/repdata%2Fdata%2FStormData.csv.bz2")
 
+# Converting data.frame to data.table
 stormDT <- as.data.table(stormDF)
 ```
 
 ### 2.2: Examining Column Names
 
-```{r}
+```{r ColumnNames}
 colnames(stormDT)
 ```
 
 ### 2.3: Data Subsetting
-Subset the dataset on the parameters of interest. Basically, we remove the columns we don't need 
+
+Subset the dataset on the parameters of interest. Basically, we remove the columns we don't need for clarity. 
 ```{r DataSubsetting, results="hide"}
 
 # Finding columns to remove
@@ -54,7 +59,7 @@ cols2Remove <- colnames(stormDT[, !c("EVTYPE"
 # Removing columns
 stormDT[, c(cols2Remove) := NULL]
 
-# Only get data where fatalities or injuries occurred.  
+# Only use data where fatalities or injuries occurred.  
 stormDT <- stormDT[(EVTYPE != "?" & 
              (INJURIES > 0 | FATALITIES > 0 | PROPDMG > 0 | CROPDMG > 0)), c("EVTYPE"
                                                                             , "FATALITIES"
@@ -67,6 +72,7 @@ stormDT <- stormDT[(EVTYPE != "?" &
 
 ### 2.4: Converting Exponent Columns into Actual Exponents instead of (-,+, H, K, etc)
 
+Making the PROPDMGEXP and CROPDMGEXP columns cleaner so they can be used to calculate property and crop cost.
 ```{r, results="hide"}
 
 # Change all damage exponents to uppercase.
@@ -100,7 +106,7 @@ cropDmgKey <-  c("\"\"" = 10^0,
                 "M" = 10^6,
                 "B" = 10^9)
 
-stormDT[,PROPDMGEXP := propDmgKey[as.character(stormDT[,PROPDMGEXP])]]
+stormDT[, PROPDMGEXP := propDmgKey[as.character(stormDT[,PROPDMGEXP])]]
 stormDT[is.na(PROPDMGEXP), PROPDMGEXP := 10^0 ]
 
 stormDT[, CROPDMGEXP := cropDmgKey[as.character(stormDT[,CROPDMGEXP])] ]
@@ -108,17 +114,29 @@ stormDT[is.na(CROPDMGEXP), CROPDMGEXP := 10^0 ]
 ```
 
 ### 2.5: Making Economic Cost Columns
-```{r}
+
+```{r EconomicCostColumns}
 stormDT <- stormDT[, .(EVTYPE, FATALITIES, INJURIES, PROPDMG, PROPDMGEXP, propCost = PROPDMG * PROPDMGEXP, CROPDMG, CROPDMGEXP, cropCost = CROPDMG * CROPDMGEXP)]
+
 
 ```
 
 
-### 2.6: Events that are Most Harmful Health Processing
+### 2.6: Calcuating Total Property and Crop Cost
 
-```{r}
+```{r }
+totalCostDT <- stormDT[, .(propCost = sum(propCost), cropCost = sum(cropCost), Total_Cost = sum(propCost) + sum(cropCost)), by = .(EVTYPE)]
 
-# Total injuries
+totalCostDT <- totalCostDT[order(-Total_Cost), ]
+
+totalCostDT <- totalCostDT[1:10, ]
+
+head(totalCostDT, 5)
+```
+
+### 2.7: Calcuating Total Fatalities and Injuries
+
+```{r TotalFatalitiesInjuriesCalc}
 totalInjuriesDT <- stormDT[, .(FATALITIES = sum(FATALITIES), INJURIES = sum(INJURIES), totals = sum(FATALITIES) + sum(INJURIES)), by = .(EVTYPE)]
 
 totalInjuriesDT <- totalInjuriesDT[order(-FATALITIES), ]
@@ -130,10 +148,12 @@ head(totalInjuriesDT, 5)
 
 ## 3: Results
 
-melting data.table so that each earlier column name (fatalities, totals) and their associated value goes into the 
+### 3.1: Events that are Most Harmful to Population Health
 
+Melting data.table so that it is easier to put in bar graph format 
 ```{r HealthResults}
 bad_stuff <- melt(totalInjuriesDT, id.vars="EVTYPE", variable.name = "bad_thing")
+head(bad_stuff, 5)
 ```
 
 
@@ -153,8 +173,8 @@ healthChart = healthChart + xlab("Event Type")
 # Rotate x-axis tick labels 
 healthChart = healthChart + theme(axis.text.x = element_text(angle=45, hjust=1))
 
-# Set chart title
-healthChart = healthChart + ggtitle("Top 10 US Killers")
+# Set chart title and center it
+healthChart = healthChart + ggtitle("Top 10 US Killers") + theme(plot.title = element_text(hjust = 0.5))
 
 healthChart
 ```
