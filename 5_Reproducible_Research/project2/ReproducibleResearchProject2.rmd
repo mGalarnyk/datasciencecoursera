@@ -7,18 +7,18 @@ output: html_document
 
 github repo for rest of specialization: [Data Science Coursera](https://github.com/mGalarnyk/datasciencecoursera)
 
-## 1 - Project Title: US Storm Event Human Health and Economic Impact Analysis
+# US Storm Event Human Health and Economic Impact Analysis
 
-## 2 - Synopsis:
-Storms and other severe weather events can cause both public health and economic problems for communities and municipalities. Many severe events can result in fatalities, injuries, and property damage, and preventing such outcomes to the extent possible is a key concern.
+## 1: Synopsis
+The goal of the assignment is to explore the NOAA Storm Database and explore the effects of severe weather events on both population and economy.The database covers the time period between 1950 and November 2011.
 
-This project involves exploring the U.S. National Oceanic and Atmospheric Administration's (NOAA) storm database. This database tracks characteristics of major storms and weather events in the United States, including when and where they occur, as well as estimates of any fatalities, injuries, and property damage.
+The analysis aims to investigate which different types of severe weather events are most harmful on the populations health in respect of general injuries and fatalities. Further the economic consequences will be analyzed by exploring the financial damage done to both general property and agriculture (i.e. crops)
 
 information on the data: [Documentation](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
 
-## 3 - Data Processing:
+## 2: Data Processing
 
-### 3.1 - Data Loading:
+### 2.1: Data Loading
 Download the raw data file and extract the data into a dataframe.
 
 ```{r}
@@ -26,20 +26,20 @@ library("data.table")
 library(ggplot2)
 
 fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2"
-download.file(fileUrl, destfile = paste0("/Users/mgalarny", '/repdata%2Fdata%2FStormData.csv.bz2'))
-stormDF <- read.csv("/Users/mgalarny/repdata%2Fdata%2FStormData.csv.bz2")
+download.file(fileUrl, destfile = paste0("C:/Users/mgalarnyk/Desktop", '/repdata%2Fdata%2FStormData.csv.bz2'))
+stormDF <- read.csv("C:/Users/mgalarnyk/Desktop/repdata%2Fdata%2FStormData.csv.bz2")
 
 stormDT <- as.data.table(stormDF)
 ```
 
-Explore what is contained in the dataset
+### 2.2: Examining Column Types
 
 ```{r}
 str(stormDT)
 ```
 
-### 3.2 - Data Subsetting:
-Subset the dataset on the parameters of interest.
+### 2.3: Data Subsetting
+Subset the dataset on the parameters of interest. Basically, we remove the columns we don't need and 
 ```{r}
 
 # Finding columns to remove
@@ -49,13 +49,12 @@ cols2Remove <- colnames(stormDT[, !c("EVTYPE"
   , "PROPDMG"
   , "PROPDMGEXP"
   , "CROPDMG"
-  , "CROPDMGEXP"
-  , "STATE")])
+  , "CROPDMGEXP")])
 
 # Removing columns
 stormDT[, c(cols2Remove) := NULL]
 
-# Subset on the parameters of interest.
+# Only get data where fatalities or injuries occurred.  
 stormDT <- stormDT[(EVTYPE != "?" & 
              (INJURIES > 0 | FATALITIES > 0 | PROPDMG > 0 | CROPDMG > 0)), c("EVTYPE"
                                                                             , "FATALITIES"
@@ -63,12 +62,11 @@ stormDT <- stormDT[(EVTYPE != "?" &
                                                                             , "PROPDMG"
                                                                             , "PROPDMGEXP"
                                                                             , "CROPDMG"
-                                                                            , "CROPDMGEXP"
-                                                                            , "STATE") ]
+                                                                            , "CROPDMGEXP") ]
 head(stormDT, 10)
 ```
 
-### 3.3 - Data Cleansing:
+### 2.4: Converting Exponent Columns into Actual Exponents instead of (-,+, H, K, etc)
 
 ```{r}
 
@@ -112,7 +110,10 @@ stormDT[is.na(CROPDMGEXP), CROPDMGEXP := 10^0 ]
 head(stormDT, 10)
 ```
 
-### 3.4 - Human Heath Data Processing:
+### 2.5: Making Economic Cost Columns
+
+
+### 2.5: Human Heath Data Processing:
 
 ```{r}
 
@@ -130,7 +131,10 @@ melting data.table so that each earlier column name (fatalities, totals) and the
 
 ```{r}
 bad_stuff <- melt(totalInjuriesDT, id.vars="EVTYPE", variable.name = "bad_thing")
+```
 
+
+```{r}
 #png("plot6.png")
 
 # Create chart
