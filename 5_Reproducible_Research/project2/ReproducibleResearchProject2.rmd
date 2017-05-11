@@ -200,7 +200,7 @@ econChart = econChart + xlab("Event Type")
 econChart = econChart + theme(axis.text.x = element_text(angle=45, hjust=1))
 
 # Set chart title and center it
-econChart = econChart + ggtitle("Top 10 Events causing Economic Consequences") + theme(plot.title = element_text(hjust = 0.5))
+econChart = econChart + ggtitle("Top 10 US Storm Events causing Economic Consequences") + theme(plot.title = element_text(hjust = 0.5))
 
 econChart
 ```
