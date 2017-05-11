@@ -73,7 +73,7 @@ stormDT <- stormDT[(EVTYPE != "?" &
 ### 2.4: Converting Exponent Columns into Actual Exponents instead of (-,+, H, K, etc)
 
 Making the PROPDMGEXP and CROPDMGEXP columns cleaner so they can be used to calculate property and crop cost.
-```{r, results="hide"}
+```{r CorrectingExponents, results="hide"}
 
 # Change all damage exponents to uppercase.
 cols <- c("PROPDMGEXP", "CROPDMGEXP")
@@ -117,14 +117,11 @@ stormDT[is.na(CROPDMGEXP), CROPDMGEXP := 10^0 ]
 
 ```{r EconomicCostColumns}
 stormDT <- stormDT[, .(EVTYPE, FATALITIES, INJURIES, PROPDMG, PROPDMGEXP, propCost = PROPDMG * PROPDMGEXP, CROPDMG, CROPDMGEXP, cropCost = CROPDMG * CROPDMGEXP)]
-
-
 ```
-
 
 ### 2.6: Calcuating Total Property and Crop Cost
 
-```{r }
+```{r TotalPropertyCropCost}
 totalCostDT <- stormDT[, .(propCost = sum(propCost), cropCost = sum(cropCost), Total_Cost = sum(propCost) + sum(cropCost)), by = .(EVTYPE)]
 
 totalCostDT <- totalCostDT[order(-Total_Cost), ]
@@ -156,7 +153,6 @@ bad_stuff <- melt(totalInjuriesDT, id.vars="EVTYPE", variable.name = "bad_thing"
 head(bad_stuff, 5)
 ```
 
-
 ```{r healthChart}
 # Create chart
 healthChart <- ggplot(bad_stuff, aes(x=reorder(EVTYPE, -value), y=value))
@@ -165,7 +161,7 @@ healthChart <- ggplot(bad_stuff, aes(x=reorder(EVTYPE, -value), y=value))
 healthChart = healthChart + geom_bar(stat="identity", aes(fill=bad_thing), position="dodge")
 
 # Format y-axis scale and set y-axis label
-healthChart = healthChart + scale_y_sqrt("Frequency Count") 
+healthChart = healthChart + ylab("Frequency Count") 
 
 # Set x-axis label
 healthChart = healthChart + xlab("Event Type") 
@@ -177,4 +173,34 @@ healthChart = healthChart + theme(axis.text.x = element_text(angle=45, hjust=1))
 healthChart = healthChart + ggtitle("Top 10 US Killers") + theme(plot.title = element_text(hjust = 0.5))
 
 healthChart
+```
+
+### 3.2: Events that have the Greatest Economic Consequences
+
+Melting data.table so that it is easier to put in bar graph format 
+```{r EconConsequences}
+econ_consequences <- melt(totalCostDT, id.vars="EVTYPE", variable.name = "Damage_Type")
+head(econ_consequences, 5)
+```
+
+```{r econChart}
+# Create chart
+econChart <- ggplot(econ_consequences, aes(x=reorder(EVTYPE, -value), y=value))
+
+# Plot data as bar chart
+econChart = econChart + geom_bar(stat="identity", aes(fill=Damage_Type), position="dodge")
+
+# Format y-axis scale and set y-axis label
+econChart = econChart + ylab("Cost (dollars)") 
+
+# Set x-axis label
+econChart = econChart + xlab("Event Type") 
+
+# Rotate x-axis tick labels 
+econChart = econChart + theme(axis.text.x = element_text(angle=45, hjust=1))
+
+# Set chart title and center it
+econChart = econChart + ggtitle("Top 10 Events causing Economic Consequences") + theme(plot.title = element_text(hjust = 0.5))
+
+econChart
 ```
