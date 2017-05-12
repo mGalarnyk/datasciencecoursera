@@ -1,11 +1,12 @@
 # Data Science Specialization | John Hopkins Coursera
 Author: Michael Galarnyk <br />
 
-Just started on Course 5 "Reproducible_Research" (as of 2/19/2017). All the coursework is aggregated into one repo.
+Just started on Course 6 (as of 5/12/2017). All the coursework is aggregated into one repo.
 
 ## Course 
 Course Number | Course | Link to Repo | Blog
 --- | --- | --- | ---
+5 |  Reproducible Research |  [Course Repo](https://github.com/mGalarnyk/datasciencecoursera/tree/master/5_Reproducible_Research "Reproducible Research Repo") | [Blog](https://medium.com/@GalarnykMichael/reproducible-research-jhu-coursera-course-5-ad0188bfc53b "Review + data.table")
 4 |  Exploratory Data Analysis |  [Course Repo](https://github.com/mGalarnyk/datasciencecoursera/tree/master/4_Exploratory_Data_Analysis "Exploratory Data Analysis Repo") | [Blog](https://medium.com/@GalarnykMichael/exploratory-data-analysis-jhu-coursera-course-4-4a908e0d30d8#.g10ri88vo "Review + data.table")
 3 |  Getting and Cleaning Data |  [Course Repo](https://github.com/mGalarnyk/datasciencecoursera/tree/master/3_Getting_and_Cleaning_Data "Getting and Cleaning Data") | [Blog](https://medium.com/@GalarnykMichael/getting-and-cleaning-data-jhu-coursera-course-3-c3635747858b#.y93kqfa0u "Review + data.table")
 2 |  R Programming |  [Course Repo](https://github.com/mGalarnyk/datasciencecoursera/tree/master/2_R_Programming "R Programming Repo") | [Blog](https://medium.com/@GalarnykMichael/in-progress-review-course-2-r-programming-jhu-coursera-ad27086d8438#.bzzr29fvo "Review + data.table")
