@@ -1,155 +1,116 @@
-# Reproducible Research Quiz 1 (JHU) Coursera
+# Statistical Inference Quiz 1 (JHU) Coursera
 
 Question 1
 ----------
-Suppose I conduct a study and publish my findings. Which of the following is an example of a replication of my study?
+Consider influenza epidemics for two parent heterosexual families. Suppose that the probability is 17% that at least one of the parents has contracted the disease. The probability that the father has contracted influenza is 12% while the probability that both the mother and father have contracted the disease is 6%. What is the probability that the mother has contracted influenza?
 
-* An investigator at another institution conducts a study addressing a different scientific question and publishes her findings.
+(Hints look at lecture 2 around 5:30 and chapter 4 problem 4).
 
-* I give my data to an independent investigator at another institution, she analyzes the data and gets the same results as I originally obtained. 
+* 17%
 
-* I take my own data, analyze it again, and publish new findings.
+* 6%
 
-* An investigator at another institution conducts a study addressing the same question, collects her own data, analyzes it separately from me, and publishes her own findings.
+* 11%
+
+* 5%
 
 Answer Options: </br>
-An investigator at another institution conducts a study addressing the same question, collects her own data, analyzes it separately from me, and publishes her own findings.
+
 
 Question 2
 ----------
-Which of the following is a requirement for a published data analysis to be reproducible?
+A random variable, X is uniform, a box from 0 to 1 of height 1. (So that its density is f(x)=1 for 0≤x≤1.) What is its 75th percentile?
 
-* The data analysis is conducted using R.
+(Hints, look at lecture 2 around 21:30 and Chapter 5 Problem 5. Also, look up the help function for the qunif command in R.)
 
-* The investigator makes the analytic data publicly available.
+* 0.50
 
-* The analysis is conducted on a variant of the Unix operating system.
+* 0.10
 
-* The investigator makes available his computer, on which the analysis was originally conducted.
+* 0.25
+
+* 0.75
 
 Answer Options: </br>
-The investigator makes the analytic data publicly available.
+
 
 Question 3
 ----------
-Which of the following is an example of a reproducible study?
+You are playing a game with a friend where you flip a coin and if it comes up heads you give her X dollars and if it comes up tails she gives you Y dollars. The probability that the coin is heads is p (some number between 0 and 1.) What has to be true about X and Y to make so that both of your expected total earnings is 0. The game would then be called “fair”.
 
-* The study's analytic data and computer code are not publicly available, but the study was simple enough to be repeated by an independent investigator.
+(Hints, look at Lecture 4 from 0 to 6:50 and Chapter 5 Problem 6. Also, for further reading on fair games and gambling, start with the Dutch Book problem ).
 
-* The study's original authors re-run their computer code on their analytic data and confirm publicly that the findings match those of the published results.
+* X = Y
 
-* The study's analytic data are publicly available, but the computer code is not.
+* p = X/Y
 
-* The study's analytic data and computer code for the data analysis are publicly available. When the code is run on the analytic data, the findings are identical to the published results.
+* p/(1−p) = X/Y
+
+* p/(1−p) = Y/X
 
 Answer Options: </br>
-The study's analytic data and computer code for the data analysis are publicly available. When the code is run on the analytic data, the findings are identical to the published results.
+
 
 Question 4
 ----------
-Which of the following is a reason that a study might NOT be fully replicated?
+A density that looks like a normal density (but may or may not be exactly normal) is exactly symmetric about zero. (Symmetric means if you flip it around zero it looks the same.) What is its median?
 
-* The original study was conducted by a well-known investigator.
+(Hints, look at quantiles from Lecture 2 around 21:30 and Chapter 2 Problem 7).
 
-* The original investigator does not want to make the analytic data available. (NO)
+* We can't conclude anything about the median.
 
-* The original study had null findings.
+* The median must be different from the mean.
 
-* The original study was very expensive and there is no money to repeat it in a different setting.
+* The median must be 1.
+
+* The median must be 0.
 
 Answer Options: </br>
-The original study was opportunistic in its timing and it would be difficult to find a similar context in which to repeat
-it. </br>
-The original study was very expensive and there is no money to repeat it in a different setting.
-
 
 Question 5
 ----------
-Which of the following is a reason why publishing reproducible research is increasingly important?
+Consider the following PMF shown below in R
 
-* The statistical methods for most studies can be accurately described using plain language.
+```{r}
+x <- 1:4
+p <- x/sum(x)
+temp <- rbind(x, p)
+rownames(temp) <- c("X", "Prob")
+temp
+```
 
-* Most studies today are small-scale and easily replicated.
+```{r}
+## [,1] [,2] [,3] [,4]
+## X 1.0 2.0 3.0 4.0
+## Prob 0.1 0.2 0.3 0.4
+```
 
-* Computing power is limited today, making it difficult to apply sophisticated statistical methods. (no)
+What is the mean?
 
-* New technologies are increasing the rate of data collection, creating datasets that are more complex and extremely high dimensional.
+(Hint, watch Lecture 4 on expectations of PMFs.)
 
-Answer Options: </br>
-New technologies are increasing the rate of data collection, creating datasets that are more complex and extremely high dimensional.
+* 2
+
+* 1
+
+* 3
+
+* 4
+
 
 Question 6
 ----------
-What is the role of processing code in the research pipeline?
+A web site (www.medicine.ox.ac.uk/bandolier/band64/b64-7.html) for home pregnancy tests cites the following: “When the subjects using the test were women who collected and tested their own samples, the overall sensitivity was 75%. Specificity was also low, in the range 52% to 75%.” Assume the lower value for the specificity. Suppose a subject has a positive test and that 30% of women taking pregnancy tests are actually pregnant. What number is closest to the probability of pregnancy given the positive test?
 
-* It transforms the computational results into figures and tables.
+(Hints, watch Lecture 3 at around 7 minutes for a similar example. Also, there's a lot of Bayes' rule problems and descriptions out there, for example here's one for HIV testing. Note, discussions of Bayes' rule can get pretty heady. So if it's new to you, stick to basic treatments of the problem. Also see Chapter 3 Question 5.)
 
-* It transforms the measured data into analytic data.
+* 30%
 
-* It transforms the analytic data into computational results.
+* 40%
 
-* It conducts the statistical analysis of the primary outcome.
+* 20%
 
-Answer: </br>
-It transforms the measured data into analytic data.
-
-Question 7
-----------
-Which is a goal of literate statistical programming?
-
-* Ensure that data analysis documents are always exported in PDF format.
-
-* Combine explanatory text and data analysis code in a single document.
-
-* Require that data analysis summaries are always written in LaTeX.
-
-* Separate figures and tables from other data analytic summaries.
-
-Answer Options: </br>
-Combine explanatory text and data analysis code in a single document.
-
-Question 8
-----------
-What does it mean to weave a literate statistical program?
-
-* Transform the literate program into a machine readable code file.
-
-* Transform a literate program from R to python.
-
-* Transform the literate program into a human readable document.
-
-* Compress the literate program so that it takes up less space.
+* 10%
 
 Answer: </br>
-Transform the literate program into a human readable document.
 
-Question 9
-----------
-Which of the following is required to implement a literate programming system?
-
-* A Unix-based computer system.
-
-* A documentation language like LaTeX.
-
-* A program that views PDF files.
-
-* A web server for publishing documents.
-
-Answer Options: </br>
-A documentation language like LaTeX. </br>
-A programming language like R.
-
-Question 10
-----------
-What is one way in which the knitr system differs from Sweave?
-
-* knitr allows for the use of markdown instead of LaTeX.
-
-* knitr lacks features like caching of code chunks.
-
-* knitr is written in python instead of R.
-
-* knitr was developed by Friedrich Leisch.
-
-Answer: </br>
-knitr allows for the use of markdown instead of LaTeX
