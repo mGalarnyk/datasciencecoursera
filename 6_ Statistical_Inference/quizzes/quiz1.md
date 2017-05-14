@@ -15,7 +15,15 @@ Consider influenza epidemics for two parent heterosexual families. Suppose that 
 * 5%
 
 Answer Options: </br>
+```{r}
+# P(A∪B) = P(A) + P(B) − P(A∩B), therefore P(B) = P(A∩B) + P(A∪B) - P(A)
 
+P_AuB_ <-0.17
+P_A_ <- 0.12
+P_AnB_ <- 0.06
+
+P_B_ <- P_AuB_ + P_AnB_ - P_A_
+```
 
 Question 2
 ----------
@@ -32,6 +40,14 @@ A random variable, X is uniform, a box from 0 to 1 of height 1. (So that its den
 * 0.75
 
 Answer Options: </br>
+
+```{r}
+qunif(p=0.75, min = 0, max = 1)
+```
+
+```{r}
+## [1] 0.75
+```
 
 
 Question 3
@@ -50,6 +66,9 @@ You are playing a game with a friend where you flip a coin and if it comes up he
 
 Answer Options: </br>
 
+```{r}
+# So that the game can be called fair, p*X = Y*(1-p), therefore p/(1-p)=Y/X.
+```
 
 Question 4
 ----------
@@ -66,6 +85,10 @@ A density that looks like a normal density (but may or may not be exactly normal
 * The median must be 0.
 
 Answer Options: </br>
+
+```{r}
+# The median must be 0, as 50% of the probability is below 0 and 50% is above 0, when the density is symmetric at zero.
+```
 
 Question 5
 ----------
@@ -97,6 +120,13 @@ What is the mean?
 
 * 4
 
+```{r}
+fi <- temp["X",]
+xi <- temp["Prob",] 
+  
+product <- fi*xi
+sum(product)
+```
 
 Question 6
 ----------
@@ -113,4 +143,11 @@ A web site (www.medicine.ox.ac.uk/bandolier/band64/b64-7.html) for home pregnanc
 * 10%
 
 Answer: </br>
+```{r}
+Ppregnant_pos <- 0.75*0.30/(0.75*0.30+0.48*0.70)
+Ppregnant_pos
+```
 
+```{r}
+## [1] 0.4010695
+```
