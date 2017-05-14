@@ -12,7 +12,7 @@ Quiz # | Link
 4 | Coming soon
 3 | Coming soon
 2 | Coming soon
-1 | Coming soon
+1 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/quizzes/quiz1.md)
 
 ## Contributors
 FirstName | LastName | Email
