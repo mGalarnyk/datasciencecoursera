@@ -16,6 +16,8 @@ Consider influenza epidemics for two parent heterosexual families. Suppose that 
 
 Explanation: </br>
 
+For any two events the probability that at least one occurs is the sum of their probabilities minus their intersection. 
+
 unions: (denoted by ∪) of a collection of sets is the set of all elements in the collection
 </br> A = {1, 3, 5, 7} and B = {1, 2, 4, 6} then A ∪ B = {1, 2, 3, 4, 5, 6, 7}
 
@@ -23,7 +25,7 @@ intersection: (denoted by ∩) intersection A ∩ B of two sets A and B is the s
 
 Answer Options: </br>
 ```{r}
-# P(A∪B) = P(A) + P(B) − P(A∩B), therefore P(B) = P(A∩B) + P(A∪B) - P(A)
+# P(M∪F) = P(M) + P(F) − P(M∩F), therefore P(M) = P(M∩B) + P(A∪B) - P(A)
 
 P_AuB_ <-0.17
 P_A_ <- 0.12
