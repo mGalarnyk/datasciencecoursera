@@ -81,6 +81,8 @@ You are playing a game with a friend where you flip a coin and if it comes up he
 
 Explanation: </br>
 
+Your expected earnings is −pX+(1−p)Y=0 Then it must be the case that p1−p=YX Or that the ratio of the payouts has to equal the odds. So consider, for example, if p1−p=2. The game is 2 to 1 against you, p=2/3; she is twice as likely to win as you. Then she will have to pay out twice as much if you win to make the game fair.
+
 p*X = Y*(1-p), therefore p/(1-p)=Y/X.
 
 Question 4
@@ -154,13 +156,5 @@ A web site (www.medicine.ox.ac.uk/bandolier/band64/b64-7.html) for home pregnanc
 
 * 10%
 
-Answer: </br>
-```{r}
-# Bayes
-Ppregnant_pos <- 0.75*0.30/(0.75*0.30+0.48*0.70)
-Ppregnant_pos
-```
-
-```{r}
-## [1] 0.4010695
-```
+Explanation: </br>
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/data/pregnant.png)
