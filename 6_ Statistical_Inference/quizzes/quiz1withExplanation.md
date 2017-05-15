@@ -24,26 +24,20 @@ unions: (denoted by ∪) of a collection of sets is the set of all elements in t
 </br>
 intersection: (denoted by ∩) intersection A ∩ B of two sets A and B is the set that contains all elements of A that also belong to B (or equivalently, all elements of B that also belong to A), but no other elements
 
-```{r}
-# P(M∪F) = P(M) + P(F) − P(M∩F), therefore P(M) = P(M∩F) + P(M∪F) - P(F)
-
-# Union
-P_MuF <-0.17
-
-# Probability Father
-P_F <- 0.12
-
-# Intersection
-P_MnF <- 0.06
-
-P_M <- P_MuF + P_MnF - P_F
-
-P_M
-```
-
-```{r}
-# 0.11
-```
+<br>
+A = Mother
+<br>
+B = Father
+<br>
+P(A∪B) = 17%
+<br>
+P(B) = 12%
+<br>
+P(A∩B) = 6%
+<br>
+Since we know P(A∪B)=P(A)+P(B)−P(A∩B) we get
+<br>
+17%=P(A)+12%−6%.
 
 Question 2
 ----------
