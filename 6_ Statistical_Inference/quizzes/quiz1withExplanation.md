@@ -10,7 +10,7 @@ Consider influenza epidemics for two parent heterosexual families. Suppose that 
 
 * 6%
 
-* 11%
+* 11% (answer)
 
 * 5%
 
@@ -21,17 +21,28 @@ For any two events the probability that at least one occurs is the sum of their 
 unions: (denoted by ∪) of a collection of sets is the set of all elements in the collection
 </br> A = {1, 3, 5, 7} and B = {1, 2, 4, 6} then A ∪ B = {1, 2, 3, 4, 5, 6, 7}
 
+</br>
 intersection: (denoted by ∩) intersection A ∩ B of two sets A and B is the set that contains all elements of A that also belong to B (or equivalently, all elements of B that also belong to A), but no other elements
 
-Answer Options: </br>
 ```{r}
-# P(M∪F) = P(M) + P(F) − P(M∩F), therefore P(M) = P(M∩B) + P(A∪B) - P(A)
+# P(M∪F) = P(M) + P(F) − P(M∩F), therefore P(M) = P(M∩F) + P(M∪F) - P(F)
 
-P_AuB_ <-0.17
-P_A_ <- 0.12
-P_AnB_ <- 0.06
+# Union
+P_MuF <-0.17
 
-P_B_ <- P_AuB_ + P_AnB_ - P_A_
+# Probability Father
+P_F <- 0.12
+
+# Intersection
+P_MnF <- 0.06
+
+P_M <- P_MuF + P_MnF - P_F
+
+P_M
+```
+
+```{r}
+# 0.11
 ```
 
 Question 2
@@ -46,9 +57,9 @@ A random variable, X is uniform, a box from 0 to 1 of height 1. (So that its den
 
 * 0.25
 
-* 0.75
+* 0.75 (answer)
 
-Answer Options: </br>
+Explanation: </br>
 
 ```{r}
 qunif(p=0.75, min = 0, max = 1)
@@ -57,7 +68,6 @@ qunif(p=0.75, min = 0, max = 1)
 ```{r}
 ## [1] 0.75
 ```
-
 
 Question 3
 ----------
@@ -71,13 +81,11 @@ You are playing a game with a friend where you flip a coin and if it comes up he
 
 * p/(1−p) = X/Y
 
-* p/(1−p) = Y/X
+* p/(1−p) = Y/X (answer)
 
-Answer Options: </br>
+Explanation: </br>
 
-```{r}
-# So that the game can be called fair, p*X = Y*(1-p), therefore p/(1-p)=Y/X.
-```
+p*X = Y*(1-p), therefore p/(1-p)=Y/X.
 
 Question 4
 ----------
@@ -93,11 +101,9 @@ A density that looks like a normal density (but may or may not be exactly normal
 
 * The median must be 0.
 
-Answer Options: </br>
+Explanation: </br>
 
-```{r}
-# The median must be 0, as 50% of the probability is below 0 and 50% is above 0, when the density is symmetric at zero.
-```
+The density is symmetric at zero so the median must be must be 0 (50% of the probability is below 0 and 50% is above 0, when the density is symmetric at zero). 
 
 Question 5
 ----------
@@ -125,11 +131,12 @@ What is the mean?
 
 * 1
 
-* 3
+* 3 (answer)
 
 * 4
 
 ```{r}
+# Expected Value
 fi <- temp["X",]
 xi <- temp["Prob",] 
   
@@ -145,7 +152,7 @@ A web site (www.medicine.ox.ac.uk/bandolier/band64/b64-7.html) for home pregnanc
 
 * 30%
 
-* 40%
+* 40% (answer)
 
 * 20%
 
@@ -153,6 +160,7 @@ A web site (www.medicine.ox.ac.uk/bandolier/band64/b64-7.html) for home pregnanc
 
 Answer: </br>
 ```{r}
+# Bayes
 Ppregnant_pos <- 0.75*0.30/(0.75*0.30+0.48*0.70)
 Ppregnant_pos
 ```
