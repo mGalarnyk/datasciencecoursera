@@ -134,7 +134,6 @@ What is the mean?
 * 4
 
 ```{r}
-# Expected Value
 fi <- temp["X",]
 xi <- temp["Prob",] 
   
