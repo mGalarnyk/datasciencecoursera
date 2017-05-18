@@ -11,7 +11,7 @@ Quiz # | Link
 --- | --- 
 4 | Coming soon
 3 | Coming soon
-2 | Coming soon
+2 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/quizzes/quiz2withExplanation.md)
 1 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/quizzes/quiz1withExplanation.md)
 
 ## Contributors
