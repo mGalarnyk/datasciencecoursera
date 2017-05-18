@@ -6,38 +6,15 @@ What is the variance of the distribution of the average an IID draw of n observa
 
 * σ/n
 
-* σ<sup>2</sup> /n
+* σ<sup>2</sup> /n 
 
 * σ<sup>2</sup>
 
 * 2σ/n<sup>.5</sup>
 
-Explanation: </br>
+Answer: </br>
 
-For any two events the probability that at least one occurs is the sum of their probabilities minus their intersection. 
-
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/data/unionIntersection.png)
-</br>
-unions: (denoted by ∪) of a collection of sets is the set of all elements in the collection
-</br> A = {1, 3, 5, 7} and B = {1, 2, 4, 6} then A ∪ B = {1, 2, 3, 4, 5, 6, 7}
-</br>
-intersection: (denoted by ∩) intersection A ∩ B of two sets A and B is the set that contains all elements of A that also belong to B (or equivalently, all elements of B that also belong to A), but no other elements
-<br>
-A = Mother
-<br>
-B = Father
-<br>
-P(A∪B) = 17%
-<br>
-P(B) = 12%
-<br>
-P(A∩B) = 6%
-<br>
-Since we know P(A∪B)=P(A)+P(B)−P(A∩B) we get
-<br>
-17%=P(A)+12%−6%.
-<br>
-P(A) = 11%
+σ<sup>2</sup> /n 
 
 Question 2
 ----------
@@ -51,14 +28,14 @@ Suppose that diastolic blood pressures (DBPs) for men aged 35-44 are normally di
 
 * 16%
 
-Explanation: </br>
+Answer: </br>
 
 ```{r}
-qunif(p=0.75, min = 0, max = 1)
+pnorm(70, mean = 80, sd = 10)
 ```
 
 ```{r}
-## [1] 0.75
+## [1] 0.1587
 ```
 
 Question 3
@@ -73,8 +50,14 @@ Brain volume for adult women is normally distributed with a mean of about 1,100 
 
 * approximately 1175
 
-Explanation: </br>
+Answer: </br>
+```{r}
+qnorm(0.95, mean = 1100, sd = 75)
+```
 
+```{r}
+## [1] 1223
+```
 Question 4
 ----------
 Refer to the previous question. Brain volume for adult women is about 1,100 cc for women with a standard deviation of 75 cc. Consider the sample mean of 100 random adult women from this population. What is the 95th percentile of the distribution of that sample mean?
@@ -89,9 +72,15 @@ Refer to the previous question. Brain volume for adult women is about 1,100 cc f
 
 * approximately 1110 cc
 
-Explanation: </br>
+Answer: </br>
 
+```{r}
+qnorm(0.95, mean = 1100, sd = 75/sqrt(100))
+```
 
+```{r}
+## [1] 1112
+```
 
 Question 5
 ----------
@@ -105,6 +94,18 @@ You flip a fair coin 5 times, about what's the probability of getting 4 or 5 hea
 
 * 3%
 
+Answer: </br>
+
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/data/quizImages/quiz2coinFlips.png)
+
+```{r}
+pbinom(3, size = 5, prob = 0.5, lower.tail = FALSE)
+```
+
+```{r}
+## [1] 0.1875
+```
+
 Question 6
 ----------
 The respiratory disturbance index (RDI), a measure of sleep disturbance, for a specific population has a mean of 15 (sleep events per hour) and a standard deviation of 10. They are not normally distributed. Give your best estimate of the probability that a sample mean RDI of 100 people is between 14 and 16 events per hour?
@@ -117,7 +118,16 @@ The respiratory disturbance index (RDI), a measure of sleep disturbance, for a s
 
 * 47.5%
 
-Explanation: </br>
+Answer: </br>
+The standard error of the mean is 10/100^.5 = 1. Thus between 14 and 16 is with one standard deviation of the mean of the distribution of the sample mean. Thus it should be about 68%.
+
+```{r}
+pnorm(16, mean = 15, sd = 1) - pnorm(14, mean = 15, sd = 1)
+```
+
+```{r}
+## [1] 0.6827
+```
 
 Question 7
 ----------
@@ -130,6 +140,9 @@ Consider a standard uniform density. The mean for this density is .5 and the var
 * 0.5
 
 * 0.10
+
+Answer: </br>
+Via the LLN it should be near .5.
 
 Question 8
 ----------
@@ -147,3 +160,12 @@ stop for 3 hours. About what's the probability of viewing 10 or fewer people?
 
 * 0.03
 
+Answer: </br>
+
+```{r}
+ppois(10, lambda = 15)
+```
+
+```{r}
+## [1] 0.1185
+```
