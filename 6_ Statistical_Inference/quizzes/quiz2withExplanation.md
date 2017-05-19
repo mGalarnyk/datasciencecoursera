@@ -96,14 +96,6 @@ You flip a fair coin 5 times, about what's the probability of getting 4 or 5 hea
 
 Answer: </br>
 
-Upload image of hand written binomial distribution, go over difference between fair and unfair coin 
-
-</br>
-https://math.stackexchange.com/questions/151810/probability-of-3-heads-in-10-coin-flips
-</br>
-
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/data/quizImages/quiz2coinFlips.png)
-
 ```{r}
 pbinom(3, size = 5, prob = 0.5, lower.tail = FALSE)
 ```
@@ -111,6 +103,10 @@ pbinom(3, size = 5, prob = 0.5, lower.tail = FALSE)
 ```{r}
 ## [1] 0.1875
 ```
+
+Explanation: I don't find answers like use this random R function too useful especially for interviews where you have to understand the stats, so I wrote it out by hand. 
+
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/data/quizImages/quiz2coinFlipsExplanation.jpg)
 
 Question 6
 ----------
