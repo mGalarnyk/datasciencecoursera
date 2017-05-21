@@ -14,7 +14,18 @@ In a population of interest, a sample of 9 men yielded a sample average brain vo
 
 Answer: </br>
 
+```{r}
+x_bar <- 1100
+s <- 30
+n <- 9
+alpha <- 0.05
+ts <- qt(1 - alpha / 2, n - 1) # 2.306004
+round(x_bar + c(-1, 1) * ts * s / sqrt(n))
+```
 
+```{r}
+# 1077 1123
+```
 
 Question 2
 ----------
@@ -29,7 +40,17 @@ A diet pill is given to 9 subjects over six weeks. The average difference in wei
 * 2.10
 
 Answer: </br>
+```{r}
+x_bar <- -2
+n <- 9
+alpha <- 0.05
+ts <- qt(1 - alpha / 2, n - 1) # 2.306004
+s <- -x_bar*sqrt(n) / ts
+```
 
+```{r}
+# 2.601903
+```
 
 Question 3
 ----------
@@ -44,7 +65,9 @@ In an effort to improve running performance, 5 runners were either given a prote
 * A paired interval
 
 Answer: </br>
-
+Independent tests: not related participants </br>
+Paired tests: related participants, same group uses 2 different tests </br>
+A paired interval. </br>
 
 Question 4
 ----------
@@ -59,7 +82,23 @@ In a study of emergency room waiting times, investigators consider a new and the
 * [1.29, 2.70]
 
 Answer: </br>
+```{r}
+n_x <- 10 
+n_y <- 10
+x_bar <- 5 # old_system
+y_bar <- 3 # new_system
+var_x <- 0.6
+var_y <- 0.68
+alpha <- 0.05
+sp_2 <- ((n_x - 1)*var_x + (n_y - 1)*var_y) / (n_x + n_y - 2)
+sp <- sqrt(sp_2)
+ts <- qt(1 - (alpha/2), n_x + n_y - 2)
+round((y_bar - x_bar) + c(-1, 1) * ts * sp * (sqrt(1/n_x + 1/n_y)), 2) 
+```
 
+```{r}
+# -2.75 -1.25
+```
 
 Question 5
 ----------
@@ -74,8 +113,7 @@ Suppose that you create a 95% T confidence interval. You then create a 90% inter
 * The interval will be narrower.
 
 Answer: </br>
-
-
+The interval will be narrower.
 
 Question 6
 ----------
@@ -92,7 +130,27 @@ What does the 95% independent group confidence interval with unequal variances s
 * When subtracting (old - new) the interval is entirely above zero. The new system appears to be effective.
 
 Answer: </br>
+When subtracting (old - new) the interval is entirely above zero. The new system appears to be effective.
 
+Explanation: 
+
+```{r}
+n_x <- 100
+n_y <- 100
+x_bar <- 6
+y_bar <- 4
+s_x <- 2
+s_y <- 0.5
+alpha <- 0.05
+sp_2 <- ((n_x - 1)*s_x^2 + (n_y - 1)*s_y^2) / (n_x + n_y - 2)
+sp <- sqrt(sp_2)
+ts <- qt(1 - (alpha/2), n_x + n_y - 2)
+round((x_bar - y_bar) + c(-1, 1) * ts * sp * (sqrt(1/n_x + 1/n_y)), 2) 
+```
+
+```{r}
+# 1.59 2.41
+```
 
 Question 7
 ----------
@@ -108,3 +166,20 @@ Suppose that 18 obese subjects were randomized, 9 each, to a new diet pill and a
 
 Answer: </br>
 
+```{r}
+n_x <- 9
+n_y <- 9
+x_bar <- -3
+y_bar <- 1
+s_x <- 1.5
+s_y <- 1.8
+alpha <- 0.1
+sp_2 <- ((n_x - 1)*s_x^2 + (n_y - 1)*s_y^2) / (n_x + n_y - 2)
+sp <- sqrt(sp_2)
+ts <- qt(1 - (alpha/2), n_x + n_y - 2)
+round((x_bar - y_bar) + c(-1, 1) * ts * sp * (sqrt(1/n_x + 1/n_y)), 3) 
+```
+
+```{r}
+# -5.364 -2.636
+```
