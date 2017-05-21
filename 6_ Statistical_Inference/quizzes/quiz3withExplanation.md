@@ -167,17 +167,14 @@ Suppose that 18 obese subjects were randomized, 9 each, to a new diet pill and a
 Answer: </br>
 
 ```{r}
-n_x <- 9
-n_y <- 9
-x_bar <- -3
-y_bar <- 1
-s_x <- 1.5
-s_y <- 1.8
-alpha <- 0.1
-sp_2 <- ((n_x - 1)*s_x^2 + (n_y - 1)*s_y^2) / (n_x + n_y - 2)
-sp <- sqrt(sp_2)
-ts <- qt(1 - (alpha/2), n_x + n_y - 2)
-round((x_bar - y_bar) + c(-1, 1) * ts * sp * (sqrt(1/n_x + 1/n_y)), 3) 
+n1 <- 9
+n2 <- 9
+x1 <- -3 # treated
+x2 <- 1 # placebo
+s1 <- 1.5 # treated
+s2 <- 1.8 # placebo
+s <- sqrt(((n1 - 1) * s1^2 + (n2 - 1) * s2^2)/(n1 + n2 - 2))
+(x1 - x2) + c(-1, 1) * qt(0.95, n1 + n2 - 2) * s * sqrt(1/n1 + 1/n2)
 ```
 
 ```{r}
