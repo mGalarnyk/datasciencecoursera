@@ -79,6 +79,13 @@ Researchers conducted a blind taste test of Coke versus Pepsi. Each of four peop
 
 Answer: </br>
 
+```{r}
+pbinom(2, size=4, prob=0.5, lower.tail=FALSE)
+```
+
+```{r}
+# [1] 0.3125
+```
 
 Question 4
 ----------
@@ -94,6 +101,15 @@ Infection rates at a hospital above 1 infection per 100 person days at risk are 
 
 Answer: </br>
 
+```{r}
+lambda <- 1 / 100 * 1787
+# Probability of 10 or less people infected given expected lambda people infected.
+ppois(10, lambda)
+```
+
+```
+# [1] 0.03237153
+```
 
 Question 5
 ----------
@@ -144,6 +160,14 @@ Researchers would like to conduct a study of 100 healthy adults to detect a four
 
 Answer: </br>
 
+```{r}
+power.t.test(n=100, delta=.01, sd=.04, alt="one.sided", type="one.sample", 
+             sig.level=.05)$power
+```
+
+```{r}
+# [1] 0.7989855
+```
 
 Explanation: 
 
@@ -161,6 +185,14 @@ Researchers would like to conduct a study of n healthy adults to detect a four y
 
 Answer: </br>
 
+```{r}
+power.t.test(delta=.01, sd=.04, alt="one.sided", type="one.sample", sig.level=.05,
+             power=.9)$n
+```
+
+```{r}
+# [1] 138.3856
+```
 
 Explanation: 
 
