@@ -27,16 +27,17 @@ Consider testing the hypothesis that there was a mean reduction in blood pressur
 Answer: </br>
 
 ```{r}
+subject <- c(1,2,3,4,5)
 baseline <- c(140,138,150,148,135)
-Week2 <- c(132,135,151,146,130)
-
-tobject <- t.test(Week2,baseline,alternative="two.sided",paired=TRUE)
-
-tobject$p.value
+week2 <- c(132,135,151,146,130)
+examinations <- data.frame(subject, baseline, week2)
+test <- t.test(x = examinations$baseline, y = examinations$week2, alt = "two.sided", paired = TRUE)
+pval <- test$p.value
+round(pval,3)
 ```
 
 ```{r}
-# 0.08652278
+# [1] 0.087
 ```
 
 Question 2
@@ -55,14 +56,14 @@ Answer: </br>
 
 ```{r}
 n <- 9
-mu <- 1100
-sd <- 30
-t <- qt(1-0.05/2, n-1)
-mu + c(-1, 1) * t * sd / sqrt(n)
+μ <- 1100
+σ <- 30
+quantile = 0.975 # is 95% with 2.5% on both sides of the range
+confidenceInterval = μ + c(-1, 1) * qt(quantile, df=n-1) * σ / sqrt(n)
 ```
 
 ```{r}
-# [1] 1076.94 1123.06
+# [1] 1077 1123
 ```
 
 Question 3
@@ -80,11 +81,14 @@ Researchers conducted a blind taste test of Coke versus Pepsi. Each of four peop
 Answer: </br>
 
 ```{r}
-pbinom(2, size=4, prob=0.5, lower.tail=FALSE)
+n <- 4
+x <- 3
+test <- binom.test(x=x, n=n, alt="greater")
+round(test$p.value,2)
 ```
 
 ```{r}
-# [1] 0.3125
+# [1] 0.31
 ```
 
 Question 4
@@ -102,13 +106,15 @@ Infection rates at a hospital above 1 infection per 100 person days at risk are 
 Answer: </br>
 
 ```{r}
-lambda <- 1 / 100 * 1787
-# Probability of 10 or less people infected given expected lambda people infected.
-ppois(10, lambda)
+rate <- 1/100
+errors <- 10
+days <- 1787
+test <-  poisson.test(errors, T = days, r = rate, alt="less")
+round(test$p.value,2)
 ```
 
 ```
-# [1] 0.03237153
+# [1] 0.03
 ```
 
 Question 5
@@ -124,6 +130,24 @@ Suppose that 18 obese subjects were randomized, 9 each, to a new diet pill and a
 * Less than 0.05, but larger than 0.01
 
 Answer: </br>
+
+```{r}
+n_y <- 9 # subjects treated
+n_x <- 9 # subjects placebo
+σ_y <- 1.5# kg/m2 std.dev. treated 
+σ_x <- 1.8# kg/m2 std.dev. placebo 
+μ_y <- -3#  kg/m2 average difference treated
+μ_x <- 1#  kg/m2 average difference placebo
+
+# calculate pooled standard deviation
+σ_p <- (((n_x - 1) * σ_x^2 + (n_y - 1) * σ_y^2)/(n_x + n_y - 2))
+pval <- pt((μ_y - μ_x) / (σ_p * (1 / n_x + 1 / n_y)^.5), df=n_y + n_x -2)
+pval
+```
+
+```{r}
+# [1] 0.003504
+```
 
 
 Question 6
@@ -141,7 +165,7 @@ H0:μ=1,078?
 * Where does Brian come up with these questions?
 
 Answer: </br>
-
+No you wouldn't reject.
 
 Explanation: 
 
@@ -161,12 +185,17 @@ Researchers would like to conduct a study of 100 healthy adults to detect a four
 Answer: </br>
 
 ```{r}
-power.t.test(n=100, delta=.01, sd=.04, alt="one.sided", type="one.sample", 
-             sig.level=.05)$power
+n <- 100 #subject
+μ <- 0.01# m^3 brain volume loss mean
+σ <- 0.04# m^3 brain volume loss std. dev.
+p <- 0.05 # sign level
+
+pow <- power.t.test(n=n, delta=μ, sd=σ , sig.level=p, type="one.sample", alt="one.sided")$power
+round(pow, 2)
 ```
 
 ```{r}
-# [1] 0.7989855
+# [1] 0.8
 ```
 
 Explanation: 
@@ -186,12 +215,17 @@ Researchers would like to conduct a study of n healthy adults to detect a four y
 Answer: </br>
 
 ```{r}
-power.t.test(delta=.01, sd=.04, alt="one.sided", type="one.sample", sig.level=.05,
-             power=.9)$n
+μ <- 0.01# m^3 brain volume loss mean
+σ <- 0.04# m^3 brain volume loss std. dev.
+p <- 0.05 # sign level
+pow <- 0.9 #power
+
+n <- power.t.test(power=pow, delta=μ, sd=σ , sig.level=p, type="one.sample", alt="one.sided")$n
+ceiling(n/10)*10
 ```
 
 ```{r}
-# [1] 138.3856
+# [1] 140
 ```
 
 Explanation: 
@@ -209,6 +243,6 @@ As you increase the type one error rate, α, what happens to power?
 * It's impossible to tell given the information in the problem.
 
 Answer: </br>
-
+You will get larger power.
 
 Explanation: 
