@@ -131,6 +131,8 @@ Suppose that 18 obese subjects were randomized, 9 each, to a new diet pill and a
 
 Answer: </br>
 
+Less than 0.01
+
 ```{r}
 n_y <- 9 # subjects treated
 n_x <- 9 # subjects placebo
