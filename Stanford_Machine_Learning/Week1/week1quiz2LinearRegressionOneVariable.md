@@ -48,11 +48,15 @@ Answer: </br>
 
 As J(θ<sub>0</sub>,θ<sub>1</sub>)=0, y = h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x. Using any two values in the table, solve for θ<sub>0</sub>, θ<sub>1</sub>. 
 
-If you don't know how to do this, please see the following video [Solving system of linear equations](https://www.youtube.com/watch?v=AqIrdW2-K6k&t=2s)
+If you don't know how to do this, please see the following video: [Solving system of linear equations](https://www.youtube.com/watch?v=AqIrdW2-K6k&t=2s)
 
 Question 3
 ----------
 Suppose we set θ<sub>0</sub>=−1,θ<sub>1</sub>=0.5. What is h<sub>θ</sub>(4)?
+
+Answer: </br>
+
+Setting x = 4, we have h<sub>θ</sub>(x)=θ<sub>0</sub>+θ<sub>1</sub>x = -1 + (0.5)(4) = <b>1</b>
 
 Question 4
 ----------
@@ -69,13 +73,31 @@ as a function of θ<sub>0</sub> and θ<sub>1</sub>. Which of the
 
 following statements are true? (Check all that apply.)
 
-* Even if the learning rate α is very large, every iteration of gradient descent will decrease the value of f(θ0,θ1).
+* Even if the learning rate α is very large, every iteration of gradient descent will decrease the value of f(θ<sub>0</sub>,θ<sub>1</sub>).
 
 * If the learning rate is too small, then gradient descent may take a very long time to converge.
 
 * If θ<sub>0</sub> and θ<sub>1</sub> are initialized at a local minimum, then one iteration will not change their values.
 
 * If θ<sub>0</sub> and θ<sub>1</sub> are initialized so that θ0=θ1, then by symmetry (because we do simultaneous updates to the two parameters), after one iteration of gradient descent, we will still have θ0=θ1.
+
+Answers: </br>
+
+True | Explanation 
+--- | --- 
+Even if the learning rate α is very large, every iteration of gradient descent will decrease the value of f(θ<sub>0</sub>,θ<sub>1</sub>). | If the learning rate is too large, one step of gradient descent can actually vastly "overshoot" and actually increase the value of f(θ<sub>0</sub>,θ<sub>1</sub>). 
+If the learning rate is too small, then gradient descent may take a very long time to converge. | If the learning rate is small, gradient descent ends up taking an extremely small step on each iteration, and therefor can take a long time to converge
+4 | 2
+0 | 0
+
+
+False | Explanation 
+--- | --- 
+Even if the learning rate α is very large, every iteration of gradient descent will decrease the value of f(θ<sub>0</sub>,θ<sub>1</sub>). | If the learning rate is too large, one step of gradient descent can actually vastly "overshoot" and actually increase the value of f(θ<sub>0</sub>,θ<sub>1</sub>). 
+If the learning rate is too small, then gradient descent may take a very long time to converge. | If the learning rate is small, gradient descent ends up taking an extremely small step on each iteration, and therefor can take a long time to converge
+4 | 2
+0 | 0
+
 
 Question 5
 ----------
