@@ -45,3 +45,10 @@ Consider the linear regression model h<sub>θ</sub>(x)=θ<sub>0</sub>+θ<sub>1</
 
 Answer: </br>
 
+Question 3
+----------
+Suppose we set θ<sub>0</sub>=−1,θ<sub>1</sub>=0.5. What is h<sub>θ</sub>(4)?
+
+Question 4
+----------
+
