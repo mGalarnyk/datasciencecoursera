@@ -51,4 +51,15 @@ Suppose we set θ<sub>0</sub>=−1,θ<sub>1</sub>=0.5. What is h<sub>θ</sub>(4)
 
 Question 4
 ----------
+Let f be some function so that
 
+f(θ<sub>0</sub>,θ<sub>1</sub>) outputs a number. For this problem,
+
+f is some arbitrary/unknown smooth function (not necessarily the
+
+cost function of linear regression, so f may have local optima).
+
+Suppose we use gradient descent to try to minimize f(θ<sub>0</sub>,θ<sub>1</sub>)
+as a function of θ<sub>0</sub> and θ<sub>1</sub>. Which of the
+
+following statements are true? (Check all that apply.)
