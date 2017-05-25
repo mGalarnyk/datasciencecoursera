@@ -68,9 +68,9 @@ following statements are true? (Check all that apply.)
 
 * If the learning rate is too small, then gradient descent may take a very long time to converge.
 
-* If θ0 and θ1 are initialized at a local minimum, then one iteration will not change their values.
+* If θ<sub>0</sub> and θ<sub>1</sub> are initialized at a local minimum, then one iteration will not change their values.
 
-* If θ0 and θ1 are initialized so that θ0=θ1, then by symmetry (because we do simultaneous updates to the two parameters), after one iteration of gradient descent, we will still have θ0=θ1.
+* If θ<sub>0</sub> and θ<sub>1</sub> are initialized so that θ0=θ1, then by symmetry (because we do simultaneous updates to the two parameters), after one iteration of gradient descent, we will still have θ0=θ1.
 
 Question 5
 ----------
