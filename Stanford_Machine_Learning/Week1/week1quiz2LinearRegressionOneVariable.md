@@ -44,6 +44,11 @@ Consider the linear regression model h<sub>θ</sub>(x)=θ<sub>0</sub>+θ<sub>1</
 * θ<sub>0</sub>=1,θ<sub>1</sub>=1
 
 Answer: </br>
+θ<sub>0</sub>=0,θ<sub>1</sub>=0.5 </br>
+
+As J(θ<sub>0</sub>,θ<sub>1</sub>)=0, y = h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x. Using any two values in the table, solve for θ<sub>0</sub>, θ<sub>1</sub>. 
+
+If you don't know how to do this, please see the following video [Solving system of linear equations](https://www.youtube.com/watch?v=AqIrdW2-K6k&t=2s)
 
 Question 3
 ----------
