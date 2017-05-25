@@ -63,3 +63,25 @@ Suppose we use gradient descent to try to minimize f(θ<sub>0</sub>,θ<sub>1</su
 as a function of θ<sub>0</sub> and θ<sub>1</sub>. Which of the
 
 following statements are true? (Check all that apply.)
+
+* Even if the learning rate α is very large, every iteration of gradient descent will decrease the value of f(θ0,θ1).
+
+* If the learning rate is too small, then gradient descent may take a very long time to converge.
+
+* If θ0 and θ1 are initialized at a local minimum, then one iteration will not change their values.
+
+* If θ0 and θ1 are initialized so that θ0=θ1, then by symmetry (because we do simultaneous updates to the two parameters), after one iteration of gradient descent, we will still have θ0=θ1.
+
+Question 5
+----------
+Suppose that for some linear regression problem (say, predicting housing prices as in the lecture), we have some training set, and for our training set we managed to find some θ<sub>0</sub>, θ<sub>1</sub> such that J(θ<sub>0</sub>,θ<sub>1</sub>)=0.
+
+Which of the statements below must then be true? (Check all that apply.)
+
+* For this to be true, we must have y<sup>(i)</sup>=0 for every value of i=1,2,…,m.
+
+* Gradient descent is likely to get stuck at a local minimum and fail to find the global minimum.
+
+* For this to be true, we must have θ<sub>0</sub>=0 and θ<sub>1</sub>=0 so that h<sub>θ</sub>(x)=0
+
+* Our training set can be fit perfectly by a straight line, i.e., all of our training examples lie perfectly on some straight line.
