@@ -81,7 +81,6 @@ Answer: </br>
 
 first and third
 
-
 Question 5
 ----------
 Which of these is a reasonable definition of machine learning?
