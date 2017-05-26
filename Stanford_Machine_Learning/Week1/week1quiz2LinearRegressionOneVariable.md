@@ -120,3 +120,9 @@ False | For this to be true, we must have y<sup>(i)</sup>=0 for every value of i
 Try False | Gradient descent is likely to get stuck at a local minimum and fail to find the global minimum. | none
 False | For this to be true, we must have θ<sub>0</sub>=0 and θ<sub>1</sub>=0 so that h<sub>θ</sub>(x)=0 | If J(θ<sub>0</sub>,θ<sub>1</sub>)=0 that means the line defined by the equation "y = θ<sub>0</sub> + θ<sub>1</sub>x" perfectly fits all of our data. There's no particular reason to expect that the values of θ<sub>0</sub> and θ<sub>1</sub> that achieve this are both 0 (unless y<sup>(i)</sup>=0 for all of our training examples).
 Try True | Our training set can be fit perfectly by a straight line, i.e., all of our training examples lie perfectly on some straight line. | None
+
+Other Options: </br>
+
+True or False | Statement | Explanation 
+--- | --- | ---
+Try False | We can perfectly predict the value of y even for new examples that we have not yet seen. (e.g., we can perfectly predict prices of even new houses that we have not yet seen.)  | None
