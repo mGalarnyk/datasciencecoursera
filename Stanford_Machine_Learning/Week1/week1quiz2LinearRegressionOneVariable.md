@@ -79,25 +79,24 @@ following statements are true? (Check all that apply.)
 
 * If θ<sub>0</sub> and θ<sub>1</sub> are initialized at a local minimum, then one iteration will not change their values.
 
-* If θ<sub>0</sub> and θ<sub>1</sub> are initialized so that θ0=θ1, then by symmetry (because we do simultaneous updates to the two parameters), after one iteration of gradient descent, we will still have θ0=θ1.
+* If θ<sub>0</sub> and θ<sub>1</sub> are initialized so that θ<sub>0</sub>=θ<sub>1</sub>, then by symmetry (because we do simultaneous updates to the two parameters), after one iteration of gradient descent, we will still have θ<sub>0</sub>=θ<sub>1</sub>.
 
 Answers: </br>
 
-True | Explanation 
---- | --- 
-Even if the learning rate α is very large, every iteration of gradient descent will decrease the value of f(θ<sub>0</sub>,θ<sub>1</sub>). | If the learning rate is too large, one step of gradient descent can actually vastly "overshoot" and actually increase the value of f(θ<sub>0</sub>,θ<sub>1</sub>). 
-If the learning rate is too small, then gradient descent may take a very long time to converge. | If the learning rate is small, gradient descent ends up taking an extremely small step on each iteration, and therefor can take a long time to converge
-4 | 2
-0 | 0
+True or False | Statement | Explanation 
+--- | --- | ---
+True | If the learning rate is too small, then gradient descent may take a very long time to converge. | If the learning rate is small, gradient descent ends up taking an extremely small step on each iteration, and therefor can take a long time to converge
+True | If θ<sub>0</sub> and θ<sub>1</sub> are initialized at a local minimum, then one iteration will not change their values. | At a local minimum, the derivative (gradient) is zero, so gradient descent will not change the parameters. 
+False | Even if the learning rate α is very large, every iteration of gradient descent will decrease the value of f(θ<sub>0</sub>,θ<sub>1</sub>). | If the learning rate is too large, one step of gradient descent can actually vastly "overshoot" and actually increase the value of f(θ<sub>0</sub>,θ<sub>1</sub>). 
+False | If θ<sub>0</sub> and θ<sub>1</sub> are initialized so that θ<sub>0</sub>=θ<sub>1</sub>, then by symmetry (because we do simultaneous updates to the two parameters), after one iteration of gradient descent, we will still have θ<sub>0</sub>=θ<sub>1</sub>. | The updates to θ<sub>0</sub> and θ<sub>1</sub> are different (even though we're doing simulaneous updates), so there's no particular reason to update them to be same after one iteration of gradient descent. 
 
+Other Options: </br>
 
-False | Explanation 
---- | --- 
-Even if the learning rate α is very large, every iteration of gradient descent will decrease the value of f(θ<sub>0</sub>,θ<sub>1</sub>). | If the learning rate is too large, one step of gradient descent can actually vastly "overshoot" and actually increase the value of f(θ<sub>0</sub>,θ<sub>1</sub>). 
-If the learning rate is too small, then gradient descent may take a very long time to converge. | If the learning rate is small, gradient descent ends up taking an extremely small step on each iteration, and therefor can take a long time to converge
-4 | 2
-0 | 0
-
+True or False | Statement | Explanation 
+--- | --- | ---
+True | If the first few iterations of gradient descent cause f(θ<sub>0</sub>,θ<sub>1</sub>) to increase rather than decrease, then the most likely cause is that we have set the learning rate to too large a value  | if  alpha were small enough, then gradient descent should always successfully take a tiny small downhill and decrease f(θ<sub>0</sub>,θ<sub>1</sub>) at least a little bit. If gradient descent instead increases the objective value, that means alpha is too large (or you have a bug in your code!).
+False | No matter how θ<sub>0</sub> and θ<sub>1</sub> are initialized, so long as learning rate is sufficiently small, we can safely expect gradient descent to converge to the same solution | This is not true, depending on the initial condition, gradient descent may end up at different local optima. 
+False | Setting the learning rate to be very small is not harmful, and can only speed up the convergence of gradient descent. | If the learning rate is small, gradient descent ends up taking an extremely small step on each iteration, so this would actually slow down (rather than speed up) the convergence of the algorithm. 
 
 Question 5
 ----------
