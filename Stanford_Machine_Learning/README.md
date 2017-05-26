@@ -2,17 +2,16 @@
 Author: Michael Galarnyk <br />
 
 ## Project 
-Markdown | R Markdown
---- | ---
-Coming soon| Coming soon
+Week Number | Project Number | Link/Project Name
+--- | --- | --- 
+2 | Coming Soon | Coming Soon
 
 ## Quizzes
-Quiz # | Link 
---- | --- 
-4 | Coming soon
-3 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/quizzes/quiz3withExplanation.md)
-2 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/quizzes/quiz2withExplanation.md)
-1 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/quizzes/quiz1withExplanation.md)
+Week Number | Quiz # | Link/Quiz Name 
+--- | --- | --- 
+1 | 3 | Coming Soon
+1 | 2 | [Linear Regression with One Variable](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/week1quiz2LinearRegressionOneVariable.md)
+1 | 1 | [Introduction](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/week1quiz1Introduction.md)
 
 ## Contributors
 FirstName | LastName | Email
