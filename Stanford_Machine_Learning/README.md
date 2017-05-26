@@ -9,7 +9,7 @@ Week Number | Project Number | Link/Project Name
 ## Quizzes
 Week Number | Quiz # | Link/Quiz Name 
 --- | --- | --- 
-1 | 3 | Coming Soon
+1 | 3 | [Linear Algebra (Practice Quiz)](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/week1quiz3LinearAlgebra.md)
 1 | 2 | [Linear Regression with One Variable](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/week1quiz2LinearRegressionOneVariable.md)
 1 | 1 | [Introduction](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/week1quiz1Introduction.md)
 
