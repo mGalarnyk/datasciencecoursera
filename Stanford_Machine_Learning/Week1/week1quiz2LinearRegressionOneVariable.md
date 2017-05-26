@@ -125,4 +125,6 @@ Other Options: </br>
 
 True or False | Statement | Explanation 
 --- | --- | ---
-Try False | We can perfectly predict the value of y even for new examples that we have not yet seen. (e.g., we can perfectly predict prices of even new houses that we have not yet seen.)  | None
+False | We can perfectly predict the value of y even for new examples that we have not yet seen. (e.g., we can perfectly predict prices of even new houses that we have not yet seen.)  | None
+False | This is not possible: By the definition of J(θ<sub>0</sub>,θ<sub>1</sub>), it is not possible for there to exist θ<sub>0</sub> and θ<sub>1</sub> so that J(θ<sub>0</sub>,θ<sub>1</sub>)=0 | None
+True | For these values of θ<sub>0</sub> and θ<sub>1</sub> that satisfy J(θ<sub>0</sub>,θ<sub>1</sub>)=0, we have that h<sub>θ</sub>(x<sup>(i)</sup>)=y<sup>(i)</sup> for every training example (x<sup>(i)</sup>,y<sup>(i)</sup>)
