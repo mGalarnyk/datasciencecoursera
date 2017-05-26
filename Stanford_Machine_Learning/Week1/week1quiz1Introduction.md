@@ -79,7 +79,10 @@ dataset is available for your algorithm to learn from.
 
 Answer: </br>
 
-first and third
+True or False | Statement 
+--- | ---
+True | Examine a web page, and classify whether the content on the web page should be considered "child friendly" (e.g., non-pornographic, etc.) or "adult."
+True | In farming, given data on crop yields over the last 50 years, learn to predict next year's crop yields.
 
 Question 5
 ----------
