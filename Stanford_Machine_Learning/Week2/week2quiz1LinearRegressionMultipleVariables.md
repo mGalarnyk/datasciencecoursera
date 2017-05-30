@@ -66,16 +66,35 @@ X is 14×4, y is 14×1, θ is 4×1 | X has m rows and n + 1 columns (+1 because 
 
 Question 4
 ----------
-Answer: </br>
+Suppose you have a dataset with m=50 examples and n=200000 features for each example. You want to use multivariate linear regression to fit the parameters θ to our data. Should you prefer gradient descent or the normal equation?
 
+* Gradient descent, since (X<sup>T</sup>X)<sup>−1</sup> will be very slow to compute in the normal equation.
+
+* Gradient descent, since it will always converge to the optimal θ.
+
+* The normal equation, since it provides an efficient way to directly find the solution.
+
+* The normal equation, since gradient descent might be unable to find the optimal θ.
+
+Answer | Explanation
+--- | ---
+Gradient descent, since (X<sup>T</sup>X)<sup>−1</sup> will be very slow to compute in the normal equation. | With n = 200000 features, you have to invert a 200001 x 200001 matrix to compute the normal equation. Inverting such a large matrix is computationally expensive, so gradient descent is a good choice. 
 
 Question 5
 ----------
+Which of the following are reasons for using feature scaling?
+
+* It speeds up solving for θ using the normal equation.
+
+* It prevents the matrix X<sup>T</sup>X (used in the normal equation) from being non-invertable (singular/degenerate).
+
+* It is necessary to prevent gradient descent from getting stuck in local optima.
+
+* It speeds up gradient descent by making it require fewer iterations to get to a good solution.
+
+True or False | Statement | Explanation 
+--- | --- | ---
+False | It speeds up solving for θ using the normal equation. | The magnitude of the feature values are insignificant in terms of computational cost. 
+Unknown | It prevents the matrix X<sup>T</sup>X (used in the normal equation) from being non-invertable (singular/degenerate). | 
 
 
-Answer: </br>
-
-True or False | Statement 
---- | ---
-True | Examine a web page, and classify whether the content on the web page should be considered "child friendly" (e.g., non-pornographic, etc.) or "adult."
-True | In farming, given data on crop yields over the last 50 years, learn to predict next year's crop yields.
