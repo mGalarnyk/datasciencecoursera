@@ -14,9 +14,11 @@ Course Number | Course | Link to Repo | Blog
 1 |  The Data Scientist's Toolbox |  [Course Repo](https://github.com/mGalarnyk/datasciencecoursera/tree/master/4_Exploratory_Data_Analysis "Data Scientist's Repo") | [Blog](https://medium.com/@GalarnykMichael/review-course-1-the-data-scientists-toolbox-jhu-coursera-4d7459458821#.5jpg133ln "Review + Going over Parts of Quiz")
 
 ## Contributors
-FirstName | LastName | Email
---- | --- | ---
-Michael |  Galarnyk |  <mgalarny@gmail.com>
+Github Username | Profile Page | Youtube Channel
+--- | ---
+mGalarnyk | [Github Profile](https://github.com/mGalarnyk) | [Michael Galarnyk](https://www.youtube.com/c/MichaelGalarnyk)
+randerson112358 | [Github Profile](https://github.com/randerson112358) | [Rand](https://www.youtube.com/channel/UCaV_0qp2NZd319K4_K8Z5SQ)
+
 Submit |  Pull Request | <youremailhere@gmail.com>
 
 ## License
