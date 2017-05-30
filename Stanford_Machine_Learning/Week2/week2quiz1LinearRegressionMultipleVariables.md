@@ -16,14 +16,14 @@ Concretely, suppose you want to fit a model of the form hθ(x)=θ<sub>0</sub>+θ
 where x<sub>1</sub> is the midterm score and x<sub>2</sub> is (midterm score)<sup>2</sup>. 
 Further, you plan to use both feature scaling (dividing by the "max-min", or range, of a feature) and mean normalization.
 
-What is the normalized feature x<sub>1</sub><sup>(3)</sup>? (Hint: midterm = 94, final = 87 is training example 3.) 
+What is the normalized feature x<sub>2</sub><sup>(4)</sup>? (Hint: midterm = 69, final = 78 is training example 4.) 
 Please round off your answer to two decimal places and enter in the text box below.
 
 Answer: </br>
 
-The mean of x<sub>1</sub> is 272.25 and the range is 94 - 69 is 25. </br>
+The mean of x<sub>2</sub> is 6675.5 and the range is 8836 - 4761 is 4075. </br>
 
-x<sub>1</sub><sup>(3)</sup> = (94 - 81) / 25 = <b>90.76</b>
+x<sub>2</sub><sup>(4)</sup> = (4761 - 6675.5) / 4075 = <b>-0.47</b>
 
 Question 2
 ----------
@@ -95,6 +95,6 @@ Which of the following are reasons for using feature scaling?
 True or False | Statement | Explanation 
 --- | --- | ---
 False | It speeds up solving for θ using the normal equation. | The magnitude of the feature values are insignificant in terms of computational cost. 
-Unknown | It prevents the matrix X<sup>T</sup>X (used in the normal equation) from being non-invertable (singular/degenerate). | 
-
-
+False | It prevents the matrix X<sup>T</sup>X (used in the normal equation) from being non-invertable (singular/degenerate). | none
+False | It is necessary to prevent gradient descent from getting stuck in local optima. | The cost function J(θ) for linear regression has no local optima. 
+True | It speeds up gradient descent by making it require fewer iterations to get to a good solution. | Feature scaling speeds up gradient descent by avoiding many extra iterations that are required when one or more features take on much larger values than the rest. 
