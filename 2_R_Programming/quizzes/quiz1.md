@@ -188,7 +188,7 @@ How many missing values are in the Ozone column of this data frame?
 
 ```R
 # Going back to data.frame because dont it hasnt been taught yet in this specialization
-hw1 = read.csv('hw1_data.csv')
+quiz_data = read.csv('hw1_data.csv')
 sub = subset(quiz_data, is.na(Ozone))
 nrow(sub)
 
