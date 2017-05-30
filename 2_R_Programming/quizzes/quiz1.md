@@ -135,7 +135,12 @@ Extract the first 2 rows of the data frame and print them to the console. What d
 
 ```R
 # First two rows 
-quiz_data[c(1,2)]
+quiz_data[c(1,2),]
+
+OR
+
+# First two rows
+head(quiz_data,2)
 ```
 
 Question 13
@@ -146,7 +151,7 @@ How many observations (i.e. rows) are in this data frame?
 153
 
 ```R
-nrows(quiz_data)
+nrow(quiz_data)
 ```
 
 Question 14
@@ -171,7 +176,7 @@ What is the value of Ozone in the 47th row?
 21
 
 ```R
-quiz_data[47, Ozone]
+quiz_data[47, 'Ozone']
 ```
 
 Question 16
@@ -251,4 +256,7 @@ What was the maximum ozone value in the month of May (i.e. Month = 5)?
 quiz_data = read.csv('hw1_data.csv')
 sub = subset(quiz_data, Month == 5 & !is.na(Ozone), select = Ozone)
 apply(sub, 2, max)
+
+NOTE: If we wanted more columns to display for sub we can achieve this by the following:
+sub = subset(quiz_data, Month == 5 & !is.na(Ozone), select = c(Ozone, Solar.R, Day))
 ```
