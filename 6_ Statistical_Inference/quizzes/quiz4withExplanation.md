@@ -246,3 +246,5 @@ As you increase the type one error rate, α, what happens to power?
 
 Answer: </br>
 You will get larger power.
+
+Explanation: 

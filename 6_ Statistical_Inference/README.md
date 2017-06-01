@@ -9,7 +9,7 @@ Coming soon| Coming soon
 ## Quizzes
 Quiz # | Link 
 --- | --- 
-4 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/quizzes/quiz4withExplanation.md)
+4 | Coming soon
 3 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/quizzes/quiz3withExplanation.md)
 2 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/quizzes/quiz2withExplanation.md)
 1 | [Quiz](https://github.com/mGalarnyk/datasciencecoursera/blob/master/6_%20Statistical_Inference/quizzes/quiz1withExplanation.md)
