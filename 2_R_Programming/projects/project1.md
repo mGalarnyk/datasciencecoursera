@@ -54,7 +54,7 @@ pollutantmean <- function(directory, pollutant, id= 1:332){
     ## read in each file and store it in data
     data = read.csv(filepath, header = TRUE)
     
-    ##Concatinate the vectors from each file of the pollutant column to pollutants vector
+    ##Concatinate the vectors from each file of the pollutant('sulfate' or 'nitrate') column to pollutants vector
     pollutants = c(pollutants, data[,pollutant])
     
   }
