@@ -70,14 +70,14 @@ source("pollutantmean.R")
 pollutantmean("specdata", "sulfate", 1:10)
 
 #Solution
-## [1] 4.064128
+[1] 4.064128
 
 # Example usage
 source("pollutantmean.R")
 pollutantmean("specdata", "nitrate", 70:72)
 
 #Solution
-## [1] 1.706047
+[1] 1.706047
 ```
 
 ### Part 2 ([complete.R](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/projects/complete.R))
