@@ -126,7 +126,7 @@ complete <- function(directory, id= 1:332){
     ##completeCases = subset(data, !is.na(Date) & !is.na(sulfate) & !is.na(nitrate) & !is.na(id),select = TRUE )
     completeCases = data[complete.cases(data), ]
     
-    ids =  c(ids, i)                    ## Since i corresponds with the id we can use i for id and concatinate a vector if id's
+    ids =  c(ids, i)                    ## We can use i for id and concatinate a vector of id's
     nobss = c(nobss, nrow(completeCases) )## Concatinates the number of completed rows from the subset into a vector
    
   }
