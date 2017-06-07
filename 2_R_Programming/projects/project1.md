@@ -126,7 +126,7 @@ complete <- function(directory, id= 1:332){
     ##completeCases = subset(data, !is.na(Date) & !is.na(sulfate) & !is.na(nitrate) & !is.na(id),select = TRUE )
     completeCases = data[complete.cases(data), ]
     
-    ids =  c(ids, i)                    ## Since i coresponds with the file name/id we can use i for id
+    ids =  c(ids, i)                    ## Since i corresponds with the file name/id we can use i for id
     nobss = c(nobss, nrow(completeCases) )## Gets the number of completed rows from the subset
    
   }
