@@ -55,6 +55,8 @@ How can one calculate the average miles per gallon (mpg) by number of cylinders 
 ### Answer
 ```R
 with(mtcars, tapply(mpg, cyl, mean))
+tapply(mtcars$mpg, mtcars$cyl, mean)
+sapply( split(mtcars$mpg, mtcars$cyl) , mean)
 ```
 
 Question 4
