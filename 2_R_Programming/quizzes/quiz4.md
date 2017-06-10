@@ -30,7 +30,7 @@ When simulating data, why is using the `set.seed()` function important?
 
 ### Answer
 			
-It ensures that the sequence of random numbers is reproducible.
+It ensures that the sequence of random numbers starts in a specific place and is therefore reproducible.
 
 
 Question 4
