@@ -16,11 +16,11 @@ Quiz # | Link
 1 | [Quiz 1](https://github.com/mGalarnyk/datasciencecoursera/blob/master/2_R_Programming/quizzes/quiz1.md)
 
 ## Contributors
-FirstName | LastName | Email
+Github Username | Profile Page | Youtube Channel
 --- | --- | ---
-Michael |  Galarnyk |  <mgalarny@gmail.com>
-Rodney |  Anderson |  
-Submit |  Pull Request | <youremailhere@gmail.com>
+randerson112358 | [Github Profile](https://github.com/randerson112358) | [Rand](https://www.youtube.com/channel/UCaV_0qp2NZd319K4_K8Z5SQ)
+mGalarnyk | [Github Profile](https://github.com/mGalarnyk) | [Michael Galarnyk](https://www.youtube.com/c/MichaelGalarnyk)
+Submit |  Pull Request | Your Github Profile/Youtube Channel Here
 
 ## License
 Anyone may contribute after each assignment is turned in and graded. 
