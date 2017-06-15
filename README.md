@@ -17,7 +17,7 @@ Course Number | Course | Link to Repo | Blog
 Github Username | Profile Page | Youtube Channel
 --- | --- | ---
 mGalarnyk | [Github Profile](https://github.com/mGalarnyk) | [Michael Galarnyk](https://www.youtube.com/c/MichaelGalarnyk)
-randerson112358 | [Github Profile](https://github.com/randerson112358) | [Rand](https://www.youtube.com/channel/UCaV_0qp2NZd319K4_K8Z5SQ)
+randerson112358 | [Github Profile](https://github.com/randerson112358) | [Randerson112358](https://www.youtube.com/channel/UCaV_0qp2NZd319K4_K8Z5SQ)
 Submit |  Pull Request | Your Github Profile Here
 
 ## License
