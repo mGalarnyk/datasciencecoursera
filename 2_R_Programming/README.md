@@ -18,7 +18,7 @@ Quiz # | Link
 ## Contributors
 Github Username | Profile Page | Youtube Channel
 --- | --- | ---
-randerson112358 | [Github Profile](https://github.com/randerson112358) | [Rand](https://www.youtube.com/channel/UCaV_0qp2NZd319K4_K8Z5SQ)
+randerson112358 | [Github Profile](https://github.com/randerson112358) | [Randerson112358](https://www.youtube.com/channel/UCaV_0qp2NZd319K4_K8Z5SQ)
 mGalarnyk | [Github Profile](https://github.com/mGalarnyk) | [Michael Galarnyk](https://www.youtube.com/c/MichaelGalarnyk)
 Submit |  Pull Request | Your Github Profile/Youtube Channel Here
 
