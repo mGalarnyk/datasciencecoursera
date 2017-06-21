@@ -6,8 +6,8 @@ Question 1
 
 Answer | Explanation
 --- | ---
-Our estimate for P(y=0|x;θ) is 0.8. | P(y=0|x;θ) = 1 - P(y = 1| x; θ); the former is 1 - 0.2 = 0.8
-Our estimate for P(y=1|x;θ) is 0.2. | h<sub>θ</sub>(x) = 0.2
+Our estimate for P(y=0\|x;θ) is 0.8. | P(y=0\|x;θ) = 1 - P(y = 1\| x; θ); the former is 1 - 0.2 = 0.8
+Our estimate for P(y=1\|x;θ) is 0.2. | h<sub>θ</sub>(x) = 0.2
 
 Question 2
 ----------
