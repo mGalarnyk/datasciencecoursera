@@ -9,6 +9,7 @@ Week Number | Project Number | Link/Project Name
 ## Quizzes
 Week Number | Quiz # | Link/Quiz Name 
 --- | --- | --- 
+3 | 1 | [Logistic Regression](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week3/week3quiz1.md)
 2 | 2 | Octave/Matlab Tutorial (will post soon)
 2 | 1 | [Linear Regression with Multiple Variables](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week2/week2quiz1LinearRegressionMultipleVariables.md)
 1 | 3 | [Linear Algebra (Practice Quiz)](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/week1quiz3LinearAlgebra.md)
