@@ -6,7 +6,8 @@ Question 1
 
 Question 2
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/logisticq2CorrectMaybe.PNG)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/logisticQ2part1.png)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/logisticQ2part2.png)
 
 Question 3
 ----------
@@ -18,4 +19,5 @@ Question 4
 
 Question 5
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/logisticq5.PNG)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/logisticQ5part1.png)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/logisticQ5part2.png)
