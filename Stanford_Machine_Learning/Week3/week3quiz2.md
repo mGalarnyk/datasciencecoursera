@@ -2,7 +2,7 @@
 
 Question 1
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/regularizationQ1.pngG)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/regularizationQ1.png)
 
 Answer | Explanation
 --- | ---
