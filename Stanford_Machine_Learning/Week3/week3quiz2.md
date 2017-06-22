@@ -27,9 +27,8 @@ True or False | Statement | Explanation
 --- | --- | ---
 False | Using a very large value λ cannot hurt the performance of your hypothesis; the only reason we do not set to be too large is to avoid numerical problems. | Using a very large value of λ can lead to underfitting of the training set.
 False | Because regularization causes J(θ) to no longer be convex, gradient descent may not always converge to the global minimum (when λ > 0, and when using an appropriate learning rate α). | Regularized logistic regression and regularized linear regression are both convex, and thus gradient descent will still converge to the global minimum.
-True | In | If
-False | Ad | A
-
+True | Using too large a value of λ can cause your hypothesis to underfit the data.| A large value of results in a large λ regularization penalty and thus a strong preference for simpler models which can underfit the data.
+False | Because logistic regression outputs values 0 <= h<sub>0</sub> <= 1, its range of output values can only be "shrunk" slighly by regularization anyway, so regularization is generally not helpful for it.  | None needed
 
 Question 4
 ----------
