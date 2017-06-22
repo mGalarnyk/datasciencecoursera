@@ -15,6 +15,11 @@ Question 2
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/regularizationQ2.png)
 
+Answer | Explanation 
+--- | --- 
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/regularizationQ2imageAnswer.png" alt="Answer Image"> | Adding many new features to the model helps prevent overfitting on the training set. 
+
+
 Question 3
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/regularizationQ3.png)
