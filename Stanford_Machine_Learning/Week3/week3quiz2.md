@@ -35,8 +35,16 @@ Question 4
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/regularizationQ4p1.png)
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/regularizationQ4p2.png)
 
+Answer | Explanation 
+--- | --- 
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/regularizationq4imageAnswer.png" alt="Answer Image"> | The hypothesis follows the data points very closely and is highly complicated, indicating that it is overfitting the training set
+
 Question 5
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/regularizationQ5p1.png)
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/regularizationQ5p2.png)
+
+Answer | Explanation 
+--- | --- 
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/regularizationq5imageAnswer.png" alt="Answer Image"> | The hypothesis does not predict many data points well, and is thus underfitting the training set.
 
