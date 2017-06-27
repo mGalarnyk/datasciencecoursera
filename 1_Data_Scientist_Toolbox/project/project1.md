@@ -36,5 +36,7 @@ Add the line "## This is a markdown file" (without the quotation marks) to the d
 Push the document to the datasciencecoursera repo you created on Github
 Submit the link to the HelloWorld.md file on your Github repo. 
 
-[![Click to see Video Solution!](https://github.com/mGalarnyk/datasciencecoursera/blob/master/1_Data_Scientist_Toolbox/images/DataScientistToolbox.png)](https://www.youtube.com/watch?v=IhkvMPE9Jxs  "Data Scientist\'s Toolbox solution")
+<br>
+Answer: Click on the link image for a step by step youtube tutorial. 
 
+[![Click to see Video Solution!](https://github.com/mGalarnyk/datasciencecoursera/blob/master/1_Data_Scientist_Toolbox/images/DataScientistToolbox.png)](https://www.youtube.com/watch?v=IhkvMPE9Jxs  "Data Scientist\'s Toolbox solution")
