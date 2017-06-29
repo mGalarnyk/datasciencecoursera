@@ -9,6 +9,7 @@ Week Number | Project Number | Link/Project Name
 ## Quizzes
 Week Number | Quiz # | Link/Quiz Name 
 --- | --- | --- 
+4 | 1 | [Neural Networks: Representation](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week4/week3quiz1.md)
 3 | 2 | [Regularization](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week3/week3quiz2.md)
 3 | 1 | [Logistic Regression](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week3/week3quiz1.md)
 2 | 2 | Octave/Matlab Tutorial (will post soon)
