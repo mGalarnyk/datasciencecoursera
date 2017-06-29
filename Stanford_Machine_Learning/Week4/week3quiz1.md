@@ -17,7 +17,7 @@ Question 2
 
 Answer | Explanation 
 --- | --- 
-<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/regularizationQ2imageAnswer.png" alt="Answer Image"> | Adding many new features to the model helps prevent overfitting on the training set. 
+AND | <img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/NeuralRepresentationQ2answer.jpg" alt="Answer Image">
 
 Question 3
 ----------
