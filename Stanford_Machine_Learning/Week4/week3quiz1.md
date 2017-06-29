@@ -40,3 +40,6 @@ Question 5
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/NeuralRepresentationQ5.png)
 
+Answer | Explanation 
+--- | --- 
+It will stay the same.  | Swapping Θ<sup>(1)</sup> swaps the hidden layers output a^{(2)}. But the swap of Θ<sup>(2)</sup> cancels out the change, so the output will remain unchanged.
