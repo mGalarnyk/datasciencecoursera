@@ -17,7 +17,7 @@ Question 2
 
 Answer | Explanation 
 --- | --- 
-AND | <img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/NeuralRepresentationQ2answer.jpg" alt="Answer Image">
+<b>AND</b> | <img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/NeuralRepresentationQ2answer.jpg" alt="Answer Image">
 
 Question 3
 ----------
