@@ -9,7 +9,7 @@ Question 1
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq1part5.png)
 
 Answer | Explanation 
---- | --- | ---
+--- | --- 
 <img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq1part2.png" alt="Maximal variance image"> | The maximal variance is along the y = x line, so this option is correct.
 <img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq1part3.png" alt="Maximal variance image"> | The maximal variance is along the y = x line, so the negative vector along that line is correct for the first principal component
 
@@ -26,10 +26,9 @@ Question 3
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq3.png)
 
-True or False | Statement | Explanation 
---- | --- | ---
-False | Randomly initialize the cluster centroids | Done earlier
-False | Test on the cross-validation set | Any sort of testing is outside the scope of K-means algorithm itself
+Answer | Explanation 
+--- | --- 
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq3Answer.png" alt="Maximal variance image"> | It is just a formula. 
 
 Question 4
 ----------
@@ -37,7 +36,8 @@ Question 4
 
 Answer | Explanation 
 --- | --- 
-<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/ClusteringDistortionFunction.png" alt="Distortion Cost FUnction"> | This is the distortion cost function which we seek to minimize
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq4Answer1.png" alt="PCA Q4 Answer 1"> | If you do not perform mean normalization, PCA will rotate the data in a possibly undesired way.
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq4Answer2.png" alt="PCA Q4 Answer 2"> | Not sure yet
 
 Question 5
 ----------
