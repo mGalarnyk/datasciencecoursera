@@ -44,15 +44,7 @@ Question 5
 
 True or False | Statement | Explanation 
 --- | --- | ---
-False | Given historical weather records, predict if tomorrow's weather will be sunny or rainy | K-means cannot make classification predictions as it does not label its inputs.
-True | Given a set of news articles from many different websites, find out what topics are the main topics covered | You can use K-means to cluster, and each cluster will correspond to a different market segment. 
-True | From the user usage patterns on a website, figure out what different groups of users exists. | You can use K-means to cluster users with each cluster corresponding to a different market segment. 
-False | Given many emails, you want to determine if they are Spam or Non-Spam emails.  | K-means cannot make classification predictions as it does not label its inputs
-
-
-K-Means will always
-give the same results
-regardless of the
-initialization of the
-centroids.
-
+False | Once an example has been assigned to a particular centroid, it will never be reassigned to another centroid | Not sure yet
+False | A good way to initialize K-means is to select K (distinct) examples from the training set and set the cluster centroids equal to these selected examples. | This is the recommended method of initialization.
+True | On every iteration of K-means, the cost funtion J(c<sup>(1)</sup>, ..., c<sup>(m)</sup>,  μ<sub>1</sub>, ...,  μ<sub>k</sub> (the distortion function) should either stay the same or decrease; in particular, it should not increase | True  
+False | K-Means will always give the same results regardless of the initialization of the centroids. | K-means is sensitive to different initializations, which is why you should run it multiple times from different random initializations
