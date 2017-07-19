@@ -31,8 +31,7 @@ True or False | Statement | Explanation
 False | Randomly initialize the cluster centroids | Done earlier
 False | Test on the cross-validation set | Any sort of testing is outside the scope of K-means algorithm itself
 True | Move the cluster centroids, where the centroids, μ<sub>k</sub> are updated | The cluster update is the second step of the K-means loop 
-True | The cluster assignment step, where the parameters c<sup>(i)</sup> are updated | This is the correst first step of the Kmeans
-loop
+True | The cluster assignment step, where the parameters c<sup>(i)</sup> are updated | This is the correst first step of the Kmeans loop
 
 Question 4
 ----------
