@@ -6,10 +6,10 @@ Question 1
 
 True or False | Statement | Explanation 
 --- | --- | ---
-False | A two layer (one input layer, one output layer; no hidden layer) neural network can represent the XOR function. | We must compose multiple logical operations by using a hidden layer to represent the XOR function. 
-True | Any logical function over binary-valued (0 or 1) inputs x<sub>1</sub> and x<sub>2</sub> can be (approximately) represented using some neural network. | Since we can build the basic AND, OR, and NOT functions with a two layer network, we can (approximately) represent any logical function by composing these basic functions over multiple layers.
-False | Suppose you have a multi-class classification problem with three classes, trained with a 3 layer network. Let a<sup>(3)</sup><sub>1</sub>=(h<sub>Θ</sub>(x))<sub>1</sub> be the activation of the first output unit, and similarly a<sup>(3)</sup><sub>2</sub>=(h<sub>Θ</sub>(x))<sub>2</sub> and a<sup>(3)</sup><sub>3</sub>=(h<sub>Θ</sub>(x))<sub>3</sub>. Then for any input x, it must be the case that a<sup>(3)</sup><sub>1</sub>+a<sup>(3)</sup><sub>2</sub>+a<sup>(3)</sup><sub>3</sub>=1. | The outputs of a neural network are not probabilities, so their sum need not be 1. 
-True | The activation values of the hidden units in a neural network, with the sigmoid activation function applied at every layer, are always in the range (0, 1). | None Needed
+False | Given historical weather records, predict if tomorrow's weather will be sunny or rainy | K-means cannot make classification predictions as it does not label its inputs.
+True | Given a set of news articles from many different websites, find out what topics are the main topics covered | You can use K-means to cluster, and each cluster will correspond to a different market segment. 
+True | From the user usage patterns on a website, figure out what different groups of users exists. | You can use K-means to cluster users with each cluster corresponding to a different market segment. 
+False | Given many emails, you want to determine if they are Spam or Non-Spam emails.  | K-means cannot make classification predictions as it does not label its inputs
 
 Question 2
 ----------
@@ -17,15 +17,18 @@ Question 2
 
 Answer | Explanation 
 --- | --- 
-<b>AND</b> | <img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/NeuralRepresentationQ2answer.jpg" alt="Answer Image">
+c<sup>(i)</sup> = 1 | x<sup>(i)</sup> is closest to μ<sub>1</sub>, so c<sup>(i)</sup> = 1
 
 Question 3
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/unsupervisedLearningQ3.png)
 
-Answer | Explanation 
---- | ---
-<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/NeuralRepresentationQ3answer.png" alt="Answer Image"> | This correctly uses the first row of Θ<sup>(2)</sup> and includes the "+1" term of a<sup>(2)</sup><sub>0</sub>
+True or False | Statement | Explanation 
+--- | --- | ---
+True | Randomly initialize the cluster centroids |
+False | Test on the cross-validation set | Any sort of testing is outside the scope of K-means algorithm itself
+True | Move the cluster centroids, where the centroids, μ<sub>k</sub> are updated | The cluster update is the second step of the K-means loop 
+True | The cluster assignment step, where the parameters c<sup>(i)</sup> are updated | The cluster update is the second step of the K-means loop.
 
 Question 4
 ----------
@@ -33,12 +36,23 @@ Question 4
 
 Answer | Explanation 
 --- | --- 
-a2 = sigmoid (Theta1 * x); | In the lecture's notation a<sup>(2)</sup> = g(Θ<sup>(1)</sup>x), so this version computes it directly, as the sigmoid function will act element-wise.
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/ClusteringDistortionFunction.png" alt="Distortion Cost FUnction"> | This is the distortion cost function which we seek to minimize
 
 Question 5
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/unsupervisedLearningQ5.png)
 
-Answer | Explanation 
---- | --- 
-It will stay the same.  | Swapping Θ<sup>(1)</sup> swaps the hidden layers output a^{(2)}. But the swap of Θ<sup>(2)</sup> cancels out the change, so the output will remain unchanged.
+True or False | Statement | Explanation 
+--- | --- | ---
+False | Given historical weather records, predict if tomorrow's weather will be sunny or rainy | K-means cannot make classification predictions as it does not label its inputs.
+True | Given a set of news articles from many different websites, find out what topics are the main topics covered | You can use K-means to cluster, and each cluster will correspond to a different market segment. 
+True | From the user usage patterns on a website, figure out what different groups of users exists. | You can use K-means to cluster users with each cluster corresponding to a different market segment. 
+False | Given many emails, you want to determine if they are Spam or Non-Spam emails.  | K-means cannot make classification predictions as it does not label its inputs
+
+
+K-Means will always
+give the same results
+regardless of the
+initialization of the
+centroids.
+
