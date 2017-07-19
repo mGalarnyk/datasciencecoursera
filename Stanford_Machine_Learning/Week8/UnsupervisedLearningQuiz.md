@@ -2,7 +2,7 @@
 
 Question 1
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/UnsupervisedLearningQ1.PNG)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/unsupervisedLearningQ1.png)
 
 True or False | Statement | Explanation 
 --- | --- | ---
@@ -13,7 +13,7 @@ True | The activation values of the hidden units in a neural network, with the s
 
 Question 2
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/UnsupervisedLearningQ2.PNG)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/unsupervisedLearningQ2.png)
 
 Answer | Explanation 
 --- | --- 
@@ -21,7 +21,7 @@ Answer | Explanation
 
 Question 3
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/UnsupervisedLearningQ3.PNG)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/unsupervisedLearningQ3.png)
 
 Answer | Explanation 
 --- | ---
@@ -29,7 +29,7 @@ Answer | Explanation
 
 Question 4
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/UnsupervisedLearningQ4.PNG)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/unsupervisedLearningQ4.png)
 
 Answer | Explanation 
 --- | --- 
@@ -37,7 +37,7 @@ a2 = sigmoid (Theta1 * x); | In the lecture's notation a<sup>(2)</sup> = g(Θ<su
 
 Question 5
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/UnsupervisedLearningQ1.PNG)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/unsupervisedLearningQ5.png)
 
 Answer | Explanation 
 --- | --- 
