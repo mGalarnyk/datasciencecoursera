@@ -10,6 +10,9 @@ False | Given historical weather records, predict if tomorrow's weather will be 
 True | Given a set of news articles from many different websites, find out what topics are the main topics covered | You can use K-means to cluster, and each cluster will correspond to a different market segment. 
 True | From the user usage patterns on a website, figure out what different groups of users exists. | You can use K-means to cluster users with each cluster corresponding to a different market segment. 
 False | Given many emails, you want to determine if they are Spam or Non-Spam emails.  | K-means cannot make classification predictions as it does not label its inputs
+True | Given a database of information about your users, automatically group them into different market segments. | You can use K-means to cluster the database entries, and each cluster will correspond to a different market segment.
+True | Given sales data from a large number of products in a supermarket, figure out which products tend to form coherent groups (say are frequently purchased together) and thus should be put on the same shelf. | Market Segmentation.
+False | Given sales data from a large number of products in a supermarket, estimate future sales for each of these products. | Such a prediction is a regression problem, and K-means does not use labels on the data, so it cannot perform regression.
 
 Question 2
 ----------
@@ -25,10 +28,11 @@ Question 3
 
 True or False | Statement | Explanation 
 --- | --- | ---
-True | Randomly initialize the cluster centroids |
+False | Randomly initialize the cluster centroids | Done earlier
 False | Test on the cross-validation set | Any sort of testing is outside the scope of K-means algorithm itself
 True | Move the cluster centroids, where the centroids, μ<sub>k</sub> are updated | The cluster update is the second step of the K-means loop 
-True | The cluster assignment step, where the parameters c<sup>(i)</sup> are updated | The cluster update is the second step of the K-means loop.
+True | The cluster assignment step, where the parameters c<sup>(i)</sup> are updated | This is the correst first step of the Kmeans
+loop
 
 Question 4
 ----------
