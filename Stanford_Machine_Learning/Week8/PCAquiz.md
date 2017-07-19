@@ -8,10 +8,10 @@ Question 1
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq1part4.png)
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq1part5.png)
 
-True or False | Statement | Explanation 
+Answer | Explanation 
 --- | --- | ---
-False | Given historical weather records, predict if tomorrow's weather will be sunny or rainy | K-means cannot make classification predictions as it does not label its inputs.
-True | Given a set of news articles from many different websites, find out what topics are the main topics covered | You can use K-means to cluster, and each cluster will correspond to a different market segment. 
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq1part2.png" alt="Maximal variance image"> | The maximal variance is along the y = x line, so this option is correct.
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq1part3.png" alt="Maximal variance image"> | The maximal variance is along the y = x line, so the negative vector along that line is correct for the first principal component
 
 Question 2
 ----------
@@ -19,7 +19,8 @@ Question 2
 
 Answer | Explanation 
 --- | --- 
-c<sup>(i)</sup> = 1 | x<sup>(i)</sup> is closest to μ<sub>1</sub>, so c<sup>(i)</sup> = 1
+Choose k to be the smallest value so that at least 99% of the variance is retained | This maintains the structure of the data while maximally reducing its dimension.
+
 
 Question 3
 ----------
