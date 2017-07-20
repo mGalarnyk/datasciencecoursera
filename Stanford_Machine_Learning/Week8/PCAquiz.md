@@ -10,8 +10,8 @@ Question 1
 
 Answer | Explanation 
 --- | --- 
-<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq1part2.png" alt="Maximal variance image"> | The maximal variance is along the y = x line, so this option is correct.
-<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq1part3.png" alt="Maximal variance image"> | The maximal variance is along the y = x line, so the negative vector along that line is correct for the first principal component
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAQ1answer1.png" alt="Maximal variance image"> | The maximal variance is along the y = x line, so this option is correct.
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAQ1answer2.png" alt="Maximal variance image"> | The maximal variance is along the y = x line, so the negative vector along that line is correct for the first principal component
 
 Question 2
 ----------
@@ -45,5 +45,8 @@ Question 5
 
 True or False | Statement | Explanation 
 --- | --- | ---
-False | Once an example has been assigned to a particular centroid, it will never be reassigned to another centroid | Not sure yet
-True | A good way to initialize K-means is to select K (distinct) examples from the training set and set the cluster centroids equal to these selected examples. | This is the recommended method of initialization.
+False | Data visualization: To take 2D data, and find a different way of plotting it in 2D (using k=2) | None needed
+False | As a replacement for (or alternative to) linear regression: For most learning applications, PCA and linear regression give substantially similar results | PCA is not linear regression. They have different goals (and cost functions), so they give different results.
+True | Data compression: Reduce the dimension of your input data x<sup>(i)</sup>, which will be used in a supervised learning algorithm (i.e., use PCA so that your supervised learning algorithm runs faster) | If your learning algorithm is too slow because the input dimension is too high, then using PCA to speed it up is a reasonable choice.
+True | Data compression: Reduce the dimension of your data, so that it takes up less memory/disk space. | If memory or disk space is limited, PCA allows you to save space in exchange for losing a little of the data's information. This can be a reasonable tradeoff.
+
