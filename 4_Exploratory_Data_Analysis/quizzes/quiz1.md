@@ -33,7 +33,8 @@ What is the role of exploratory graphs in data analysis?
 * Axes, legends, and other details are clean and exactly detailed.
 
 Answer Options: </br>
-They are typically made very quickly.
+They are typically made very quickly.</br>
+The goal is for personal understanding
 
 Question 3
 ----------
