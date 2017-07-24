@@ -17,7 +17,8 @@ Which of the following is a principle of analytic graphics?
 Answer Options: </br>
 Integrate multiple modes of evidence </br>
 Show comparisons</br>
-Show causality, mechanism, explanation
+Show causality, mechanism, explanation</br>
+Describe and document the evidence
 
 Question 2
 ----------
