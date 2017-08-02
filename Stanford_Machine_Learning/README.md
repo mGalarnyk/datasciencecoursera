@@ -9,8 +9,16 @@ Week Number | Project Number | Link/Project Name
 ## Quizzes
 Week Number | Quiz # | Link/Quiz Name 
 --- | --- | ---
+11 | 1 | Application: Photo OCR
+10 | 1 | Large Scale Machine Learning
+9 | 2 | Recommender Systems
+9 | 1 | Anomaly Detection
 8 | 2 | [Principle Component Analysis](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week8/PCAquiz.md)
 8 | 1 | [Unsupervised Learning](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week8/UnsupervisedLearningQuiz.md)
+7 | 1 | Support Vector Machines
+6 | 2 | Machine Learning System Design
+6 | 1 | Advice for Applying Machine Learning
+5 | 1 | Neural Network Learning
 4 | 1 | [Neural Networks: Representation](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week4/week3quiz1.md)
 3 | 2 | [Regularization](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week3/week3quiz2.md)
 3 | 1 | [Logistic Regression](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week3/week3quiz1.md)
