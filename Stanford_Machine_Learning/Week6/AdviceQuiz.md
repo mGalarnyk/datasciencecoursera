@@ -39,11 +39,13 @@ Question 4
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/AdviceQ4.png)
 
-Answer | Explanation
---- | ---
-The cost function J(θ) for logistic regression trained with examples is always greater than or equal to zero. | The cost for any example x<sup>(i)</sup> is always ≥ 0 since it is the negative log of a quantity less than one. The cost function J(θ) is a summation over the cost for each eample, so the cost function itself must be greater than or equal to zero.
-The sigmoid function is never greater than one | none
-
+True/False | Answer | Explanation
+--- | --- | ---
+False | Suppose you are training a regularized linear regression model.The recommended way to choose what value of regularization parameter λ to use is to choose the value of λ which gives the lowest <b>training set</b> error. |  You should not use training error to choose the regularization parameter, as you can always improve training error by using less regularization (a smaller value of ). But too small of a value will not generalize well onthe test set.
+True | The performance of a learning algorithm on the training set will typically be better than its performance on the test set. | The learning algorithm finds parameters to minimize training set error, so the performance should be better on the training set than the test set.
+True | Suppose you are training a regularized linear regression model. The recommended way to choose what value of regularization parameter λ to use is to choose the value of λ which gives the lowest <b>cross validation</b> error | The cross validation lets us find the "just right" setting of the regularization parameter given the fixed model parameters learned from the training set. 
+False | Suppose you are training a regularized linear regression model. The recommended way to choose what value of regularization parameter λ to use is to choose the value of λ which gives the lowest <b>test set</b> error. |  You should not use the test set to choose the regularization parameter, as you will then have an artificially low value for test error and it will not give a good estimate of generalization error.
+True | A typical split of a dataset into training, validation and test sets might be 60% training set, 20% validation set, and 20% test set. | This is a good split of the data, as it dedicates the bulk of the data to finding model parameters in training while leaving enough data for cross validation and estimating generalization error.
 
 Question 5
 ----------
