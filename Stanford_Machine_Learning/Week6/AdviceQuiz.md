@@ -6,25 +6,32 @@ Question 1
 
 Answer | Explanation
 --- | ---
-Our estimate for P(y=0\|x;θ) is 0.8. | P(y=0\|x;θ) = 1 - P(y = 1\| x; θ); the former is 1 - 0.2 = 0.8
-Our estimate for P(y=1\|x;θ) is 0.2. | h<sub>θ</sub>(x) = 0.2
+High Bias | This learning curve shows high error on both the training and test
+sets, so the algorithm is suffering from high bias.
 
 Question 2
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/AdviceQ1.png)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/AdviceQ2.png)
 
-Answer | Explanation
---- | ---
-J(θ) will be a convex function, so gradient descent should converge to the global minimum. | none
-Adding polynomial features (e.g., instead using h<sub>θ</sub>(x) = g(θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub> + θ<sub>2</sub>x</sub>2 + θ<sub>3</sub>x<sup>2</sup> + θ<sub>4</sub>x<sup>1</sup>x<sup>2</sup> + θ<sub>5</sub>x<sup>2</sup> )) could increase how well we can fit the training data | Adding new features can only improve the fit on the training set: since setting θ<sub>3</sub> = θ<sub>4</sub> = θ<sub>5</sub> = 0 makes the hypothesis the same as the original one, gradient descent will use those features (by making the corresponding non-zero) only if doing so improves the training set fit
+Answer: Since the hypothesis performs <b> well </b> (has low error) on the training set, it is suffering from high variance (overfitting)
+
+True/False | Answer | Explanation
+--- | --- | ---
+ | Try evaluating the hypothesis on a cross validation set rather than the test set. | This learning curve shows high error on both the training and test sets, so the algorithm is suffering from high bias.
+ | Try decreasing the regularization parameter λ. | This learning curve shows high error on both the training and test
+sets, so the algorithm is suffering from high bias.
+ | Try using a smaller set of features. | This learning curve shows high error on both the training and test
+sets, so the algorithm is suffering from high bias.
+ | Try increasing the regularization parameter λ. | This learning curve shows high error on both the training and test
+sets, so the algorithm is suffering from high bias.
 
 Question 3
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/AdviceQ1.png)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/AdviceQ3.png)
 
 Question 4
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/AdviceQ1.png)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/AdviceQ4.png)
 
 Answer | Explanation
 --- | ---
@@ -34,4 +41,4 @@ The sigmoid function is never greater than one | none
 
 Question 5
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/AdviceQ1.png)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/AdviceQ5.png)
