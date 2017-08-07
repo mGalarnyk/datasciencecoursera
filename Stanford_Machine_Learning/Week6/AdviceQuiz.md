@@ -13,21 +13,35 @@ Question 2
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/AdviceQ2.png)
 
-Answer: Since the hypothesis performs <b> well </b> (has low error) on the training set, it is suffering from high variance (overfitting)
+Useful Info: Since the hypothesis performs <b> well </b> (has low error) on the training set, it is suffering from high variance (overfitting)
 
 True/False | Answer | Explanation
 --- | --- | ---
- | Try evaluating the hypothesis on a cross validation set rather than the test set. | This learning curve shows high error on both the training and test sets, so the algorithm is suffering from high bias.
- | Try decreasing the regularization parameter λ. | This learning curve shows high error on both the training and test
-sets, so the algorithm is suffering from high bias.
- | Try using a smaller set of features. | This learning curve shows high error on both the training and test
-sets, so the algorithm is suffering from high bias.
- | Try increasing the regularization parameter λ. | This learning curve shows high error on both the training and test
-sets, so the algorithm is suffering from high bias.
+False | Try evaluating the hypothesis on a cross validation set rather than the test set. | 
+False | Try decreasing the regularization parameter λ. | The gap in errors between training and test suggests a high variance problem in which the algorithm has overfit the training set. Decreasing the regularization parameter will increase the overfitting, not decrease it.
+False | Try using a smaller set of features. | The gap in errors between training and test suggests a high
+variance problem in which the algorithm has overfit the training set. Reducing the feature set will ameliorate the overfitting and
+help with the variance problem
+True | Try increasing the regularization parameter λ. |  The gap in errors between training and test suggests a high
+variance problem in which the algorithm has overfit the training set. Increasing the regularization parameter will reduce
+overfitting and help with the variance problem.
+True | Get more training examples | The gap in errors between training and test suggests a high variance problem in which the algorithm has overfit the training set. Adding more training data will increase the complexity of the training set and help with the variance problem.
 
 Question 3
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/AdviceQ3.png)
+
+True/False | Answer | Explanation
+--- | --- | ---
+False | Try evaluating the hypothesis on a cross validation set rather than the test set. | 
+False | Try decreasing the regularization parameter λ. | The gap in errors between training and test suggests a high variance problem in which the algorithm has overfit the training set. Decreasing the regularization parameter will increase the overfitting, not decrease it.
+False | Try using a smaller set of features. | The gap in errors between training and test suggests a high
+variance problem in which the algorithm has overfit the training set. Reducing the feature set will ameliorate the overfitting and
+help with the variance problem
+True | Try increasing the regularization parameter λ. |  The gap in errors between training and test suggests a high
+variance problem in which the algorithm has overfit the training set. Increasing the regularization parameter will reduce
+overfitting and help with the variance problem.
+True | Get more training examples | The gap in errors between training and test suggests a high variance problem in which the algorithm has overfit the training set. Adding more training data will increase the complexity of the training set and help with the variance problem.
 
 Question 4
 ----------
