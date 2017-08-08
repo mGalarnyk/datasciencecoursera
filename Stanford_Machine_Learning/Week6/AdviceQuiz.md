@@ -1,4 +1,4 @@
-# Machine Learning Week 3 Quiz 1 (Logistic Regression) Stanford Coursera
+# Machine Learning Week 6 Quiz 1 (Advice for Applying Machine Learning) Stanford Coursera
 
 Question 1
 ----------
