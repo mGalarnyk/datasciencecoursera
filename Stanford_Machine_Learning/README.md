@@ -17,7 +17,7 @@ Week Number | Quiz # | Link/Quiz Name
 8 | 1 | [Unsupervised Learning](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week8/UnsupervisedLearningQuiz.md)
 7 | 1 | Support Vector Machines
 6 | 2 | Machine Learning System Design
-6 | 1 | Advice for Applying Machine Learning
+6 | 1 | [Advice for Applying Machine Learning](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week6/AdviceQuiz.md)
 5 | 1 | Neural Network Learning
 4 | 1 | [Neural Networks: Representation](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week4/week3quiz1.md)
 3 | 2 | [Regularization](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week3/week3quiz2.md)
