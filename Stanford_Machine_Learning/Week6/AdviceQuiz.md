@@ -50,3 +50,10 @@ True | A typical split of a dataset into training, validation and test sets migh
 Question 5
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/AdviceQ5.png)
+
+True/False | Answer | Explanation
+--- | --- | ---
+True | If a learning algorithm is suffering from high bias, only adding more training examples may <b>not</b> improve the test error significantly. |  If a learning algorithm is suffering from high bias, only adding more training examples may not improve the test error significantly.
+True | A model with more parameters is more prone to overfitting and typically has higher variance. | More model parameters increases the model's complexity, so it can more tightly fit data in training, increasing the chances of overfitting.
+True | When debugging learning algorithms, it is useful to plot a learning curve to understand if there is a high bias or high variance problem. | The shape of a learning curve is a good indicator of bias or variance problems with your learning algorithm.
+False | If a neural network has much lower training error than test error, then adding more layers will help bring the test error down because we can fit the test set better. | With lower training than test error, the model has high variance. Adding more layers will increase model complexity, making the variance problem worse.
