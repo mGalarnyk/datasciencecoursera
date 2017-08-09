@@ -15,7 +15,7 @@ See Links Below if you have trouble installing R and RStudio: </br>
 Operating System | Youtube Video | Step by Step Guide
 --- | --- | ---
 Windows |  [Video](https://www.youtube.com/watch?v=GAGUDL-4aVw) |  [Installing R, RStudio on Windows](https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-windows-5f503f708027#.w5h2azali)
-Mac |  [Video](https://www.youtube.com/watch?v=GFImMj1lMRI) | [Installing R, RStudio on Mac](https://www.andrewheiss.com/blog/2012/04/17/install-r-rstudio-r-commander-windows-osx/)
+Mac |  [Video](https://www.youtube.com/watch?v=1PsPfMaLWSk) | [Installing R, RStudio on Mac](https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-mac-e911606ce4f4)
 Ubuntu |  [Video](https://www.youtube.com/watch?v=GsuA5ugYqyw) |  [Installing R, RStudio on Ubuntu](https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-ubuntu-12-04-14-04-16-04-b6b3107f7779#.2v9pwd1yg)
 
 Part 2
