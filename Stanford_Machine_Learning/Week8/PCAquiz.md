@@ -37,7 +37,7 @@ Question 4
 Answer | Explanation 
 --- | --- 
 <img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq4Answer1.png" alt="PCA Q4 Answer 1"> | If you do not perform mean normalization, PCA will rotate the data in a possibly undesired way.
-<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq4Answer2.png" alt="PCA Q4 Answer 2"> | Not sure yet
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/PCAq4Answer2.png" alt="PCA Q4 Answer 2"> | None needed
 
 Question 5
 ----------
