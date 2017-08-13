@@ -4,29 +4,30 @@ Question 1
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/MachineLearningSystemDesignQ1.png)
 
-Answer | Explanation
+Statistic | Solution
 --- | ---
-High Bias | This learning curve shows high error on both the training and test sets, so the algorithm is suffering from high bias.
+Accuracy | (85 + 10) / (1000) = .095
+Precision | (85) / (85 + 890) = 0.087
+Recall | There are 85 true positives and 15 false negatives, so recall is 85 / (85 + 15) = 0.85.
+F<sub>1</sub> Score | (2 * (0.087 * 0.85)) / (0.087 + 0.85) = 0.16
 
 Question 2
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/MachineLearningSystemDesignQ2.png)
 
-Useful Info: Since the hypothesis performs <b> well </b> (has low error) on the training set, it is suffering from high variance (overfitting)
-
 True/False | Answer | Explanation
 --- | --- | ---
-False | Try evaluating the hypothesis on a cross validation set rather than the test set. | A cross validation set is useful for choosing the optimal non-model parameters like the regularization parameter λ, but the train / test split is sufficient for debugging problems with the algorithm itself.
-False | Try decreasing the regularization parameter λ. | The gap in errors between training and test suggests a high variance problem in which the algorithm has overfit the training set. Decreasing the regularization parameter will increase the overfitting, not decrease it.
-True | Try using a smaller set of features. | The gap in errors between training and test suggests a high variance problem in which the algorithm has overfit the training set. Reducing the feature set will ameliorate the overfitting and help with the variance problem
-True | Try increasing the regularization parameter λ. |  The gap in errors between training and test suggests a high variance problem in which the algorithm has overfit the training set. Increasing the regularization parameter will reduce overfitting and help with the variance problem.
-True | Get more training examples | The gap in errors between training and test suggests a high variance problem in which the algorithm has overfit the training set. Adding more training data will increase the complexity of the training set and help with the variance problem.
+False | We train a learning algorithm with a small number of parameters (that is thus unlikely to overfit). | 
+True | We train a learning algorithm with a large number of parameters (that is able tolearn/represent fairly complex functions). | You should use a "low bias" algorithm with many parameters, as it will be able to make use of the large dataset provided. If the model has too few parameters, it will underfit the large training set.
+True | The features x contain sufficient information to predict y accurately. (For example, one way to verify this is if a human expert on the domain can confidently predict y when given only x). | It is important that the features contain sufficient information, as otherwise no amount of data can solve a learning problem in which the features do not contain enough information to make an accurate prediction.
+False | We train a model that does not use regularization. |  Even with a very large dataset, some regularization is still likely to help the algorithm's performance, so you should use cross-validation to select the appropriate regularization parameter.
+False | The classes are not too skewed. | The problem of skewed classes is unrelated to training with large datasets.
+True | Our learning algorithm is able to represent fairly complex functions (for example, if we train a neural network or other model with a large number of parameters). | You should use a complex, "low bias" algorithm, as it will be able to make use of the large dataset provided. If the model is too simple, it will underfit the large training set.
+False | When we are willing to include high order polynomial features of x | As we saw with neural networks, polynomial features can still be insufficient to capture the complexity of the data, especially if the features are very high-dimensional. Instead, you should use a complex model with many parameters to fit to the large training set.
 
 Question 3
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/MachineLearningSystemDesignQ3.png)
-
-Useful Info: Since the hypothesis performs <b> poorly </b> on the training set, it is suffering from high bias (underfitting)
 
 True/False | Answer | Explanation
 --- | --- | ---
