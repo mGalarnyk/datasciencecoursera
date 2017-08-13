@@ -33,7 +33,7 @@ True/False | Answer | Explanation
 --- | --- | ---
 True | The classifier is likely to now have lower recall. | Increasing the threshold means more y = 0 predictions. This will increase the decrease of true positives and increase the number of false negatives, so recall will decrease.
 False | The classifier is likely to have unchanged precision and recall, but lower accuracy. | By making more y = 0 predictions, we decrease true and false positives and increase true and false negatives. Thus, precision and recall will certainly change. We cannot say whether accuracy will increase or decrease.
-False | The classifier is likely to have unchanged precision and recall, but higher accuracy. | By making more y = 0 predictions, we decrease true and false positives and increase true and false negatives. Thus, precision and recall will certainly change. We cannot say whether accuracy will increase or decrease.
+False | The classifier is likely to have unchanged precision and recall, but thus the same F<sub>1</sub> score. | By making more y = 0 predictions, we decrease true and false positives and increase true and false negatives. Thus, precision and recall will certainly change. We cannot say whether the F<sub>1</sub> score will increase or decrease.
 False | The classifier is likely to now have lower precision. |  Increasing the threshold means more y = 0 predictions. This will decrease both true and false positives, so precision will increase, not decrease.
 
 Question 4
@@ -42,11 +42,10 @@ Question 4
 
 True/False | Answer | Explanation
 --- | --- | ---
-False | Suppose you are training a regularized linear regression model.The recommended way to choose what value of regularization parameter λ to use is to choose the value of λ which gives the lowest <b>training set</b> error. |  You should not use training error to choose the regularization parameter, as you can always improve training error by using less regularization (a smaller value of ). But too small of a value will not generalize well onthe test set.
-True | The performance of a learning algorithm on the training set will typically be better than its performance on the test set. | The learning algorithm finds parameters to minimize training set error, so the performance should be better on the training set than the test set.
-True | Suppose you are training a regularized linear regression model. The recommended way to choose what value of regularization parameter λ to use is to choose the value of λ which gives the lowest <b>cross validation</b> error | The cross validation lets us find the "just right" setting of the regularization parameter given the fixed model parameters learned from the training set. 
-False | Suppose you are training a regularized linear regression model. The recommended way to choose what value of regularization parameter λ to use is to choose the value of λ which gives the lowest <b>test set</b> error. |  You should not use the test set to choose the regularization parameter, as you will then have an artificially low value for test error and it will not give a good estimate of generalization error.
-True | A typical split of a dataset into training, validation and test sets might be 60% training set, 20% validation set, and 20% test set. | This is a good split of the data, as it dedicates the bulk of the data to finding model parameters in training while leaving enough data for cross validation and estimating generalization error.
+True | If you always predict non-spam (output y = 0 ), your classifier will have a recall of 0%. |  Since every prediction is y = 0, there will be no true positives, so recall is 0%.
+False | If you always predict spam (output y = 1), your classifier will have a recall of 0% and precision of 99%. | Every prediction is y = 1, so recall is 100% and precision is only 1%.
+True | If you always predict non-spam (output y = 0), your classifier will have 99% accuracy on the training set, and it will likely perform similarly on the cross validation set. | The classifier achieves 99% accuracy on the training set because of how skewed the classes are. We can expect that the cross-validation set will be skewed in the same fashion, so the classifier will have approximately the same accuracy. 
+True | If you always predict spam (output y = 1), your classifier will have a recall of 100% and precision of 1%. |  Since every prediction is y = 1, there are no false negatives, so recall is 100%. Furthermore, the precision will be the fraction of examples with are positive, which is 1%.
 
 Question 5
 ----------
