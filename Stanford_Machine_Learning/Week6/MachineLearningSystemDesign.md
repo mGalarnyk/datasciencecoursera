@@ -46,6 +46,8 @@ True | If you always predict non-spam (output y = 0 ), your classifier will have
 False | If you always predict spam (output y = 1), your classifier will have a recall of 0% and precision of 99%. | Every prediction is y = 1, so recall is 100% and precision is only 1%.
 True | If you always predict non-spam (output y = 0), your classifier will have 99% accuracy on the training set, and it will likely perform similarly on the cross validation set. | The classifier achieves 99% accuracy on the training set because of how skewed the classes are. We can expect that the cross-validation set will be skewed in the same fashion, so the classifier will have approximately the same accuracy. 
 True | If you always predict spam (output y = 1), your classifier will have a recall of 100% and precision of 1%. |  Since every prediction is y = 1, there are no false negatives, so recall is 100%. Furthermore, the precision will be the fraction of examples with are positive, which is 1%.
+unknown | A good classifier should have both a high precision and high recall on the cross validation set. | unknown
+True | If you always predict non-spam (output y=0), your classifier will have an accuracy of 99%. | none needed. 
 
 Question 5
 ----------
@@ -54,8 +56,12 @@ Question 5
 
 True/False | Answer | Explanation
 --- | --- | ---
-False | After training a logistic regression classifier, you <b>must</b> use 0.5 as your threshold for predicting whether an example is positive or negative. |  You can and should adjust the threshold in logistic regression using cross validation data.
-True | The "error analysis" process of manually examining the examples which your algorithm got wrong can help suggest what are good steps to take (e.g., developing new features) to improve your algorithm's performance. | This process of error analysis is crucial in developing high performance learning systems, as the space of possible improvements to your system is very large, and it gives you direction about what to work on next.
-False | If your model is underfitting the training set, then obtaining more data is likely to help. |  If the model is underfitting the training data, it has not captured the information in the examples you already have. Adding further examples will not help any more.
-False | It is a good idea to spend a lot of time collecting a <b>large</b> amount of data before building your first version of a learning algorithm. | You cannot know whether a huge dataset will be important until you have built a first version and find that the algorithm has high variance.
 True | Using a <b>very large</b> training set makes it unlikely for model to overfit the training data | A sufficiently large training set will not be overfit, as the model cannot overfit some of the examples without doing poorly on the others.
+False | It is a good idea to spend a lot of time collecting a <b>large</b> amount of data before building your first version of a learning algorithm. | You cannot know whether a huge dataset will be important until you have built a first version and find that the algorithm has high variance.
+False | After training a logistic regression classifier, you <b>must</b> use 0.5 as your threshold for predicting whether an example is positive or negative. |  You can and should adjust the threshold in logistic regression using cross validation data.
+False | If your model is underfitting the training set, then obtaining more data is likely to help. |  If the model is underfitting the training data, it has not captured the information in the examples you already have. Adding further examples will not help any more.
+True | The "error analysis" process of manually examining the examples which your algorithm got wrong can help suggest what are good steps to take (e.g., developing new features) to improve your algorithm's performance. | This process of error analysis is crucial in developing high performance learning systems, as the space of possible improvements to your system is very large, and it gives you direction about what to work on next.
+True | On skewed datasets (e.g., when there are more positive examples than negative examples), accuracy is not a good measure of performance and you should instead use F1 score based on the precision and recall. | This is a wonderful interview question. 
+
+
+
