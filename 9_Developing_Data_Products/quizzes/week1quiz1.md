@@ -13,13 +13,17 @@ Question 2
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/9_Developing_Data_Products/data/quizImages/quiz1question2.png)
 
+True or False | Statement
+--- | ---
+True | Missing a comma in the sidebar panel
+
 Question 3
 ----------
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/9_Developing_Data_Products/data/quizImages/quiz1question3.png)
 
 Answer | Explanation 
 --- | ---
-<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/NeuralRepresentationQ3answer.png" alt="Answer Image"> | This correctly uses the first row of Θ<sup>(2)</sup> and includes the "+1" term of a<sup>(2)</sup><sub>0</sub>
+True | No arguments are defined for pickXY()
 
 Question 4
 ----------
@@ -27,7 +31,8 @@ Question 4
 
 Answer | Explanation 
 --- | --- 
-a2 = sigmoid (Theta1 * x); | In the lecture's notation a<sup>(2)</sup> = g(Θ<sup>(1)</sup>x), so this version computes it directly, as the sigmoid function will act element-wise.
+True | Shiny Gadgets are designed to be used by R users in the middle of a data analysis.
+True | Shiny Gadgets are designed to have small user interfaces that fit on one page.
 
 Question 5
 ----------
