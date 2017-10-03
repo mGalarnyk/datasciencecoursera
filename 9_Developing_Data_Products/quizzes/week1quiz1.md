@@ -2,7 +2,7 @@
 
 Question 1
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/NeuralRepresentationQ1.png)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/9_Developing_Data_Products/data/quizImages/quiz1question1.png)
 
 True or False | Statement | Explanation 
 --- | --- | ---
@@ -13,15 +13,11 @@ True | The activation values of the hidden units in a neural network, with the s
 
 Question 2
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/NeuralRepresentationQ2.png)
-
-Answer | Explanation 
---- | --- 
-<b>AND</b> | <img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/NeuralRepresentationQ2answer.jpg" alt="Answer Image">
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/9_Developing_Data_Products/data/quizImages/quiz1question2.png)
 
 Question 3
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/NeuralRepresentationQ3.png)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/9_Developing_Data_Products/data/quizImages/quiz1question3.png)
 
 Answer | Explanation 
 --- | ---
@@ -29,8 +25,7 @@ Answer | Explanation
 
 Question 4
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/NeuralRepresentationQ4p1.png)
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/NeuralRepresentationQ4p2.png)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/9_Developing_Data_Products/data/quizImages/quiz1question4.png)
 
 Answer | Explanation 
 --- | --- 
@@ -38,7 +33,7 @@ a2 = sigmoid (Theta1 * x); | In the lecture's notation a<sup>(2)</sup> = g(Θ<su
 
 Question 5
 ----------
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/NeuralRepresentationQ5.png)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/9_Developing_Data_Products/data/quizImages/quiz1question5.png)
 
 Answer | Explanation 
 --- | --- 
