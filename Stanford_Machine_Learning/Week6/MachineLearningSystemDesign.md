@@ -24,6 +24,7 @@ False | We train a model that does not use regularization. |  Even with a very l
 False | The classes are not too skewed. | The problem of skewed classes is unrelated to training with large datasets.
 True | Our learning algorithm is able to represent fairly complex functions (for example, if we train a neural network or other model with a large number of parameters). | You should use a complex, "low bias" algorithm, as it will be able to make use of the large dataset provided. If the model is too simple, it will underfit the large training set.
 False | When we are willing to include high order polynomial features of x | As we saw with neural networks, polynomial features can still be insufficient to capture the complexity of the data, especially if the features are very high-dimensional. Instead, you should use a complex model with many parameters to fit to the large training set.
+True | A human expert on the application domain can confidently predict y when given only the features x (or more generally we have some way to be confident that x contains sufficient information to predict y accuratly) | This is a nice project commencement briefing. 
 
 Question 3
 ----------
@@ -31,7 +32,7 @@ Question 3
 
 True/False | Answer | Explanation
 --- | --- | ---
-True | The classifier is likely to now have lower recall. | Increasing the threshold means more y = 0 predictions. This will increase the decrease of true positives and increase the number of false negatives, so recall will decrease.
+True | The classifier is likely to now have lower recall. | Increasing the threshold means more y = 0 predictions. This increase  will decrease the number of true positives and increase the number of false negatives, so recall will decrease.
 False | The classifier is likely to have unchanged precision and recall, but lower accuracy. | By making more y = 0 predictions, we decrease true and false positives and increase true and false negatives. Thus, precision and recall will certainly change. We cannot say whether accuracy will increase or decrease.
 False | The classifier is likely to have unchanged precision and recall, but thus the same F<sub>1</sub> score. | By making more y = 0 predictions, we decrease true and false positives and increase true and false negatives. Thus, precision and recall will certainly change. We cannot say whether the F<sub>1</sub> score will increase or decrease.
 False | The classifier is likely to now have lower precision. |  Increasing the threshold means more y = 0 predictions. This will decrease both true and false positives, so precision will increase, not decrease.
@@ -62,3 +63,4 @@ False | After training a logistic regression classifier, you <b>must</b> use 0.5
 False | If your model is underfitting the training set, then obtaining more data is likely to help. |  If the model is underfitting the training data, it has not captured the information in the examples you already have. Adding further examples will not help any more.
 True | The "error analysis" process of manually examining the examples which your algorithm got wrong can help suggest what are good steps to take (e.g., developing new features) to improve your algorithm's performance. | This process of error analysis is crucial in developing high performance learning systems, as the space of possible improvements to your system is very large, and it gives you direction about what to work on next.
 True | On skewed datasets (e.g., when there are more positive examples than negative examples), accuracy is not a good measure of performance and you should instead use F1 score based on the precision and recall. | This is a wonderful interview question. 
+True | The error analysis process of manually examining the examples which your algorithm got wrong can help suggest what are good steps to take (e.g. developing new features) to improve your algorithm's performance | none needed
