@@ -17,7 +17,7 @@ Question 2
 
 Answer | Explanation 
 --- | --- 
-<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/regularizationQ2imageAnswer.png" alt="Answer Image"> | Adding many new features to the model helps prevent overfitting on the training set. 
+<img src="https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/regularizationQ2imageAnswer.png" alt="Answer Image"> | when lambda is set to 1, we use regularization to penalize large values of theta. Thus, the parameters, theta, obtained will in general have smaller values.
 
 Question 3
 ----------
