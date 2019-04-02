@@ -55,7 +55,7 @@ Suppose you are working on stock market prediction. You would like to predict wh
 
 Answer: </br>
 
-Classification
+Regression
 
 Question 4
 ----------
