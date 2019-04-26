@@ -29,10 +29,10 @@ Week Number | Quiz # | Link/Quiz Name
 1 | 1 | [Introduction](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/week1quiz1Introduction.md)
 
 ## Contributors
-FirstName | LastName | Email
---- | --- | ---
-Michael |  Galarnyk |  <mgalarny@gmail.com>
-Submit |  Pull Request | <youremailhere@gmail.com>
+FirstName | LastName
+--- | ---
+Michael |  Galarnyk
+Submit |  Pull Request
 
 ## License
 Anyone may contribute 
