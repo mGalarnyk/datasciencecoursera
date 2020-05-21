@@ -47,7 +47,7 @@ True | If you always predict non-spam (output y = 0 ), your classifier will have
 False | If you always predict spam (output y = 1), your classifier will have a recall of 0% and precision of 99%. | Every prediction is y = 1, so recall is 100% and precision is only 1%.
 True | If you always predict non-spam (output y = 0), your classifier will have 99% accuracy on the training set, and it will likely perform similarly on the cross validation set. | The classifier achieves 99% accuracy on the training set because of how skewed the classes are. We can expect that the cross-validation set will be skewed in the same fashion, so the classifier will have approximately the same accuracy. 
 True | If you always predict spam (output y = 1), your classifier will have a recall of 100% and precision of 1%. |  Since every prediction is y = 1, there are no false negatives, so recall is 100%. Furthermore, the precision will be the fraction of examples with are positive, which is 1%.
-False | A good classifier should have both a high precision and high recall on the cross validation set. | Different classifiers are made for different reasons with different goals. 
+True | A good classifier should have both a high precision and high recall on the cross validation set. | In an ideal situation we want to have both, FP and FN near to none and hence high precision and high recall. Also, for data with skewed classes like these spam data, we want to achieve a high F1 score, which requires high precision and high recall. 
 True | If you always predict non-spam (output y=0), your classifier will have an accuracy of 99%. | none needed. 
 
 Question 5
