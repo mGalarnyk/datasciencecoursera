@@ -1,4 +1,4 @@
-# Data Science Specialization | John Hopkins Coursera
+# Data Science Specialization | Johns Hopkins Coursera
 Author: Michael Galarnyk <br />
 
 Just started on Course 6 Statistical Inference (as of 5/12/2017). All the coursework is aggregated into one repo.
