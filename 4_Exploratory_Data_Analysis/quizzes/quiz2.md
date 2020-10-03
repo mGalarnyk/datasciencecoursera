@@ -70,6 +70,7 @@ Which of the following functions can be used to annotate the panels in a multi-p
 Answer Options: </br>
 panel.lmline() </br>
 panel.abline()
+lpoints()
 
 Question 4
 ----------
