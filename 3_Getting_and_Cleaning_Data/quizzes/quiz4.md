@@ -56,7 +56,7 @@ In the data set from Question 2 what is a regular expression that would allow yo
 
 ```R
 # Answer: 
-grep("^United",GDPrank[, Country])
+grep("^United",countryNames),3
 
 ```
 
