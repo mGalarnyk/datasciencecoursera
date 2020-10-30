@@ -1,0 +1,8 @@
+#How to run this code in Python3
+
+First of all, thanks to mGalarnyk for the code, if you want to use this code in Python3 there are 3 things to do:
+- just add some () to each print function
+- change xrange by range
+- remove or comment each plt.hold(False)
+
+Have fun!
