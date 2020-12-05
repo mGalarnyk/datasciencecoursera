@@ -23,9 +23,9 @@ Question 2
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/SupportVectorMachinesQ2p5.png)
 
 
-True/False | Answer | Explanation
+Answer | Explanation
 --- | --- | ---
-none yet | none yet | none yet
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/SupportVectorMachinesQ2p2Solution.png) | none yet
 
 Question 3
 ----------
