@@ -7,7 +7,7 @@ Question 1
 
 Answer | Explanation
 --- | ---
-It would be reasonable to try decreasing C. It would also be reasonable to try decreasing  σ<sup>2</sup>  | none yet
+It would be reasonable to try decreasing C. It would also be reasonable to try decreasing  σ<sup>2</sup>  | The figure shows a decision boundary that is overfit to the training set, so we'd like to increase the bias / lower the variance of the SVM. We can do so by either decreasing the parameter C or increasing σ<sup>2</sup>
 
 
 False | Suppose you have a multi-class classification problem with three classes, trained with a 3 layer network. Let a<sup>(3)</sup><sub>1</sub>=(h<sub>Θ</sub>(x))<sub>1</sub> be the activation of the first output unit, and similarly a<sup>(3)</sup><sub>2</sub>=(h<sub>Θ</sub>(x))<sub>2</sub> and a<sup>(3)</sup><sub>3</sub>=(h<sub>Θ</sub>(x))<sub>3</sub>. Then for any input x, it must be the case that a<sup>(3)</sup><sub>1</sub>+a<sup>(3)</sup><sub>2</sub>+a<sup>(3)</sup><sub>3</sub>=1. | The outputs of a neural network are not probabilities, so their sum need not be 1. 
