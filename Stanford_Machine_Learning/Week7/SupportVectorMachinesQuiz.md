@@ -5,6 +5,10 @@ Question 1
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/SupportVectorMachinesQ1p1.png)
 ![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week1/data/SupportVectorMachinesQ1p2.png)
 
+True/False | Answer | Explanation
+--- | --- | ---
+none yet | none yet | none yet
+
 
 Question 2
 ----------
