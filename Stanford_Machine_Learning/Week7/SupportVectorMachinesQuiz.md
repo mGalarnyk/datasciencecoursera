@@ -30,7 +30,7 @@ True/False | Answer | Explanation
 --- | --- | ---
 False | For every example with y<sup>(i)</sup>=1, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= 0  | cost<sub>0</sub>(Θ<sup>T</sup>x<sup>(i)</sup>) is still non-zero for inputs between 0 and 1, so being greater than or equal to 0 is insufficient. 
 False | For every example with y<sup>(i)</sup>=0, we have that Θ<sup>T</sup>x<sup>(i)</sup><= 0 | cost<sub>0</sub>(Θ<sup>T</sup>x<sup>(i)</sup>) is still non-zero for inputs between -1 and 0, so being less than or equal to 0 is insufficient. 
-True | For every example with y<sup>(i)</sup>=0, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= -1  |  For examples with y<sup>(i)</sup>=0, only the cost<sub>0</sub>(Θ<sup>T</sup>x<sup>(i)</sup>) term is present. As you can see in the graph, this will be zero for all inputs greater than or equal to -1. 
+True | For every example with y<sup>(i)</sup>=0, we have that Θ<sup>T</sup>x<sup>(i)</sup><= -1  |  For examples with y<sup>(i)</sup>=0, only the cost<sub>0</sub>(Θ<sup>T</sup>x<sup>(i)</sup>) term is present. As you can see in the graph, this will be zero for all inputs greater than or equal to -1. 
 True | For every example with y<sup>(i)</sup>=1, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= 1  | For examples with y<sup>(i)</sup>=1,only the cost<sub>1</sub>(Θ<sup>T</sup>x<sup>(i)</sup>) term is present. As you can see in the graph, this will be zero for all inputs greater than or equal to 1. 
 
 Question 4
