@@ -33,10 +33,13 @@ Question 3
 
 True/False | Answer | Explanation
 --- | --- | ---
-| For every example with y<sup>(i)</sup>=1, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= 0  | none yet
-| For every example with y<sup>(i)</sup>=0, we have that Θ<sup>T</sup>x<sup>(i)</sup><= 0 | none yet
-| For every example with y<sup>(i)</sup>=0, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= 0  | none yet
-| For every example with y<sup>(i)</sup>=1, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= 1  | none yet
+True | For every example with y<sup>(i)</sup>=1, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= 0  | none yet
+
+True | For every example with y<sup>(i)</sup>=0, we have that Θ<sup>T</sup>x<sup>(i)</sup><= 0 | none yet
+
+True | For every example with y<sup>(i)</sup>=0, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= -1  |  For examples with y<sup>(i)</sup>=0, only the cost<sub>0</sub>(Θ<sup>T</sup>x<sup>(i)</sup>) term is present. As you can see in the graph, this will be zero for all inputs greater than or equal to -1. 
+
+True | For every example with y<sup>(i)</sup>=1, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= 1  | For examples with y<sup>(i)</sup>=1,only the cost<sub>1</sub>(Θ<sup>T</sup>x<sup>(i)</sup>) term is present. As you can see in the graph, this will be zero for all inputs greater than or equal to 1. 
 
 Question 4
 ----------
