@@ -15,7 +15,7 @@ Week Number | Quiz # | Link/Quiz Name
 9 | 1 | Anomaly Detection
 8 | 2 | [Principle Component Analysis](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week8/PCAquiz.md)
 8 | 1 | [Unsupervised Learning](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week8/UnsupervisedLearningQuiz.md)
-7 | 1 | Support Vector Machines
+7 | 1 | [Support Vector Machines](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week7/SupportVectorMachinesQuiz.md)
 6 | 2 | [Machine Learning System Design](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week6/MachineLearningSystemDesign.md)
 6 | 1 | [Advice for Applying Machine Learning](https://github.com/mGalarnyk/datasciencecoursera/blob/master/Stanford_Machine_Learning/Week6/AdviceQuiz.md)
 5 | 1 | Neural Network Learning
