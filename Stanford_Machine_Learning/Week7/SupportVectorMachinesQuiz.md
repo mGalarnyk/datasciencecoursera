@@ -33,7 +33,10 @@ Question 3
 
 True/False | Answer | Explanation
 --- | --- | ---
-none yet | none yet | none yet
+| For every example with y<sup>(i)</sup>=1, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= 0  | none yet
+| For every example with y<sup>(i)</sup>=0, we have that Θ<sup>T</sup>x<sup>(i)</sup><= 0 | none yet
+| For every example with y<sup>(i)</sup>=0, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= 0  | none yet
+| For every example with y<sup>(i)</sup>=1, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= 1  | none yet
 
 Question 4
 ----------
