@@ -33,12 +33,9 @@ Question 3
 
 True/False | Answer | Explanation
 --- | --- | ---
-True | For every example with y<sup>(i)</sup>=1, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= 0  | none yet
-
-True | For every example with y<sup>(i)</sup>=0, we have that Θ<sup>T</sup>x<sup>(i)</sup><= 0 | none yet
-
+False | For every example with y<sup>(i)</sup>=1, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= 0  | cost<sub>0</sub>(Θ<sup>T</sup>x<sup>(i)</sup>) is still non-zero for inputs between 0 and 1, so being greater than or equal to 0 is insufficient. 
+False | For every example with y<sup>(i)</sup>=0, we have that Θ<sup>T</sup>x<sup>(i)</sup><= 0 | cost<sub>0</sub>(Θ<sup>T</sup>x<sup>(i)</sup>) is still non-zero for inputs between -1 and 0, so being less than or equal to 0 is insufficient. 
 True | For every example with y<sup>(i)</sup>=0, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= -1  |  For examples with y<sup>(i)</sup>=0, only the cost<sub>0</sub>(Θ<sup>T</sup>x<sup>(i)</sup>) term is present. As you can see in the graph, this will be zero for all inputs greater than or equal to -1. 
-
 True | For every example with y<sup>(i)</sup>=1, we have that Θ<sup>T</sup>x<sup>(i)</sup>>= 1  | For examples with y<sup>(i)</sup>=1,only the cost<sub>1</sub>(Θ<sup>T</sup>x<sup>(i)</sup>) term is present. As you can see in the graph, this will be zero for all inputs greater than or equal to 1. 
 
 Question 4
@@ -47,7 +44,12 @@ Question 4
 
 True/False | Answer | Explanation
 --- | --- | ---
-none yet | none yet | none yet
+none yet | Use an SVM with a linear kernel, without introducing new features.| none yet
+none yet | Use an SVM with a Gaussian Kernel| none yet
+False | Increase the regularization parameter λ | You are already underfitting the data and increasing the regularization parameter only makes underfitting stronger. 
+True | Create / add new polynomial features | When you add more features, you increase the variance of your model, reducing your chances of underfitting. 
+False | Use a different optimization method since gradient descent to train logisitic regression might result in a local minimum | The logistic regression cost function is convex, so gradient descent will always find the global minimum. 
+True | Try using a neural network with a large number of hidden units | A neural network with many hidden units is a more complex (higher variance) model than logistic regression, so it is less likely to underfit the data. 
 
 Question 5
 ----------
@@ -55,4 +57,7 @@ Question 5
 
 True/False | Answer | Explanation
 --- | --- | ---
-none yet | none yet | none yet
+none yet | If the data are linear separable, an SVM using a linear kernel will return the same parameters Θ regardless of the chosen value of C (i.e., the resulting value of Θ does not depend on C)  | none yet
+none yet | The maximum value of the Gaussian kernel (i.e., sim(x,l<sup>(1)</sup>)) is 1. | none yet
+none yet | Suppose you had 2D input examples (i.e. x<sup>(i)</sup> ∈ R<sup>2</sup>). The decision boundary of the SVM (with the linear kernel) is a straight line. | none yet
+none yet | If you are training multi-class SVMs with the one-vs-all method, it is not possible to use a kernel | none yet
