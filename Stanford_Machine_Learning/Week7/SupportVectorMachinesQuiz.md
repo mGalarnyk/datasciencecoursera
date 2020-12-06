@@ -39,8 +39,8 @@ Question 4
 
 True/False | Answer | Explanation
 --- | --- | ---
-none yet | Use an SVM with a linear kernel, without introducing new features.| none yet
-none yet | Use an SVM with a Gaussian Kernel| none yet
+False | Use an SVM with a linear kernel, without introducing new features.| An SVM with only the linear kernel is comparable to logistic regression, so it will likely underfit the data as well. 
+True | Use an SVM with a Gaussian Kernel| By using a Gaussian kernel, your model will have greater complexity and you can avoid underfitting the data. 
 False | Increase the regularization parameter λ | You are already underfitting the data and increasing the regularization parameter only makes underfitting stronger. 
 True | Create / add new polynomial features | When you add more features, you increase the variance of your model, reducing your chances of underfitting. 
 False | Use a different optimization method since gradient descent to train logisitic regression might result in a local minimum | The logistic regression cost function is convex, so gradient descent will always find the global minimum. 
@@ -52,7 +52,7 @@ Question 5
 
 True/False | Answer | Explanation
 --- | --- | ---
-none yet | If the data are linear separable, an SVM using a linear kernel will return the same parameters Θ regardless of the chosen value of C (i.e., the resulting value of Θ does not depend on C)  | none yet
+False | If the data are linear separable, an SVM using a linear kernel will return the same parameters Θ regardless of the chosen value of C (i.e., the resulting value of Θ does not depend on C)  | A linearly separable dataset can usually be separated by many different lines. Varying the parameter C will cause the SVM's decision boundary to vary among these possibilities. For example, for a very large value of C, it might learn larger values of Θ in order to increase the margin on certain examples. 
 True | The maximum value of the Gaussian kernel (i.e., sim(x,l<sup>(1)</sup>)) is 1. | When x = l<sup>(1)</sup>, the Gaussian kernel has value exp(0) = 1, and it is less than 1 otherwise. 
 True | Suppose you had 2D input examples (i.e. x<sup>(i)</sup> ∈ R<sup>2</sup>). The decision boundary of the SVM (with the linear kernel) is a straight line. | The SVM without any kernel (i.e., the linear kernel) predicts output based only Θ<sup>T</sup>x, so it gives a linear/straight-line decision boundary, just as logisitic regression does. 
 False | If you are training multi-class SVMs with the one-vs-all method, it is not possible to use a kernel | Each SVM you train in the one-vs-all method is a standard SVM, so you are free to use a kernel. 
