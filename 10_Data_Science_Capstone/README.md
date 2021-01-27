@@ -1,4 +1,4 @@
-## Data Science Specialization | John Hopkins Coursera
+## Data Science Specialization | Johns Hopkins Coursera
 
 [R Programming (JHU Coursera)](https://medium.com/@GalarnykMichael/in-progress-review-course-2-r-programming-jhu-coursera-ad27086d8438#.bzzr29fvo "Review + data.table")
 
