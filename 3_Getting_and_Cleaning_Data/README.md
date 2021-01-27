@@ -1,4 +1,4 @@
-# Getting and Cleaning Data | John Hopkins Coursera
+# Getting and Cleaning Data | Johns Hopkins Coursera
 
 ## Projects 
 Project # | Link 
@@ -22,7 +22,7 @@ Submit |  Pull Request | <youremailhere@gmail.com>
 ## License
 Anyone may contribute after each assignment is turned in and graded. 
 
-## Blog Posts on the Specialization | John Hopkins Coursera
+## Blog Posts on the Specialization | Johns Hopkins Coursera
 
 [Reproducible Research (JHU Coursera)](https://medium.com/@GalarnykMichael/reproducible-research-jhu-coursera-course-5-ad0188bfc53b "Review + data.table")
 
