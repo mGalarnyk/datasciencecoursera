@@ -30,7 +30,7 @@ Submit |  Pull Request | <youremailhere@gmail.com>
 
 Anyone may contribute after this assignment is turned in and graded. 
 
-## Blog Posts on the Specialization | John Hopkins Coursera
+## Blog Posts on the Specialization | Johns Hopkins Coursera
 
 [Getting and Cleaning Data (JHU Coursera)](https://medium.com/@GalarnykMichael/getting-and-cleaning-data-jhu-coursera-course-3-c3635747858b#.y93kqfa0u "Review + data.table")
 
