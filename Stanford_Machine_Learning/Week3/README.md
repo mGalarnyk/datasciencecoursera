@@ -5,6 +5,7 @@ Author: Michael Galarnyk <br />
 FirstName | LastName | Email
 --- | --- | ---
 Michael |  Galarnyk |  <mgalarny@gmail.com>
+Saurav | Chaudhary | <sauravchaudhary717@gmail.com>
 Submit |  Pull Request | <youremailhere@gmail.com>
 
 ## License
