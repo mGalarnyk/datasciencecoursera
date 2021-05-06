@@ -1,4 +1,4 @@
-# Data Science Specialization | John Hopkins Coursera
+# Data Science Specialization | Johns Hopkins Coursera
 Author: Michael Galarnyk <br />
 
 Just started on Course 5 "Reproducible_Research" (as of 2/19/2017). All the coursework is aggregated into one repo.
