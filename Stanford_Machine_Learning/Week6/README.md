@@ -18,6 +18,7 @@ Quiz # | Link
 FirstName | LastName | Email
 --- | --- | ---
 Michael |  Galarnyk |  <mgalarny@gmail.com>
+Parth | Agarwal | <parth1102007@gmail.com>
 Submit |  Pull Request | <youremailhere@gmail.com>
 
 ## License
