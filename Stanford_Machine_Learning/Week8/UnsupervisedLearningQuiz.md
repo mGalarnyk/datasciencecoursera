@@ -49,7 +49,7 @@ True or False | Statement | Explanation
 --- | --- | ---
 False | Once an example has been assigned to a particular centroid, it will never be reassigned to another centroid | Not sure yet
 True | A good way to initialize K-means is to select K (distinct) examples from the training set and set the cluster centroids equal to these selected examples. | This is the recommended method of initialization.
-True | On every iteration of K-means, the cost funtion J(c<sup>(1)</sup>, ..., c<sup>(m)</sup>,  μ<sub>1</sub>, ...,  μ<sub>k</sub> (the distortion function) should either stay the same or decrease; in particular, it should not increase | True  
+True | On every iteration of K-means, the cost function J(c<sup>(1)</sup>, ..., c<sup>(m)</sup>,  μ<sub>1</sub>, ...,  μ<sub>k</sub> (the distortion function) should either stay the same or decrease; in particular, it should not increase | True  
 False | K-Means will always give the same results regardless of the initialization of the centroids. | K-means is sensitive to different initializations, which is why you should run it multiple times from different random initializations
 True | For some datasets, the "right" or "correct" value of K (the number of clusters) can be ambiguous, and hard even for a human expert looking carefully at the data to decide. | Look at an elbow curve for an example. It can often be ambiguous.
 True | If we are worried about K-means getting stuck in bad local optima, one way to ameliorate (reduce) this problem is if we try using multiple random initializations. | None needed

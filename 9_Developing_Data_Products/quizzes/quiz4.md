@@ -33,7 +33,7 @@ Remove the commas from the GDP numbers in millions of dollars and average them. 
 Original data sources: http://data.worldbank.org/data-catalog/GDP-ranking-table
 ```R
 # Removed the s from https to be compatible with windows computers. 
-# Skip first 5 rows and only read in relevent columns
+# Skip first 5 rows and only read in relevant columns
 GDPrank <- data.table::fread('http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv'
                     , skip=5
                     , nrows=190

@@ -197,7 +197,7 @@ corr <- function(directory, threshold = 0){
     count = nrow(completeCases)
     
     ## Calculate and store the count of complete cases
-    ## if threshhold is reached
+    ## if threshold is reached
     if( count >= threshold ) {
       correlations = c(correlations, cor(completeCases$nitrate, completeCases$sulfate) )
     }
