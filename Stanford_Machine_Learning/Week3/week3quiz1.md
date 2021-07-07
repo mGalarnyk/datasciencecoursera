@@ -15,7 +15,7 @@ Question 2
 
 Answer | Explanation
 --- | ---
-J(θ) will be a convex function, so gradient descent should converge to the global minimum. | none
+J(θ) will be a convex function, so gradient descent should converge to the global minimum. | If J(θ) is a non-convex function, gradient descent will fail to converge at a global minimum because it will converge at a local optimum and get stuck there
 Adding polynomial features (e.g., instead using h<sub>θ</sub>(x) = g(θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub> + θ<sub>2</sub>x</sub>2 + θ<sub>3</sub>x<sup>2</sup> + θ<sub>4</sub>x<sup>1</sup>x<sup>2</sup> + θ<sub>5</sub>x<sup>2</sup> )) could increase how well we can fit the training data | Adding new features can only improve the fit on the training set: since setting θ<sub>3</sub> = θ<sub>4</sub> = θ<sub>5</sub> = 0 makes the hypothesis the same as the original one, gradient descent will use those features (by making the corresponding non-zero) only if doing so improves the training set fit
 
 Question 3
