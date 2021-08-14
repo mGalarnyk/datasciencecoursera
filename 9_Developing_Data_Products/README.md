@@ -16,7 +16,7 @@ FirstName | LastName | Email
 Michael |  Galarnyk |  <mgalarny@gmail.com>
 Submit |  Pull Request | <youremailhere@gmail.com>
 
-## Blog Posts on the Specialization | John Hopkins Coursera
+## Blog Posts on the Specialization | Johns Hopkins Coursera
 
 [Reproducible Research (JHU Coursera)](https://medium.com/@GalarnykMichael/reproducible-research-jhu-coursera-course-5-ad0188bfc53b "Review + data.table")
 
