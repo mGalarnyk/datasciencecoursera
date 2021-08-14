@@ -1,4 +1,4 @@
-# Developing Data Products Week 1 Quiz 1 John Hopkins Coursera 
+# Developing Data Products Week 1 Quiz 1 Johns Hopkins Coursera 
 
 Question 1
 ----------
